@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://0babifs40qdg"]
+
+[ext_resource type="Script" uid="uid://cn64a3rnbo1hb" path="res://Scripts/player.gd" id="1_8od7v"]
+[ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="2_qc4db"]
+[ext_resource type="Script" uid="uid://ox6kstvmsf0i" path="res://Scripts/camera_follow.gd" id="3_qc4db"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ys1qc"]
+size = Vector3(0.8, 1, 0.8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8od7v"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8od7v"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qc4db"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qc4db"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_35xla"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_8od7v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ys1qc"]
+
+[node name="Test" type="Node3D" unique_id=1414063333]
+
+[node name="Player" type="Node3D" parent="." unique_id=1704071589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("1_8od7v")
+step_time = 0.25
+step_delay = 0.1
+rotate_speed = 20.0
+enemy_collision = 2
+
+[node name="Body" type="MeshInstance3D" parent="Player" unique_id=2017477247]
+mesh = SubResource("BoxMesh_ys1qc")
+
+[node name="Front" type="MeshInstance3D" parent="Player/Body" unique_id=138113734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53298664, 0.29932982)
+mesh = SubResource("BoxMesh_8od7v")
+
+[node name="GridMovement" type="Node" parent="Player" unique_id=271678568]
+script = ExtResource("2_qc4db")
+
+[node name="Step_timer" type="Timer" parent="Player" unique_id=122099979]
+one_shot = true
+
+[node name="GroundCheck" type="RayCast3D" parent="Player" unique_id=498813566]
+debug_shape_thickness = 3
+
+[node name="CameraFollow" type="Camera3D" parent="." unique_id=1539753937 node_paths=PackedStringArray("follow")]
+transform = Transform3D(-0.7071068, 0.49999994, -0.49999997, 0, 0.7071068, 0.7071068, 0.7071067, 0.50000006, -0.50000006, -4, 7.262662, -4.1009955)
+projection = 1
+size = 6.0
+script = ExtResource("3_qc4db")
+follow = NodePath("../Player")
+min_x = -5.0
+max_x = -3.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1639729662]
+transform = Transform3D(-0.24416363, -0.6674021, 0.70353293, -0.43928128, 0.7229069, 0.5333269, -0.8645324, -0.17882979, -0.4696849, -4.7683716e-07, 3.8958273, -2.1307015)
+
+[node name="Ground_tile" type="AnimatableBody3D" parent="." unique_id=1024934734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground_tile" unique_id=1461691271]
+shape = SubResource("BoxShape3D_8od7v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground_tile" unique_id=54127688]
+mesh = SubResource("BoxMesh_qc4db")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=330308228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=892781850]
+shape = SubResource("BoxShape3D_qc4db")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=425300624]
+mesh = SubResource("BoxMesh_35xla")
+
+[node name="EnemyHitBox" type="Area3D" parent="." unique_id=1601859794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 2)
+collision_layer = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EnemyHitBox" unique_id=450721107]
+mesh = SubResource("SphereMesh_8od7v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyHitBox" unique_id=811890964]
+shape = SubResource("BoxShape3D_ys1qc")
