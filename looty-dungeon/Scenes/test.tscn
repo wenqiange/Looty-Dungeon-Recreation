@@ -1,16 +1,11 @@
 [gd_scene format=3 uid="uid://0babifs40qdg"]
 
 [ext_resource type="Script" uid="uid://cn64a3rnbo1hb" path="res://Scripts/player.gd" id="1_8od7v"]
+[ext_resource type="ArrayMesh" uid="uid://u0823laalwef" path="res://Models/archero_model.obj" id="2_i3aeo"]
 [ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="2_qc4db"]
 [ext_resource type="Script" uid="uid://ox6kstvmsf0i" path="res://Scripts/camera_follow.gd" id="3_qc4db"]
 [ext_resource type="Script" uid="uid://ce5ur84jdnf6g" path="res://Scripts/health.gd" id="3_ys1qc"]
 [ext_resource type="Script" uid="uid://doolqemfcfhdo" path="res://Scripts/hit_box.gd" id="4_35xla"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_ys1qc"]
-size = Vector3(0.8, 1, 0.8)
-
-[sub_resource type="BoxMesh" id="BoxMesh_8od7v"]
-size = Vector3(0.2, 0.2, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_35xla"]
 size = Vector3(0.9, 0.9, 0.9)
@@ -178,12 +173,11 @@ enemy_collision = 2
 Attack_animation = "Arquero/Attack"
 Action_animation = "Arquero/Action"
 
-[node name="Body" type="MeshInstance3D" parent="Player" unique_id=2017477247]
-mesh = SubResource("BoxMesh_ys1qc")
+[node name="Body" type="Node3D" parent="Player" unique_id=1575044450]
 
-[node name="Front" type="MeshInstance3D" parent="Player/Body" unique_id=138113734]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53298664, 0.29932982)
-mesh = SubResource("BoxMesh_8od7v")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Body" unique_id=41169827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.505, 0)
+mesh = ExtResource("2_i3aeo")
 
 [node name="GridMovement" type="Node" parent="Player" unique_id=271678568]
 script = ExtResource("2_qc4db")

@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var grid_movement: GridMovement = $GridMovement
 @onready var step_timer: Timer = $Step_timer
-@onready var body: MeshInstance3D = $Body
+@onready var body: Node3D = $Body
 @onready var ground_check: RayCast3D = $GroundCheck
 @onready var health: Health = $Health
 @onready var invincibility_timer: Timer = $"Invincibility timer"
