@@ -11,6 +11,7 @@ extends Node3D
 
 @export var step_time:float
 @export var step_delay:float
+@export var attack_delay:float
 @export var rotate_speed:float
 @export var invincibility_time:float
 
@@ -21,6 +22,8 @@ extends Node3D
 
 var can_move:bool = true
 var on_ground:bool = true
+
+var just_attacked:bool = false
 
 var tween: Tween
 
@@ -46,6 +49,7 @@ func _physics_process(_delta: float) -> void:
 		var dir = Vector2(Input.get_axis("move_right","move_left"),Input.get_axis("move_down","move_up"))
 		if dir.length() <= 0: 
 			animator.play("Basic/Idle")
+			just_attacked = false
 			return
 		var direction = global.vec_to_dir(dir)
 		dir = global.dir_to_vec(direction) #No diagonales
@@ -75,8 +79,7 @@ func _physics_process(_delta: float) -> void:
 		enemy_query.collide_with_bodies = false
 		result = space.intersect_ray(enemy_query)
 		if result:
-			#TODO: On enemy
-			print("TODO: on facing enemy/entity")
+			if not just_attacked: attack()
 			return
 		
 		#move
@@ -84,6 +87,14 @@ func _physics_process(_delta: float) -> void:
 		grid_movement.move(direction)
 		await grid_movement.finished_step
 		step_timer.start()
+
+func attack():
+	just_attacked = true
+	can_move = false
+	animator.play(Attack_animation)
+	await animator.animation_finished
+	await get_tree().create_timer(attack_delay).timeout
+	can_move = true
 
 func die():
 	print("TODO: YOU ARE DEAD")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://0babifs40qdg"]
 
 [ext_resource type="Script" uid="uid://cn64a3rnbo1hb" path="res://Scripts/player.gd" id="1_8od7v"]
-[ext_resource type="ArrayMesh" uid="uid://u0823laalwef" path="res://Models/archero_model.obj" id="2_i3aeo"]
+[ext_resource type="ArrayMesh" uid="uid://bjvvxpahjsk6u" path="res://Models/Character/archero_model.obj" id="2_i3aeo"]
 [ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="2_qc4db"]
 [ext_resource type="Script" uid="uid://ox6kstvmsf0i" path="res://Scripts/camera_follow.gd" id="3_qc4db"]
 [ext_resource type="Script" uid="uid://ce5ur84jdnf6g" path="res://Scripts/health.gd" id="3_ys1qc"]
@@ -46,6 +46,31 @@ resource_name = "Action"
 
 [sub_resource type="Animation" id="Animation_5wyu1"]
 resource_name = "Attack"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:position:y")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.15, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:scale:y")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.7, 1.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yb21e"]
 _data = {
@@ -167,6 +192,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("1_8od7v")
 step_time = 0.25
 step_delay = 0.1
+attack_delay = 0.1
 rotate_speed = 20.0
 invincibility_time = 0.5
 enemy_collision = 2
@@ -182,9 +208,6 @@ mesh = ExtResource("2_i3aeo")
 [node name="GridMovement" type="Node" parent="Player" unique_id=271678568]
 script = ExtResource("2_qc4db")
 
-[node name="Step_timer" type="Timer" parent="Player" unique_id=122099979]
-one_shot = true
-
 [node name="GroundCheck" type="RayCast3D" parent="Player" unique_id=498813566]
 debug_shape_thickness = 3
 
@@ -199,6 +222,9 @@ script = ExtResource("4_35xla")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/hit box" unique_id=2077846109]
 shape = SubResource("BoxShape3D_35xla")
+
+[node name="Step_timer" type="Timer" parent="Player" unique_id=122099979]
+one_shot = true
 
 [node name="Invincibility timer" type="Timer" parent="Player" unique_id=988956817]
 one_shot = true
