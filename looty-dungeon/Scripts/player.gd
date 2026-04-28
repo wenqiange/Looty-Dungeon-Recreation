@@ -7,13 +7,9 @@ extends Node3D
 @onready var health: Health = $Health
 @onready var invincibility_timer: Timer = $"Invincibility timer"
 @onready var animator: AnimationPlayer = $AnimationPlayer
+@onready var attack_timer: Timer = $"Attack timer"
 
-
-@export var step_time:float
-@export var step_delay:float
-@export var attack_delay:float
 @export var rotate_speed:float
-@export var invincibility_time:float
 
 @export_flags_3d_physics var enemy_collision
 
@@ -27,11 +23,7 @@ var just_attacked:bool = false
 
 var tween: Tween
 
-func _ready() -> void:
-	step_timer.wait_time = step_delay
-	grid_movement.step_time = step_time
-	
-	invincibility_timer.wait_time = invincibility_time
+func _ready() -> void:	
 	invincibility_timer.timeout.connect(end_invincibility)
 	
 	health.got_hit.connect(on_hit)
@@ -71,7 +63,6 @@ func _physics_process(_delta: float) -> void:
 		var result = space.intersect_ray(wall_query)
 		if result:
 			#TODO: Wall animation
-			print("TODO: on facing wall")
 			return
 		
 		var enemy_query = PhysicsRayQueryParameters3D.create(position,position+dir_3d,enemy_collision) #TODO: review masks
@@ -93,7 +84,8 @@ func attack():
 	can_move = false
 	animator.play(Attack_animation)
 	await animator.animation_finished
-	await get_tree().create_timer(attack_delay).timeout
+	attack_timer.start()
+	await attack_timer.timeout
 	can_move = true
 
 func die():
