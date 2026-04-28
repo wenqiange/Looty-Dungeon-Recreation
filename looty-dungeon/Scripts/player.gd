@@ -4,12 +4,20 @@ extends Node3D
 @onready var step_timer: Timer = $Step_timer
 @onready var body: MeshInstance3D = $Body
 @onready var ground_check: RayCast3D = $GroundCheck
+@onready var health: Health = $Health
+@onready var invincibility_timer: Timer = $"Invincibility timer"
+@onready var animator: AnimationPlayer = $AnimationPlayer
+
 
 @export var step_time:float
 @export var step_delay:float
 @export var rotate_speed:float
+@export var invincibility_time:float
 
 @export_flags_3d_physics var enemy_collision
+
+@export var Attack_animation:String
+@export var Action_animation:String
 
 var can_move:bool = true
 var on_ground:bool = true
@@ -19,6 +27,14 @@ var tween: Tween
 func _ready() -> void:
 	step_timer.wait_time = step_delay
 	grid_movement.step_time = step_time
+	
+	invincibility_timer.wait_time = invincibility_time
+	invincibility_timer.timeout.connect(end_invincibility)
+	
+	health.got_hit.connect(on_hit)
+	health.death.connect(die)
+	
+	animator.play("Basic/Idle")
 
 func _process(delta: float) -> void:
 	on_ground = ground_check.is_colliding()
@@ -28,7 +44,9 @@ func _physics_process(_delta: float) -> void:
 		#check direction
 		if grid_movement.is_moving or step_timer.time_left > 0: return
 		var dir = Vector2(Input.get_axis("move_right","move_left"),Input.get_axis("move_down","move_up"))
-		if dir.length() <= 0: return
+		if dir.length() <= 0: 
+			animator.play("Basic/Idle")
+			return
 		var direction = global.vec_to_dir(dir)
 		dir = global.dir_to_vec(direction) #No diagonales
 		
@@ -62,6 +80,17 @@ func _physics_process(_delta: float) -> void:
 			return
 		
 		#move
+		animator.play("Basic/Walk")
 		grid_movement.move(direction)
 		await grid_movement.finished_step
 		step_timer.start()
+
+func die():
+	print("TODO: YOU ARE DEAD")
+
+func on_hit():
+	health.invincible = true
+	invincibility_timer.start()
+
+func end_invincibility():
+	health.invincible = false
