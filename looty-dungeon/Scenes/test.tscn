@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://ox6kstvmsf0i" path="res://Scripts/camera_follow.gd" id="3_qc4db"]
 [ext_resource type="Script" uid="uid://ce5ur84jdnf6g" path="res://Scripts/health.gd" id="3_ys1qc"]
 [ext_resource type="Script" uid="uid://doolqemfcfhdo" path="res://Scripts/hit_box.gd" id="4_35xla"]
+[ext_resource type="Script" uid="uid://sd0cn462nyjn" path="res://Scripts/bow.gd" id="6_5wyu1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_35xla"]
 size = Vector3(0.9, 0.9, 0.9)
@@ -35,6 +36,13 @@ tracks/1/keys = {
 "update": 1,
 "values": [1.0]
 }
+tracks/2/type = "scale_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 1, 1, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iaow0"]
 _data = {
@@ -43,6 +51,21 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_i3aeo"]
 resource_name = "Action"
+length = 0.5
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.06666667, 1, 0, -0.05, 0, 0.3, 1, 0, 0, 0)
+tracks/1/type = "scale_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.06666667, 1, 1, 0.9, 1, 0.3, 1, 1, 1, 1)
 
 [sub_resource type="Animation" id="Animation_5wyu1"]
 resource_name = "Attack"
@@ -72,10 +95,30 @@ tracks/1/keys = {
 "values": [1.0, 0.7, 1.0]
 }
 
+[sub_resource type="Animation" id="Animation_yb21e"]
+resource_name = "Hold"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.1, 1, 1, 1.05, 1, 0.2, 1, 1, 1, 1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.1, 1, 0, 0.025, 0, 0.2, 1, 0, 0, 0)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yb21e"]
 _data = {
 &"Action": SubResource("Animation_i3aeo"),
-&"Attack": SubResource("Animation_5wyu1")
+&"Attack": SubResource("Animation_5wyu1"),
+&"Hold": SubResource("Animation_yb21e")
 }
 
 [sub_resource type="Animation" id="Animation_0c07c"]
@@ -187,30 +230,29 @@ size = Vector3(1, 0.2, 1)
 
 [node name="Test" type="Node3D" unique_id=1414063333]
 
-[node name="Player" type="Node3D" parent="." unique_id=1704071589]
+[node name="Arquero" type="Node3D" parent="." unique_id=1704071589]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("1_8od7v")
 Attack_animation = "Arquero/Attack"
-Action_animation = "Arquero/Action"
 
-[node name="Body" type="Node3D" parent="Player" unique_id=1575044450]
+[node name="Body" type="Node3D" parent="Arquero" unique_id=1575044450]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Body" unique_id=41169827]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arquero/Body" unique_id=41169827]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.505, 0)
 mesh = ExtResource("2_i3aeo")
 
-[node name="GroundCheck" type="RayCast3D" parent="Player" unique_id=498813566]
+[node name="GroundCheck" type="RayCast3D" parent="Arquero" unique_id=498813566]
 debug_shape_thickness = 3
 
-[node name="hit box" type="Area3D" parent="Player" unique_id=910676190]
+[node name="hit box" type="Area3D" parent="Arquero" unique_id=910676190]
 collision_layer = 8
 collision_mask = 4
 script = ExtResource("4_35xla")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/hit box" unique_id=2077846109]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arquero/hit box" unique_id=2077846109]
 shape = SubResource("BoxShape3D_35xla")
 
-[node name="GridMovement" type="Node" parent="Player" unique_id=271678568 node_paths=PackedStringArray("body", "ground_raycast")]
+[node name="GridMovement" type="Node" parent="Arquero" unique_id=271678568 node_paths=PackedStringArray("body", "ground_raycast")]
 script = ExtResource("2_qc4db")
 step_time = 0.25
 body = NodePath("../Body")
@@ -218,25 +260,34 @@ rotate_speed = 20.0
 ground_raycast = NodePath("../GroundCheck")
 enemy_collision = 2
 
-[node name="Health" type="Node" parent="Player" unique_id=1435482904]
+[node name="Health" type="Node" parent="Arquero" unique_id=1435482904]
 script = ExtResource("3_ys1qc")
 max_health = 3
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=545041223]
+[node name="Bow" type="Node" parent="Arquero" unique_id=1835342806]
+script = ExtResource("6_5wyu1")
+max_dist = 6
+min_dist = 2
+
+[node name="HoldTimer" type="Timer" parent="Arquero/Bow" unique_id=1672093041]
+wait_time = 1.5
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Arquero" unique_id=545041223]
 libraries/ = SubResource("AnimationLibrary_iaow0")
 libraries/Arquero = SubResource("AnimationLibrary_yb21e")
 libraries/Basic = SubResource("AnimationLibrary_aees8")
 autoplay = &"Basic/Fall"
 
-[node name="Step_timer" type="Timer" parent="Player" unique_id=122099979]
+[node name="Step_timer" type="Timer" parent="Arquero" unique_id=122099979]
 wait_time = 0.1
 one_shot = true
 
-[node name="Invincibility timer" type="Timer" parent="Player" unique_id=988956817]
+[node name="Invincibility timer" type="Timer" parent="Arquero" unique_id=988956817]
 wait_time = 0.5
 one_shot = true
 
-[node name="Attack timer" type="Timer" parent="Player" unique_id=1421025106]
+[node name="Attack timer" type="Timer" parent="Arquero" unique_id=1421025106]
 wait_time = 0.1
 one_shot = true
 
@@ -245,7 +296,7 @@ transform = Transform3D(-0.7071068, 0.49999994, -0.49999997, 0, 0.7071068, 0.707
 projection = 1
 size = 6.0
 script = ExtResource("3_qc4db")
-follow = NodePath("../Player")
+follow = NodePath("../Arquero")
 min_x = -5.0
 max_x = -3.0
 
@@ -253,7 +304,7 @@ max_x = -3.0
 transform = Transform3D(-0.24416363, -0.6674021, 0.70353293, -0.43928128, 0.7229069, 0.5333269, -0.8645324, -0.17882979, -0.4696849, -4.7683716e-07, 3.8958273, -2.1307015)
 
 [node name="Ground_tile" type="AnimatableBody3D" parent="." unique_id=1024934734]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.5, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground_tile" unique_id=1461691271]
 shape = SubResource("BoxShape3D_8od7v")
@@ -292,3 +343,5 @@ shape = SubResource("BoxShape3D_i3aeo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Trap" unique_id=1949453442]
 mesh = SubResource("BoxMesh_5wyu1")
+
+[connection signal="timeout" from="Arquero/Bow/HoldTimer" to="Arquero/Bow" method="_on_hold_timer_timeout"]

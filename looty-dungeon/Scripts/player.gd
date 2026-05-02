@@ -1,3 +1,4 @@
+class_name Player
 extends Node3D
 
 @onready var grid_movement: GridMovement = $GridMovement
@@ -9,7 +10,6 @@ extends Node3D
 @onready var attack_timer: Timer = $"Attack timer"
 
 @export var Attack_animation:String
-@export var Action_animation:String
 
 var can_move:bool = true
 
@@ -26,7 +26,6 @@ func _ready() -> void:
 	animator.play("Basic/Idle")
 
 func _process(delta: float) -> void:
-	print(grid_movement.on_ground)
 	if grid_movement.is_moving:
 		animator.play("Basic/Walk")
 	elif can_move:
@@ -67,3 +66,6 @@ func on_hit():
 
 func end_invincibility():
 	health.invincible = false
+
+func get_look_rot():
+	return body.rotation
