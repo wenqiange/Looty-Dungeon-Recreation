@@ -8,13 +8,16 @@ var animator:AnimationPlayer
 const Arrow_path = "uid://o68de7frxg5w"
 
 @onready var hold_timer: Timer = $HoldTimer
+@onready var delay_timer: Timer = $DelayTimer
 
 func _ready() -> void:
 	player = get_parent() as Player
 	animator = player.animator
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not animator: animator = player.animator
+	
+	if not delay_timer.is_stopped(): return
 	
 	if Input.is_action_just_pressed("Action"):
 		hold_timer.start()
@@ -36,6 +39,7 @@ func shoot(strength:float):
 	arrow.rotation = player.get_look_rot()
 	arrow.position = player.position
 	player.add_sibling(arrow)
+	delay_timer.start()
 
 func _on_hold_timer_timeout() -> void:
 	animator.play("Arquero/Action")

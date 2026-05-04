@@ -1,215 +1,14 @@
 [gd_scene format=3 uid="uid://0babifs40qdg"]
 
-[ext_resource type="Script" uid="uid://cn64a3rnbo1hb" path="res://Scripts/player.gd" id="1_8od7v"]
-[ext_resource type="ArrayMesh" uid="uid://bjvvxpahjsk6u" path="res://Models/Character/archero_model.obj" id="2_i3aeo"]
+[ext_resource type="PackedScene" uid="uid://cy003rfen1a3a" path="res://Nodes/arquero.tscn" id="1_8od7v"]
 [ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="2_qc4db"]
+[ext_resource type="Script" uid="uid://cohqj85ihs47j" path="res://Scripts/slime.gd" id="3_0c07c"]
+[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="3_2cgwh"]
+[ext_resource type="ArrayMesh" uid="uid://c3vu0lmeq5pmp" path="res://Models/Enemies/outside_slime.obj" id="3_5wyu1"]
 [ext_resource type="Script" uid="uid://ox6kstvmsf0i" path="res://Scripts/camera_follow.gd" id="3_qc4db"]
-[ext_resource type="Script" uid="uid://ce5ur84jdnf6g" path="res://Scripts/health.gd" id="3_ys1qc"]
+[ext_resource type="Texture2D" uid="uid://bqi62hfa2dcxh" path="res://Models/Enemies/outside_slime.png" id="4_0c07c"]
 [ext_resource type="Script" uid="uid://doolqemfcfhdo" path="res://Scripts/hit_box.gd" id="4_35xla"]
-[ext_resource type="Script" uid="uid://sd0cn462nyjn" path="res://Scripts/bow.gd" id="6_5wyu1"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_35xla"]
-size = Vector3(0.9, 0.9, 0.9)
-
-[sub_resource type="Animation" id="Animation_35xla"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body:scale:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1.0]
-}
-tracks/2/type = "scale_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 1, 1, 1)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_iaow0"]
-_data = {
-&"RESET": SubResource("Animation_35xla")
-}
-
-[sub_resource type="Animation" id="Animation_i3aeo"]
-resource_name = "Action"
-length = 0.5
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.06666667, 1, 0, -0.05, 0, 0.3, 1, 0, 0, 0)
-tracks/1/type = "scale_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.06666667, 1, 1, 0.9, 1, 0.3, 1, 1, 1, 1)
-
-[sub_resource type="Animation" id="Animation_5wyu1"]
-resource_name = "Attack"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body:position:y")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, -0.15, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body:scale:y")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [1.0, 0.7, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_yb21e"]
-resource_name = "Hold"
-length = 0.2
-loop_mode = 1
-tracks/0/type = "scale_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.1, 1, 1, 1.05, 1, 0.2, 1, 1, 1, 1)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.1, 1, 0, 0.025, 0, 0.2, 1, 0, 0, 0)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_yb21e"]
-_data = {
-&"Action": SubResource("Animation_i3aeo"),
-&"Attack": SubResource("Animation_5wyu1"),
-&"Hold": SubResource("Animation_yb21e")
-}
-
-[sub_resource type="Animation" id="Animation_0c07c"]
-
-[sub_resource type="Animation" id="Animation_2cgwh"]
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(0, -0.24999315, -0.07891192, 0.36666667, 0.11574066, -5, -0.03333333, 2.476852, 0, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body:scale:y")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.0, 1.5]
-}
-
-[sub_resource type="Animation" id="Animation_iaow0"]
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body:position:y")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, -0.05, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body:scale:y")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [1.0, 0.9, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_qpfo2"]
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body:position:y")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.3, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body:scale:y")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [1.0, 1.1, 1.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_aees8"]
-_data = {
-&"Die": SubResource("Animation_0c07c"),
-&"Fall": SubResource("Animation_2cgwh"),
-&"Idle": SubResource("Animation_iaow0"),
-&"Walk": SubResource("Animation_qpfo2")
-}
+[ext_resource type="ArrayMesh" uid="uid://p4u4cnfhs4lr" path="res://Models/Enemies/inside_slime.obj" id="5_2cgwh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8od7v"]
 
@@ -228,68 +27,17 @@ _data = {
 [sub_resource type="BoxMesh" id="BoxMesh_5wyu1"]
 size = Vector3(1, 0.2, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iaow0"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.07058824)
+albedo_texture = ExtResource("4_0c07c")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qpfo2"]
+
 [node name="Test" type="Node3D" unique_id=1414063333]
 
-[node name="Arquero" type="Node3D" parent="." unique_id=1704071589]
+[node name="Arquero" parent="." unique_id=1232147745 instance=ExtResource("1_8od7v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-script = ExtResource("1_8od7v")
-Attack_animation = "Arquero/Attack"
-
-[node name="Body" type="Node3D" parent="Arquero" unique_id=1575044450]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Arquero/Body" unique_id=41169827]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.505, 0)
-mesh = ExtResource("2_i3aeo")
-
-[node name="GroundCheck" type="RayCast3D" parent="Arquero" unique_id=498813566]
-debug_shape_thickness = 3
-
-[node name="hit box" type="Area3D" parent="Arquero" unique_id=910676190]
-collision_layer = 8
-collision_mask = 4
-script = ExtResource("4_35xla")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Arquero/hit box" unique_id=2077846109]
-shape = SubResource("BoxShape3D_35xla")
-
-[node name="GridMovement" type="Node" parent="Arquero" unique_id=271678568 node_paths=PackedStringArray("body", "ground_raycast")]
-script = ExtResource("2_qc4db")
-step_time = 0.25
-body = NodePath("../Body")
-rotate_speed = 20.0
-ground_raycast = NodePath("../GroundCheck")
-enemy_collision = 2
-
-[node name="Health" type="Node" parent="Arquero" unique_id=1435482904]
-script = ExtResource("3_ys1qc")
-max_health = 3
-
-[node name="Bow" type="Node" parent="Arquero" unique_id=1835342806]
-script = ExtResource("6_5wyu1")
-max_dist = 6
-min_dist = 2
-
-[node name="HoldTimer" type="Timer" parent="Arquero/Bow" unique_id=1672093041]
-wait_time = 1.5
-one_shot = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Arquero" unique_id=545041223]
-libraries/ = SubResource("AnimationLibrary_iaow0")
-libraries/Arquero = SubResource("AnimationLibrary_yb21e")
-libraries/Basic = SubResource("AnimationLibrary_aees8")
-autoplay = &"Basic/Fall"
-
-[node name="Step_timer" type="Timer" parent="Arquero" unique_id=122099979]
-wait_time = 0.1
-one_shot = true
-
-[node name="Invincibility timer" type="Timer" parent="Arquero" unique_id=988956817]
-wait_time = 0.5
-one_shot = true
-
-[node name="Attack timer" type="Timer" parent="Arquero" unique_id=1421025106]
-wait_time = 0.1
-one_shot = true
 
 [node name="CameraFollow" type="Camera3D" parent="." unique_id=1539753937 node_paths=PackedStringArray("follow")]
 transform = Transform3D(-0.7071068, 0.49999994, -0.49999997, 0, 0.7071068, 0.7071068, 0.7071067, 0.50000006, -0.50000006, -4, 7.262662, -4.1009955)
@@ -337,6 +85,7 @@ shape = SubResource("BoxShape3D_ys1qc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 collision_layer = 4
 collision_mask = 10
+script = ExtResource("3_2cgwh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trap" unique_id=619106722]
 shape = SubResource("BoxShape3D_i3aeo")
@@ -344,4 +93,44 @@ shape = SubResource("BoxShape3D_i3aeo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Trap" unique_id=1949453442]
 mesh = SubResource("BoxMesh_5wyu1")
 
-[connection signal="timeout" from="Arquero/Bow/HoldTimer" to="Arquero/Bow" method="_on_hold_timer_timeout"]
+[node name="Slime" type="Node3D" parent="." unique_id=931944941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 5)
+script = ExtResource("3_0c07c")
+see_radius = 5.0
+
+[node name="Body" type="Node3D" parent="Slime" unique_id=1503231881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="out" type="MeshInstance3D" parent="Slime/Body" unique_id=323741639]
+mesh = ExtResource("3_5wyu1")
+surface_material_override/0 = SubResource("StandardMaterial3D_iaow0")
+
+[node name="in" type="MeshInstance3D" parent="Slime/Body" unique_id=1144309024]
+mesh = ExtResource("5_2cgwh")
+
+[node name="HitBox" type="Area3D" parent="Slime" unique_id=1850136103]
+collision_layer = 2
+collision_mask = 30
+script = ExtResource("4_35xla")
+metadata/_custom_type_script = "uid://doolqemfcfhdo"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Slime/HitBox" unique_id=410089393]
+shape = SubResource("BoxShape3D_qpfo2")
+
+[node name="GroundCheck" type="RayCast3D" parent="Slime" unique_id=1739131868]
+debug_shape_thickness = 3
+
+[node name="GridMovement" type="Node" parent="Slime" unique_id=1219796883 node_paths=PackedStringArray("body", "ground_raycast")]
+script = ExtResource("2_qc4db")
+body = NodePath("../Body")
+rotate_speed = 20.0
+ground_raycast = NodePath("../GroundCheck")
+enemy_collision = 10
+metadata/_custom_type_script = "uid://3t50y6pxtmjf"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Slime" unique_id=60237233]
+
+[node name="Delay" type="Timer" parent="Slime" unique_id=258589540]
+autostart = true
+
+[connection signal="timeout" from="Slime/Delay" to="Slime" method="_on_delay_timeout"]

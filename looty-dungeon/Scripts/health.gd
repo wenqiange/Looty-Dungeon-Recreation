@@ -14,7 +14,7 @@ func _ready() -> void:
 	for c in get_parent().get_children():
 		if c is HitBox:
 			var hb = c as HitBox
-			hb.area_entered.connect(func(_area:Area3D):on_hit())
+			hb.area_entered.connect(func(area:Area3D):if area is DamageArea: on_hit())
 
 func on_heal(val:int):
 	cur_health += val

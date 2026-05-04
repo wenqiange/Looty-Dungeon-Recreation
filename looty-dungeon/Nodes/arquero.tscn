@@ -1,0 +1,277 @@
+[gd_scene format=3 uid="uid://cy003rfen1a3a"]
+
+[ext_resource type="Script" uid="uid://cn64a3rnbo1hb" path="res://Scripts/player.gd" id="1_dv83t"]
+[ext_resource type="ArrayMesh" uid="uid://bjvvxpahjsk6u" path="res://Models/Character/archero_model.obj" id="2_rnn4s"]
+[ext_resource type="Script" uid="uid://doolqemfcfhdo" path="res://Scripts/hit_box.gd" id="3_1negf"]
+[ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="4_sg4uk"]
+[ext_resource type="Script" uid="uid://ce5ur84jdnf6g" path="res://Scripts/health.gd" id="5_5nirr"]
+[ext_resource type="Script" uid="uid://sd0cn462nyjn" path="res://Scripts/bow.gd" id="6_kf4pe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_35xla"]
+size = Vector3(0.9, 0.9, 0.9)
+
+[sub_resource type="Animation" id="Animation_35xla"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/2/type = "scale_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iaow0"]
+_data = {
+&"RESET": SubResource("Animation_35xla")
+}
+
+[sub_resource type="Animation" id="Animation_i3aeo"]
+resource_name = "Action"
+length = 0.5
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.06666667, 1, 0, -0.05, 0, 0.3, 1, 0, 0, 0)
+tracks/1/type = "scale_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.06666667, 1, 1, 0.9, 1, 0.3, 1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_5wyu1"]
+resource_name = "Attack"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:position:y")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.15, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:scale:y")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.7, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_yb21e"]
+resource_name = "Hold"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.1, 1, 1, 1.05, 1, 0.2, 1, 1, 1, 1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.1, 1, 0, 0.025, 0, 0.2, 1, 0, 0, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yb21e"]
+_data = {
+&"Action": SubResource("Animation_i3aeo"),
+&"Attack": SubResource("Animation_5wyu1"),
+&"Hold": SubResource("Animation_yb21e")
+}
+
+[sub_resource type="Animation" id="Animation_0c07c"]
+
+[sub_resource type="Animation" id="Animation_2cgwh"]
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, -0.24999315, -0.07891192, 0.36666667, 0.11574066, -5, -0.03333333, 2.476852, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:scale:y")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.5]
+}
+
+[sub_resource type="Animation" id="Animation_iaow0"]
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:position:y")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.05, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:scale:y")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.9, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_qpfo2"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:position:y")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.3, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:scale:y")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 1.1, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aees8"]
+_data = {
+&"Die": SubResource("Animation_0c07c"),
+&"Fall": SubResource("Animation_2cgwh"),
+&"Idle": SubResource("Animation_iaow0"),
+&"Walk": SubResource("Animation_qpfo2")
+}
+
+[node name="Arquero" type="Node3D" unique_id=1232147745 groups=["Player"]]
+script = ExtResource("1_dv83t")
+Attack_animation = "Arquero/Attack"
+
+[node name="Body" type="Node3D" parent="." unique_id=1057291217]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body" unique_id=564966186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.505, 0)
+mesh = ExtResource("2_rnn4s")
+
+[node name="GroundCheck" type="RayCast3D" parent="." unique_id=403455966]
+debug_shape_thickness = 3
+
+[node name="hit box" type="Area3D" parent="." unique_id=264684101]
+collision_layer = 8
+collision_mask = 14
+script = ExtResource("3_1negf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hit box" unique_id=1685150382]
+shape = SubResource("BoxShape3D_35xla")
+
+[node name="GridMovement" type="Node" parent="." unique_id=489791859 node_paths=PackedStringArray("body", "ground_raycast")]
+script = ExtResource("4_sg4uk")
+step_time = 0.25
+body = NodePath("../Body")
+rotate_speed = 20.0
+ground_raycast = NodePath("../GroundCheck")
+enemy_collision = 2
+
+[node name="Health" type="Node" parent="." unique_id=1670237981]
+script = ExtResource("5_5nirr")
+max_health = 3
+
+[node name="Bow" type="Node" parent="." unique_id=660424687]
+script = ExtResource("6_kf4pe")
+max_dist = 6
+min_dist = 2
+
+[node name="HoldTimer" type="Timer" parent="Bow" unique_id=1789669464]
+wait_time = 1.5
+one_shot = true
+
+[node name="DelayTimer" type="Timer" parent="Bow" unique_id=464886449]
+wait_time = 0.4
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2088966330]
+libraries/ = SubResource("AnimationLibrary_iaow0")
+libraries/Arquero = SubResource("AnimationLibrary_yb21e")
+libraries/Basic = SubResource("AnimationLibrary_aees8")
+autoplay = &"Basic/Fall"
+
+[node name="Step_timer" type="Timer" parent="." unique_id=543583154]
+wait_time = 0.1
+one_shot = true
+
+[node name="Invincibility timer" type="Timer" parent="." unique_id=130729846]
+wait_time = 0.5
+one_shot = true
+
+[node name="Attack timer" type="Timer" parent="." unique_id=356264558]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="Bow/HoldTimer" to="Bow" method="_on_hold_timer_timeout"]

@@ -19,13 +19,14 @@ func _ready() -> void:
 	invincibility_timer.timeout.connect(end_invincibility)
 	
 	grid_movement.on_entity.connect(attack)
+	grid_movement.finished_step.connect(func():step_timer.start())
 	
 	health.got_hit.connect(on_hit)
 	health.death.connect(die)
 	
 	animator.play("Basic/Idle")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if grid_movement.is_moving:
 		animator.play("Basic/Walk")
 	elif can_move:
@@ -44,8 +45,6 @@ func _physics_process(_delta: float) -> void:
 		
 		#move
 		grid_movement.move(direction)
-		await  grid_movement.finished_step
-		step_timer.start()
 
 func attack():
 	if just_attacked: return
