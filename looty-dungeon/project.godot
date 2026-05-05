@@ -79,6 +79,7 @@ Action={
 3d_physics/layer_3="DamageBox"
 3d_physics/layer_4="PlayerHitBox"
 3d_physics/layer_5="PlayerDamageBox"
+3d_physics/layer_6="GroundEffect"
 
 [physics]
 

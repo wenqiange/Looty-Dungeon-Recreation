@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cy003rfen1a3a" path="res://Nodes/arquero.tscn" id="1_tmemv"]
 [ext_resource type="Script" uid="uid://ox6kstvmsf0i" path="res://Scripts/camera_follow.gd" id="2_moyba"]
 [ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="3_qitfk"]
+[ext_resource type="PackedScene" uid="uid://6c1gdumh0lvv" path="res://Nodes/ground_slime.tscn" id="4_d46s6"]
 [ext_resource type="PackedScene" uid="uid://coippum77fhr3" path="res://Nodes/slime.tscn" id="6_siafu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8od7v"]
@@ -81,5 +82,8 @@ shape = SubResource("BoxShape3D_i3aeo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Trap" unique_id=1949453442]
 mesh = SubResource("BoxMesh_5wyu1")
 
+[node name="GroundSlime" parent="." unique_id=176859037 instance=ExtResource("4_d46s6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
 [node name="Slime" parent="." unique_id=1608742070 instance=ExtResource("6_siafu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 5)

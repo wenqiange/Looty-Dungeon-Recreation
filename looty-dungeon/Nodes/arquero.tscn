@@ -239,6 +239,7 @@ rotate_speed = 20.0
 ground_raycast = NodePath("../GroundCheck")
 enemy_collision = 2
 exclude_colision = [NodePath("../hit box")]
+inmune_to = 0
 
 [node name="Health" type="Node" parent="." unique_id=1670237981]
 script = ExtResource("5_5nirr")
@@ -273,6 +274,10 @@ one_shot = true
 
 [node name="Attack timer" type="Timer" parent="." unique_id=356264558]
 wait_time = 0.1
+one_shot = true
+
+[node name="SlimeDelay" type="Timer" parent="." unique_id=809043261]
+wait_time = 0.5
 one_shot = true
 
 [connection signal="timeout" from="Bow/HoldTimer" to="Bow" method="_on_hold_timer_timeout"]

@@ -198,6 +198,7 @@ rotate_speed = 20.0
 ground_raycast = NodePath("../GroundCheck")
 enemy_collision = 10
 exclude_colision = [NodePath("../HitBox")]
+inmune_to = 1
 metadata/_custom_type_script = "uid://3t50y6pxtmjf"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=353505092]

@@ -8,6 +8,7 @@ extends Node3D
 @onready var invincibility_timer: Timer = $"Invincibility timer"
 @onready var animator: AnimationPlayer = $AnimationPlayer
 @onready var attack_timer: Timer = $"Attack timer"
+@onready var slime_delay: Timer = $SlimeDelay
 
 @export var Attack_animation:String
 
@@ -20,6 +21,7 @@ func _ready() -> void:
 	
 	grid_movement.on_entity.connect(attack)
 	grid_movement.finished_step.connect(func():step_timer.start())
+	grid_movement.remove_slime.connect(remove_slime)
 	
 	health.got_hit.connect(on_hit)
 	health.death.connect(die)
@@ -54,6 +56,12 @@ func attack(_entity:Node3D):
 	await animator.animation_finished
 	attack_timer.start()
 	await attack_timer.timeout
+	can_move = true
+
+func remove_slime():
+	can_move = false
+	slime_delay.start()
+	await  slime_delay.timeout
 	can_move = true
 
 func die():

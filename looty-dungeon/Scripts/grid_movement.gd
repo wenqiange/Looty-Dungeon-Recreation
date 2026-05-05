@@ -14,12 +14,16 @@ var on_ground = false
 @export_flags_3d_physics var enemy_collision
 @export var exclude_colision:Array[CollisionObject3D]
 
+@export_flags("slime") var inmune_to
+var cur_effect:int = 0
+
 var is_moving = false
 signal finished_step()
 
 signal on_wall
 signal on_entity(node:Node3D)
 signal on_bounce
+signal remove_slime
 
 var parent:Node3D
 var hit_box: HitBox
@@ -54,6 +58,11 @@ func move(direction:global.direction):
 	rot_tween = create_tween()
 	rot_tween.set_ease(Tween.EASE_IN_OUT)
 	rot_tween.tween_property(body,"rotation",new_rotation,abs(angle_dif)/rotate_speed).as_relative()
+	
+	#if on slime -> attack
+	if cur_effect == 1:
+		remove_slime.emit()
+		return
 	
 	#check walls or enemies
 	var dir_3d = Vector3(dir.x,0,dir.y)
