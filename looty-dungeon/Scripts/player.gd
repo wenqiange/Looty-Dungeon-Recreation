@@ -46,7 +46,7 @@ func _physics_process(_delta: float) -> void:
 		#move
 		grid_movement.move(direction)
 
-func attack():
+func attack(_entity:Node3D):
 	if just_attacked: return
 	just_attacked = true
 	can_move = false

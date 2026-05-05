@@ -17,7 +17,7 @@ var is_moving = false
 signal finished_step()
 
 signal on_wall
-signal on_entity
+signal on_entity(node:Node3D)
 signal on_bounce
 
 var parent:Node3D
@@ -76,7 +76,9 @@ func move(direction:global.direction):
 	result = space.intersect_shape(enemy_query)
 	PhysicsServer3D.free_rid(shape_rid)
 	if result:
-		on_entity.emit()
+		for coll in result:
+			on_entity.emit(coll.collider.get_parent())
+			print(coll)
 		return
 	
 	prev_pos = parent.position
