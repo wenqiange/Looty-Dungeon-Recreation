@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://c2uwtqp0iswjw"]
+
+[ext_resource type="ArrayMesh" uid="uid://c8mfa3lywevxb" path="res://Models/Traps/floor_trap.obj" id="1_32cfw"]
+[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="2_adgxc"]
+[ext_resource type="ArrayMesh" uid="uid://cqqjkpfhfbac6" path="res://Models/Traps/spikes.obj" id="3_blkkn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_im1sb"]
+size = Vector3(1.2232666, 1.2521896, 1.2407227)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qbuxw"]
+size = Vector3(1, 0.5054321, 1.00354)
+
+[sub_resource type="Animation" id="Animation_eg6cg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.07, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_u1bph"]
+resource_name = "Spikes_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.62, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.07, 0), Vector3(0, -0.02, 0), Vector3(0, -0.02, 0), Vector3(0, 0.4, 0), Vector3(0, -0.07, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_13d5c"]
+_data = {
+&"RESET": SubResource("Animation_eg6cg"),
+&"Spikes_up": SubResource("Animation_u1bph")
+}
+
+[node name="Spikes_Floor" type="StaticBody3D" unique_id=1092495601]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=575329052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002746582, 0.5949974, -0.095947266)
+shape = SubResource("BoxShape3D_im1sb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1217546213]
+mesh = ExtResource("1_32cfw")
+
+[node name="Spikes" type="Area3D" parent="." unique_id=1240939986]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("2_adgxc")
+metadata/_custom_type_script = "uid://dte1wrypmyej1"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Spikes" unique_id=355803620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94540405, -0.09539795)
+shape = SubResource("BoxShape3D_qbuxw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Spikes" unique_id=63812216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07, 0)
+mesh = ExtResource("3_blkkn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spikes" unique_id=1064195683]
+libraries/ = SubResource("AnimationLibrary_13d5c")
+
+[node name="Timer" type="Timer" parent="Spikes" unique_id=439107201]
+autostart = true
+
+[connection signal="timeout" from="Spikes/Timer" to="Spikes/AnimationPlayer" method="play" binds= [&"Spikes_up"]]
