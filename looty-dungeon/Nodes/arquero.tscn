@@ -231,13 +231,14 @@ script = ExtResource("3_1negf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hit box" unique_id=1685150382]
 shape = SubResource("BoxShape3D_35xla")
 
-[node name="GridMovement" type="Node" parent="." unique_id=489791859 node_paths=PackedStringArray("body", "ground_raycast")]
+[node name="GridMovement" type="Node" parent="." unique_id=489791859 node_paths=PackedStringArray("body", "ground_raycast", "exclude_colision")]
 script = ExtResource("4_sg4uk")
 step_time = 0.25
 body = NodePath("../Body")
 rotate_speed = 20.0
 ground_raycast = NodePath("../GroundCheck")
 enemy_collision = 2
+exclude_colision = [NodePath("../hit box")]
 
 [node name="Health" type="Node" parent="." unique_id=1670237981]
 script = ExtResource("5_5nirr")

@@ -12,6 +12,7 @@ extends Node
 var on_ground = false
 
 @export_flags_3d_physics var enemy_collision
+@export var exclude_colision:Array[CollisionObject3D]
 
 var is_moving = false
 signal finished_step()
@@ -67,12 +68,16 @@ func move(direction:global.direction):
 	var enemy_query:PhysicsShapeQueryParameters3D = PhysicsShapeQueryParameters3D.new()
 	enemy_query.collide_with_areas = true #Detectar hitboxes
 	enemy_query.collide_with_bodies = false
-	enemy_query.transform = parent.transform.translated(dir_3d)
+	enemy_query.transform = parent.transform.translated(dir_3d*0.5)
 	enemy_query.motion = Vector3.ZERO
-	var shape_rid = PhysicsServer3D.sphere_shape_create()
-	PhysicsServer3D.shape_set_data(shape_rid, 0.4)
+	var shape_rid = PhysicsServer3D.box_shape_create()
+	PhysicsServer3D.shape_set_data(shape_rid, Vector3(0.4,0.4,0.4) + abs(dir_3d*0.5))
 	enemy_query.shape_rid = shape_rid
 	enemy_query.collision_mask = enemy_collision
+	var exclude = []
+	for col in exclude_colision:
+		exclude.append(col.get_rid())
+	enemy_query.exclude = exclude
 	result = space.intersect_shape(enemy_query)
 	PhysicsServer3D.free_rid(shape_rid)
 	if result:
@@ -93,6 +98,7 @@ func move(direction:global.direction):
 
 func on_hitbox_collide(area:Area3D):
 	if area is not HitBox: return
+	if not (area as HitBox).bounce_on_coll: return
 	mov_tween.kill()
 	on_bounce.emit()
 	var tween = get_tree().create_tween()

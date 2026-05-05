@@ -3,12 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cy003rfen1a3a" path="res://Nodes/arquero.tscn" id="1_tmemv"]
 [ext_resource type="Script" uid="uid://ox6kstvmsf0i" path="res://Scripts/camera_follow.gd" id="2_moyba"]
 [ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="3_qitfk"]
-[ext_resource type="Script" uid="uid://cohqj85ihs47j" path="res://Scripts/slime.gd" id="4_wv5nn"]
-[ext_resource type="ArrayMesh" uid="uid://c3vu0lmeq5pmp" path="res://Models/Enemies/outside_slime.obj" id="5_v6fbd"]
-[ext_resource type="Texture2D" uid="uid://bqi62hfa2dcxh" path="res://Models/Enemies/outside_slime.png" id="6_anrsr"]
-[ext_resource type="ArrayMesh" uid="uid://p4u4cnfhs4lr" path="res://Models/Enemies/inside_slime.obj" id="7_wwjx8"]
-[ext_resource type="Script" uid="uid://doolqemfcfhdo" path="res://Scripts/hit_box.gd" id="8_dlunh"]
-[ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="9_jyhfe"]
+[ext_resource type="PackedScene" uid="uid://coippum77fhr3" path="res://Nodes/slime.tscn" id="6_siafu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8od7v"]
 
@@ -26,145 +21,6 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_5wyu1"]
 size = Vector3(1, 0.2, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iaow0"]
-transparency = 1
-albedo_color = Color(1, 1, 1, 0.07058824)
-albedo_texture = ExtResource("6_anrsr")
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_tmemv"]
-radius = 0.3
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_qpfo2"]
-size = Vector3(0.727478, 0.7576904, 0.7319336)
-
-[sub_resource type="Animation" id="Animation_wv5nn"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/DamageArea:position:z")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/DamageArea/CollisionShape3D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_v6fbd"]
-_data = {
-&"RESET": SubResource("Animation_wv5nn")
-}
-
-[sub_resource type="Animation" id="Animation_tmemv"]
-length = 0.6
-tracks/0/type = "scale_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Mesh")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.10000001, 1, 0.9, 1.1, 0.9, 0.4, 1, 0.9, 1.1, 0.9, 0.5, 1, 1.1, 0.9, 1.1, 0.6, 1, 1, 1, 1)
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/Mesh:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0, -0.2498212, -0.022600546, 0.13333334, 0.012062252, 0.113, -0.029953973, -0.034965727, 0.16666667, 0.19455253, 0, -0.03333333, 0.05875486, 0, 0),
-"times": PackedFloat32Array(0, 0.19999999, 0.5)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Body/Mesh:position:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0, 0, 0, 0.16666667, 0, 0.11906614, -0.03333333, -0.012062259, 0.03333336, -0.012062259, -0.0002594064, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.2, 0.5)
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Body/DamageArea:position:z")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 1.0, 0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Body/DamageArea/CollisionShape3D:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.16666667, 0.43333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_moyba"]
-length = 2.0
-loop_mode = 1
-tracks/0/type = "scale_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Mesh")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 1, 1, 1.1, 0.8, 1.1)
-
-[sub_resource type="Animation" id="Animation_qitfk"]
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/Mesh:position:y")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.26666668, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.1, 0.0]
-}
-tracks/1/type = "scale_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/Mesh")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.10000001, 1, 0.9, 1.2, 0.9, 0.5, 1, 1, 1, 1)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wv5nn"]
-_data = {
-&"attack": SubResource("Animation_tmemv"),
-&"idle": SubResource("Animation_moyba"),
-&"walk": SubResource("Animation_qitfk")
-}
 
 [node name="Test" type="Node3D" unique_id=1414063333]
 
@@ -184,7 +40,7 @@ max_x = -3.0
 transform = Transform3D(-0.24416363, -0.6674021, 0.70353293, -0.43928128, 0.7229069, 0.5333269, -0.8645324, -0.17882979, -0.4696849, -4.7683716e-07, 3.8958273, -2.1307015)
 
 [node name="Ground_tile" type="AnimatableBody3D" parent="." unique_id=1024934734]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.5, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 4)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground_tile" unique_id=1461691271]
 shape = SubResource("BoxShape3D_8od7v")
@@ -214,7 +70,7 @@ mesh = SubResource("SphereMesh_8od7v")
 shape = SubResource("BoxShape3D_ys1qc")
 
 [node name="Trap" type="Area3D" parent="." unique_id=1060227861]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 5)
 collision_layer = 4
 collision_mask = 10
 script = ExtResource("3_qitfk")
@@ -225,65 +81,5 @@ shape = SubResource("BoxShape3D_i3aeo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Trap" unique_id=1949453442]
 mesh = SubResource("BoxMesh_5wyu1")
 
-[node name="Slime" type="Node3D" parent="." unique_id=931944941]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 5)
-script = ExtResource("4_wv5nn")
-see_radius = 5.0
-idle_animation = "slime/idle"
-walk_animation = "slime/walk"
-attack_animation = "slime/attack"
-
-[node name="Body" type="Node3D" parent="Slime" unique_id=1503231881]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015058924, -0.5, -0.003975204)
-
-[node name="Mesh" type="Node3D" parent="Slime/Body" unique_id=1692045307]
-
-[node name="out" type="MeshInstance3D" parent="Slime/Body/Mesh" unique_id=323741639]
-transform = Transform3D(0.8, 0, 0, 0, 0.8000001, 0, 0, 0, 0.8, 0, 0, 0)
-mesh = ExtResource("5_v6fbd")
-surface_material_override/0 = SubResource("StandardMaterial3D_iaow0")
-
-[node name="in" type="MeshInstance3D" parent="Slime/Body/Mesh" unique_id=1144309024]
-transform = Transform3D(0.8, 0, 0, 0, 0.8000001, 0, 0, 0, 0.8, 0, 0, 0)
-mesh = ExtResource("7_wwjx8")
-
-[node name="DamageArea" type="Area3D" parent="Slime/Body" unique_id=1863763471]
-collision_layer = 4
-collision_mask = 8
-script = ExtResource("3_qitfk")
-metadata/_custom_type_script = "uid://dte1wrypmyej1"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Slime/Body/DamageArea" unique_id=1315349633]
-transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0, 0.4, 0)
-shape = SubResource("SphereShape3D_tmemv")
-
-[node name="HitBox" type="Area3D" parent="Slime" unique_id=1850136103]
-collision_layer = 2
-collision_mask = 30
-script = ExtResource("8_dlunh")
-metadata/_custom_type_script = "uid://doolqemfcfhdo"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Slime/HitBox" unique_id=410089393]
-shape = SubResource("BoxShape3D_qpfo2")
-
-[node name="GroundCheck" type="RayCast3D" parent="Slime" unique_id=1739131868]
-debug_shape_thickness = 3
-
-[node name="GridMovement" type="Node" parent="Slime" unique_id=1219796883 node_paths=PackedStringArray("body", "ground_raycast")]
-script = ExtResource("9_jyhfe")
-body = NodePath("../Body")
-rotate_speed = 20.0
-ground_raycast = NodePath("../GroundCheck")
-enemy_collision = 10
-metadata/_custom_type_script = "uid://3t50y6pxtmjf"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Slime" unique_id=60237233]
-libraries/ = SubResource("AnimationLibrary_v6fbd")
-libraries/slime = SubResource("AnimationLibrary_wv5nn")
-autoplay = &"slime/idle"
-
-[node name="Delay" type="Timer" parent="Slime" unique_id=258589540]
-wait_time = 1.5
-autostart = true
-
-[connection signal="timeout" from="Slime/Delay" to="Slime" method="_on_delay_timeout"]
+[node name="Slime" parent="." unique_id=1608742070 instance=ExtResource("6_siafu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 6)
