@@ -78,7 +78,6 @@ func move(direction:global.direction):
 	if result:
 		for coll in result:
 			on_entity.emit(coll.collider.get_parent())
-			print(coll)
 		return
 	
 	prev_pos = parent.position

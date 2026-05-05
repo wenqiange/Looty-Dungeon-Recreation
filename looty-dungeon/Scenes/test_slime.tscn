@@ -265,7 +265,6 @@ metadata/_custom_type_script = "uid://doolqemfcfhdo"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Slime/HitBox" unique_id=410089393]
 shape = SubResource("BoxShape3D_qpfo2")
-disabled = true
 
 [node name="GroundCheck" type="RayCast3D" parent="Slime" unique_id=1739131868]
 debug_shape_thickness = 3
