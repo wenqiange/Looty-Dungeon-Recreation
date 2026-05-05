@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://c20nxqsdyiuwj"]
+
+[ext_resource type="ArrayMesh" uid="uid://cpv7i30eyix07" path="res://Models/Traps/axe_base_obs.obj" id="1_bwrha"]
+[ext_resource type="Script" uid="uid://bvtkiffovu4i4" path="res://Scenes/mesh_instance_3d.gd" id="2_t6p5g"]
+[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="3_3jvbo"]
+[ext_resource type="ArrayMesh" uid="uid://bejhd5lbq2s7i" path="res://Models/Traps/axe.obj" id="4_gbypq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yamyc"]
+size = Vector3(0.9063721, 0.8247986, 0.829834)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rdlqr"]
+size = Vector3(1, 1.3363647, 0.19311523)
+
+[sub_resource type="Animation" id="Animation_bwrha"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t6p5g"]
+resource_name = "axe_down"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333, 1.3666667, 1.6333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 1.5707964), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3jvbo"]
+_data = {
+&"RESET": SubResource("Animation_bwrha"),
+&"axe_down": SubResource("Animation_t6p5g")
+}
+
+[node name="Axe_Trap" type="AnimatableBody3D" unique_id=862690607]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=97797561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04559326, 0.3957367, 0.004760742)
+shape = SubResource("BoxShape3D_yamyc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=888027729]
+mesh = ExtResource("1_bwrha")
+script = ExtResource("2_t6p5g")
+
+[node name="Axe" type="Area3D" parent="MeshInstance3D" unique_id=241448325]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.14076734, 0.29327995, 0)
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("3_3jvbo")
+metadata/_custom_type_script = "uid://dte1wrypmyej1"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Axe" unique_id=1491229283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.220446e-16, 0.99282837, 0.0013427734)
+shape = SubResource("BoxShape3D_rdlqr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D/Axe" unique_id=938445434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.052590847)
+mesh = ExtResource("4_gbypq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MeshInstance3D/Axe" unique_id=1559617021]
+libraries/ = SubResource("AnimationLibrary_3jvbo")
+autoplay = &"axe_down"

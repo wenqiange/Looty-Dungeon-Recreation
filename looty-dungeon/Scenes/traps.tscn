@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://2yc4mt6dmjb6"]
+
+[ext_resource type="PackedScene" uid="uid://c20nxqsdyiuwj" path="res://Nodes/axe_trap.tscn" id="1_q0un5"]
+
+[node name="Traps" type="Node3D" unique_id=1660021779]
+
+[node name="Axe_Trap" parent="." unique_id=862690607 instance=ExtResource("1_q0un5")]
