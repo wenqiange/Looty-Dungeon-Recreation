@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://o68de7frxg5w"]
 
 [ext_resource type="Script" uid="uid://bigkwcxyg1qgx" path="res://Scripts/arrow.gd" id="1_4kvq3"]
+[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="2_5h5os"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0c07c"]
 size = Vector3(0.1, 0.1, 0.4)
@@ -20,6 +21,7 @@ mesh = SubResource("BoxMesh_0c07c")
 [node name="DamageBox" type="Area3D" parent="." unique_id=2041877935]
 collision_layer = 16
 collision_mask = 3
+script = ExtResource("2_5h5os")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DamageBox" unique_id=1332047678]
 shape = SubResource("SphereShape3D_2cgwh")

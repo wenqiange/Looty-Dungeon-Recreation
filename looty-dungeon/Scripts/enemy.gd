@@ -14,6 +14,9 @@ var can_move = true
 @export var idle_animation:String
 @export var walk_animation:String
 @export var attack_animation:String
+@export var die_animation:String
+
+signal dead
 
 func _ready() -> void:
 	var players = get_tree().get_nodes_in_group("Player")
@@ -46,3 +49,10 @@ func attack(entity:Node3D):
 	animator.play(attack_animation)
 	await animator.animation_finished
 	can_move = true
+
+func on_die():
+	can_move = false
+	animator.play(die_animation)
+	await animator.animation_finished
+	dead.emit()
+	queue_free()

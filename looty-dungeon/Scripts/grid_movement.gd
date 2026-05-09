@@ -114,3 +114,5 @@ func on_hitbox_collide(area:Area3D):
 	tween.tween_property(parent,"position",prev_pos,bounce_back_time)
 	await tween.finished
 	is_moving = false
+
+#TODO:Function to bounce -> use for bounce back and die
