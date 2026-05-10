@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://gx7lqxu60ajb"]
+
+[ext_resource type="PackedScene" uid="uid://cy003rfen1a3a" path="res://Nodes/arquero.tscn" id="1_5yeu2"]
+[ext_resource type="Script" uid="uid://ox6kstvmsf0i" path="res://Scripts/camera_follow.gd" id="2_glaca"]
+[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="3_ksdj3"]
+[ext_resource type="PackedScene" uid="uid://gpauov8g8ppc" path="res://Nodes/rat.tscn" id="4_k1ebl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8od7v"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qc4db"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qc4db"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_35xla"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_8od7v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ys1qc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i3aeo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5wyu1"]
+size = Vector3(1, 0.2, 1)
+
+[node name="Test" type="Node3D" unique_id=1414063333]
+
+[node name="Arquero" parent="." unique_id=1232147745 instance=ExtResource("1_5yeu2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CameraFollow" type="Camera3D" parent="." unique_id=1539753937 node_paths=PackedStringArray("follow")]
+transform = Transform3D(-0.7071068, 0.49999994, -0.49999997, 0, 0.7071068, 0.7071068, 0.7071067, 0.50000006, -0.50000006, -4, 7.262662, -4.1009955)
+projection = 1
+size = 6.0
+script = ExtResource("2_glaca")
+follow = NodePath("../Arquero")
+min_x = -5.0
+max_x = -3.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1639729662]
+transform = Transform3D(-0.24416363, -0.6674021, 0.70353293, -0.43928128, 0.7229069, 0.5333269, -0.8645324, -0.17882979, -0.4696849, -4.7683716e-07, 3.8958273, -2.1307015)
+
+[node name="Ground_tile" type="AnimatableBody3D" parent="." unique_id=1024934734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.5, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground_tile" unique_id=1461691271]
+shape = SubResource("BoxShape3D_8od7v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground_tile" unique_id=54127688]
+mesh = SubResource("BoxMesh_qc4db")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=330308228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=892781850]
+shape = SubResource("BoxShape3D_qc4db")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=425300624]
+mesh = SubResource("BoxMesh_35xla")
+
+[node name="EnemyHitBox" type="Area3D" parent="." unique_id=1601859794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 2)
+collision_layer = 2
+collision_mask = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EnemyHitBox" unique_id=450721107]
+mesh = SubResource("SphereMesh_8od7v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyHitBox" unique_id=811890964]
+shape = SubResource("BoxShape3D_ys1qc")
+
+[node name="Trap" type="Area3D" parent="." unique_id=1060227861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("3_ksdj3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trap" unique_id=619106722]
+shape = SubResource("BoxShape3D_i3aeo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Trap" unique_id=1949453442]
+mesh = SubResource("BoxMesh_5wyu1")
+
+[node name="Rat" parent="." unique_id=1608742070 instance=ExtResource("4_k1ebl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.3, 5)
