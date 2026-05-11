@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://di5fq0hk2r255"]
+
+[ext_resource type="Script" uid="uid://dyxyqp2jv6gjp" path="res://Scripts/falling_ground.gd" id="1_isc57"]
+
+[node name="Falling_Ground" type="Node3D" unique_id=1422386578]
+script = ExtResource("1_isc57")
+
+[node name="fall_timer" type="Timer" parent="." unique_id=708693866]
+
+[connection signal="timeout" from="fall_timer" to="." method="_on_fall_timer_timeout"]

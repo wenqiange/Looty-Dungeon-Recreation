@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://6l4fq11fr1ni"]
+
+[ext_resource type="PackedScene" uid="uid://di5fq0hk2r255" path="res://Nodes/falling_ground.tscn" id="1_enulc"]
+[ext_resource type="PackedScene" uid="uid://b7xjfjybpqqow" path="res://Nodes/ground_tile.tscn" id="2_enulc"]
+
+[node name="FallingGroundTest" type="Node3D" unique_id=1204698194]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2063844913]
+transform = Transform3D(-1, 4.371139e-08, -7.5710346e-08, 0, 0.8660254, 0.5, 8.742278e-08, 0.5, -0.8660254, 0, 2, -4)
+
+[node name="Falling_Ground" parent="." unique_id=1422386578 instance=ExtResource("1_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+falling_time = 5.0
+animation_time = 2.0
+
+[node name="GroundTile" parent="Falling_Ground" unique_id=1690565268 instance=ExtResource("2_enulc")]
+
+[node name="GroundTile2" parent="Falling_Ground" unique_id=199299551 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="GroundTile3" parent="Falling_Ground" unique_id=1694756985 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="GroundTile4" parent="Falling_Ground" unique_id=626976981 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="GroundTile5" parent="Falling_Ground" unique_id=1832947389 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="GroundTile6" parent="Falling_Ground" unique_id=1425262770 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="GroundTile7" parent="Falling_Ground" unique_id=1740574972 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="GroundTile8" parent="Falling_Ground" unique_id=717350011 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="GroundTile9" parent="Falling_Ground" unique_id=553947564 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="GroundTile10" parent="Falling_Ground" unique_id=1278762557 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+
+[node name="GroundTile11" parent="Falling_Ground" unique_id=1405131249 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="GroundTile12" parent="Falling_Ground" unique_id=131673130 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="GroundTile13" parent="Falling_Ground" unique_id=1787710112 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
+
+[node name="GroundTile14" parent="Falling_Ground" unique_id=1183378285 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="GroundTile15" parent="Falling_Ground" unique_id=2020382019 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="GroundTile16" parent="Falling_Ground" unique_id=1269330394 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="GroundTile17" parent="Falling_Ground" unique_id=1570470750 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="GroundTile18" parent="Falling_Ground" unique_id=351525973 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="GroundTile19" parent="Falling_Ground" unique_id=1455523581 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+
+[node name="GroundTile20" parent="Falling_Ground" unique_id=928255637 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
+
+[node name="GroundTile21" parent="Falling_Ground" unique_id=973259332 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="GroundTile22" parent="Falling_Ground" unique_id=583906444 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+
+[node name="GroundTile23" parent="Falling_Ground" unique_id=1636237466 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 4)
+
+[node name="GroundTile24" parent="Falling_Ground" unique_id=926440078 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+
+[node name="GroundTile25" parent="Falling_Ground" unique_id=1300162113 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
+
+[node name="GroundTile26" parent="Falling_Ground" unique_id=968515125 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="GroundTile27" parent="Falling_Ground" unique_id=702609625 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
+
+[node name="GroundTile28" parent="Falling_Ground" unique_id=1802371076 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5)
+
+[node name="GroundTile29" parent="Falling_Ground" unique_id=1452057990 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5)
+
+[node name="GroundTile30" parent="Falling_Ground" unique_id=1659189943 instance=ExtResource("2_enulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 5)
