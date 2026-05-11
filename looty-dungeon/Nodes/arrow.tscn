@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://o68de7frxg5w"]
 
 [ext_resource type="Script" uid="uid://bigkwcxyg1qgx" path="res://Scripts/arrow.gd" id="1_4kvq3"]
-[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="2_5h5os"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_0c07c"]
-size = Vector3(0.1, 0.1, 0.4)
+[ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="2_5h5os"]
+[ext_resource type="ArrayMesh" uid="uid://cw2vyc3aiuxvn" path="res://Models/Character/arrow.obj" id="2_w6sw4"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2cgwh"]
 radius = 0.1809137
@@ -16,7 +14,8 @@ distance_offset = -0.5
 velocity = 6.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1412855848]
-mesh = SubResource("BoxMesh_0c07c")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5830698, 0.19710773)
+mesh = ExtResource("2_w6sw4")
 
 [node name="DamageBox" type="Area3D" parent="." unique_id=2041877935]
 collision_layer = 16

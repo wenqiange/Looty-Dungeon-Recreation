@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://6ohd0kweg6bw"]
+
+[ext_resource type="ArrayMesh" uid="uid://bf806q5snlsqe" path="res://Models/Decorative_objects/solid_knight.obj" id="1_ililo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s5pmr"]
+size = Vector3(1.0254517, 1.21344, 0.8112793)
+
+[node name="solid_knight" type="StaticBody3D" unique_id=136595844]
+collision_layer = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=555719907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.8251352)
+mesh = ExtResource("1_ililo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1278415741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00088500977, 0.59555054, 1.8259897)
+shape = SubResource("BoxShape3D_s5pmr")

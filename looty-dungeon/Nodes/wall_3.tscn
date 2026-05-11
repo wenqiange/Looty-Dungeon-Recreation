@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://crqvugbsp47nd"]
+
+[ext_resource type="ArrayMesh" uid="uid://beaggs21ti2ul" path="res://Models/Floor_and_walls/wall3.obj" id="1_n7hi8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s5pmr"]
+size = Vector3(1.211792, 2.0037918, 0.3119812)
+
+[node name="Wall3" type="StaticBody3D" unique_id=886034082]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=22765236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00091552734, 0.9947319, -0.45051575)
+shape = SubResource("BoxShape3D_s5pmr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1567166027]
+mesh = ExtResource("1_n7hi8")

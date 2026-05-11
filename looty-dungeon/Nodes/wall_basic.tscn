@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d32wpetkiei63"]
+
+[ext_resource type="ArrayMesh" uid="uid://mxyey7kfc313" path="res://Models/Floor_and_walls/normal_wall.obj" id="1_osf5i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s5pmr"]
+size = Vector3(1.211792, 2.0037918, 0.3119812)
+
+[node name="WallBasic" type="StaticBody3D" unique_id=1255375245]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1969640079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00091552734, 0.9947319, -0.45051575)
+shape = SubResource("BoxShape3D_s5pmr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=725797915]
+mesh = ExtResource("1_osf5i")
