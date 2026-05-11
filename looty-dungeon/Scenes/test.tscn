@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cy003rfen1a3a" path="res://Nodes/arquero.tscn" id="1_8od7v"]
 [ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="2_qc4db"]
 [ext_resource type="Script" uid="uid://cohqj85ihs47j" path="res://Scripts/slime.gd" id="3_0c07c"]
-[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="3_2cgwh"]
 [ext_resource type="ArrayMesh" uid="uid://c3vu0lmeq5pmp" path="res://Models/Enemies/outside_slime.obj" id="3_5wyu1"]
 [ext_resource type="Script" uid="uid://ox6kstvmsf0i" path="res://Scripts/camera_follow.gd" id="3_qc4db"]
 [ext_resource type="Texture2D" uid="uid://bqi62hfa2dcxh" path="res://Models/Enemies/outside_slime.png" id="4_0c07c"]
@@ -86,7 +85,6 @@ shape = SubResource("BoxShape3D_ys1qc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 collision_layer = 4
 collision_mask = 10
-script = ExtResource("3_2cgwh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trap" unique_id=619106722]
 shape = SubResource("BoxShape3D_i3aeo")

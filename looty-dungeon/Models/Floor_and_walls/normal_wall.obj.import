@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://mxyey7kfc313"
+path="res://.godot/imported/normal_wall.obj-f3cdc34d89158772296e6fa7429f0471.mesh"
+
+[deps]
+
+files=["res://.godot/imported/normal_wall.obj-f3cdc34d89158772296e6fa7429f0471.mesh"]
+
+source_file="res://Models/Floor_and_walls/normal_wall.obj"
+dest_files=["res://.godot/imported/normal_wall.obj-f3cdc34d89158772296e6fa7429f0471.mesh", "res://.godot/imported/normal_wall.obj-f3cdc34d89158772296e6fa7429f0471.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

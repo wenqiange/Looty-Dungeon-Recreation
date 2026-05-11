@@ -2,10 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://c20nxqsdyiuwj" path="res://Nodes/axe_trap.tscn" id="1_q0un5"]
 [ext_resource type="PackedScene" uid="uid://c2uwtqp0iswjw" path="res://Nodes/spikes_floor.tscn" id="2_y4pun"]
+[ext_resource type="PackedScene" uid="uid://dkkjwel1efltt" path="res://Nodes/trident_trap.tscn" id="3_im1sb"]
 
 [node name="Traps" type="Node3D" unique_id=1660021779]
 
 [node name="Axe_Trap" parent="." unique_id=862690607 instance=ExtResource("1_q0un5")]
 
-[node name="Spikes_Floor" parent="." unique_id=1092495601 instance=ExtResource("2_y4pun")]
+[node name="Spikes_Trap" parent="." unique_id=1092495601 instance=ExtResource("2_y4pun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.2886927)
+
+[node name="Trident_Trap" parent="." unique_id=776772037 instance=ExtResource("3_im1sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.0728612)

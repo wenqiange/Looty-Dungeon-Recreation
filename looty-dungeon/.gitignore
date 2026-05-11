@@ -1,3 +1,2 @@
-# Godot 4+ specific ignores
+ziva_installer/bin/
 .godot/
-/android/
