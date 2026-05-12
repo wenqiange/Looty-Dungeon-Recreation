@@ -73,7 +73,8 @@ func remove_slime():
 	can_move = true
 
 func die():
-	print("TODO: YOU ARE DEAD")
+	can_move = false
+	animator.play("Basic/Die")
 	dead.emit()
 
 func on_hit():
