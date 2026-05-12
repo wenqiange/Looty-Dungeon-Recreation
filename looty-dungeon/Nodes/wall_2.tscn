@@ -3,13 +3,14 @@
 [ext_resource type="ArrayMesh" uid="uid://crbjlvjgwty8e" path="res://Models/Floor_and_walls/wall2.obj" id="1_eocdu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s5pmr"]
-size = Vector3(1.211792, 2.0037918, 0.3119812)
+size = Vector3(1.0053406, 1.6776772, 0.26213837)
 
 [node name="Wall2" type="StaticBody3D" unique_id=2013402098]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=88182914]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00091552734, 0.9947319, -0.45051575)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0008087158, 0.8316746, 0.06468618)
 shape = SubResource("BoxShape3D_s5pmr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1533053077]
+transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, 0, 0, 0.44036114)
 mesh = ExtResource("1_eocdu")

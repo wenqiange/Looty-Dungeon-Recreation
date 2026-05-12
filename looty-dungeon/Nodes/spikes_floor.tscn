@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c2uwtqp0iswjw"]
 
 [ext_resource type="ArrayMesh" uid="uid://c8mfa3lywevxb" path="res://Models/Traps/floor_trap.obj" id="1_32cfw"]
-[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="2_adgxc"]
+[ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="2_adgxc"]
 [ext_resource type="ArrayMesh" uid="uid://cqqjkpfhfbac6" path="res://Models/Traps/spikes.obj" id="3_blkkn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_im1sb"]
@@ -47,6 +47,7 @@ _data = {
 }
 
 [node name="Spikes_Floor" type="StaticBody3D" unique_id=1092495601]
+transform = Transform3D(0.836, 0, 0, 0, 0.836, 0, 0, 0, 0.836, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=575329052]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002746582, 0.5949974, -0.095947266)
@@ -59,7 +60,6 @@ mesh = ExtResource("1_32cfw")
 collision_layer = 4
 collision_mask = 10
 script = ExtResource("2_adgxc")
-metadata/_custom_type_script = "uid://dte1wrypmyej1"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Spikes" unique_id=355803620]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94540405, -0.09539795)
