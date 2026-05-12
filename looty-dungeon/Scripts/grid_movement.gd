@@ -9,7 +9,7 @@ extends Node
 @export var rotate_speed:float
 
 @export var ground_raycast:RayCast3D
-var on_ground = false
+var on_ground = true
 
 @export_flags_3d_physics var enemy_collision
 @export var exclude_colision:Array[CollisionObject3D]

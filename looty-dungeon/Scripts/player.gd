@@ -12,6 +12,8 @@ extends Node3D
 
 @export var Attack_animation:String
 
+signal dead
+
 var can_move:bool = true
 
 var just_attacked:bool = false
@@ -36,6 +38,12 @@ func _process(_delta: float) -> void:
 
 func _physics_process(_delta: float) -> void:
 	if can_move:
+		if not grid_movement.on_ground and not grid_movement.is_moving:
+			can_move = false
+			animator.play("Basic/Fall")
+			dead.emit()
+			return
+		
 		#check direction
 		if grid_movement.is_moving or step_timer.time_left > 0: return
 		var dir = Vector2(Input.get_axis("move_right","move_left"),Input.get_axis("move_down","move_up"))
@@ -66,6 +74,7 @@ func remove_slime():
 
 func die():
 	print("TODO: YOU ARE DEAD")
+	dead.emit()
 
 func on_hit():
 	health.invincible = true
