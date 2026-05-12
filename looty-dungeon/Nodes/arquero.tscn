@@ -307,13 +307,14 @@ max_health = 3
 script = ExtResource("6_kf4pe")
 max_dist = 6
 min_dist = 2
+min_hold_time = 0.2
 
 [node name="HoldTimer" type="Timer" parent="Bow" unique_id=1789669464]
 wait_time = 1.5
 one_shot = true
 
 [node name="DelayTimer" type="Timer" parent="Bow" unique_id=464886449]
-wait_time = 0.4
+wait_time = 0.2
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2088966330]

@@ -40,6 +40,7 @@ func _physics_process(_delta: float) -> void:
 	if can_move:
 		if not grid_movement.on_ground and not grid_movement.is_moving:
 			can_move = false
+			print("hey")
 			animator.play("Basic/Fall")
 			dead.emit()
 			return

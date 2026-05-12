@@ -5,10 +5,13 @@ var animator:AnimationPlayer
 
 @export var max_dist:int
 @export var min_dist:int
+@export var min_hold_time:float
 const Arrow_path = "uid://o68de7frxg5w"
 
 @onready var hold_timer: Timer = $HoldTimer
 @onready var delay_timer: Timer = $DelayTimer
+
+var falling = false
 
 func _ready() -> void:
 	player = get_parent() as Player
@@ -16,6 +19,14 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if not animator: animator = player.animator
+	
+	if falling: return
+	if not player.grid_movement.on_ground:
+		hold_timer.stop()
+		animator.stop()
+		player.can_move = true
+		falling = true  
+		return
 	
 	if not delay_timer.is_stopped(): return
 	
@@ -25,7 +36,11 @@ func _process(_delta: float) -> void:
 		player.can_move = false
 	elif Input.is_action_just_released("Action"):
 		if hold_timer.is_stopped(): return
-		var strength = 1 - hold_timer.time_left / hold_timer.wait_time
+		var strength = 1 - hold_timer.time_left / hold_timer.wait_time  
+		if hold_timer.wait_time-hold_timer.time_left < min_hold_time:
+			hold_timer.stop()
+			player.can_move = true
+			return
 		hold_timer.stop()
 		shoot(strength)
 		animator.play("Arquero/Action")
