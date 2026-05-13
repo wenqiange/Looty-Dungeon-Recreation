@@ -154,7 +154,7 @@ _data = {
 &"walk": SubResource("Animation_2235k")
 }
 
-[node name="Rat" type="Node3D" unique_id=1608742070]
+[node name="Rat" type="Node3D" unique_id=1608742070 groups=["enemies"]]
 script = ExtResource("1_sxu4g")
 see_radius = 5.0
 idle_animation = "idle"

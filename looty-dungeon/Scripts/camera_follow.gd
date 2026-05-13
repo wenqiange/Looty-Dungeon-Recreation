@@ -1,3 +1,4 @@
+class_name CameraFollow
 extends Camera3D
 
 @export var off_set:Vector3
@@ -6,12 +7,16 @@ extends Camera3D
 @export var min_x:float
 @export var max_x:float
 
+@export var lock:bool
+
 var ini_offset:Vector3
 
 func _ready() -> void:
-	reset_ini_offset()
+	#reset_ini_offset()
+	pass
 
 func _process(_delta: float) -> void:
+	if lock:  return
 	var new_pos = follow.position + ini_offset + off_set
 	new_pos.x = clamp(new_pos.x,min_x,max_x)
 	position = position.lerp(new_pos,0.1)

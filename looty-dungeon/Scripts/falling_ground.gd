@@ -12,6 +12,8 @@ var cur_z:int
 func _ready() -> void:
 	cur_z = initialZ
 	fall_timer.wait_time = falling_time
+
+func start():
 	fall_timer.start()
 
 func _on_fall_timer_timeout() -> void:
