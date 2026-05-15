@@ -24,9 +24,10 @@ environment = SubResource("Environment_wowpa")
 projection = 1
 size = 6.0
 script = ExtResource("5_h4fw4")
-off_set = Vector3(-2, 2, 0)
+off_set = Vector3(-4, 4, 0)
 follow = NodePath("../Arquero")
-min_x = -4.0
+min_x = -6.0
+max_x = -2.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2049277993]
 transform = Transform3D(0.9330128, 0.25881907, -0.25000006, 0.2588191, -4.222196e-08, 0.96592593, 0.25, -0.9659258, -0.06698735, 0, 0, -3)

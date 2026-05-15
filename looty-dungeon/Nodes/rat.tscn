@@ -90,7 +90,7 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("Body/Mesh")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.1, 1, 0, 0.1, 0, 0.3, 1, 0, 0, 0)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.1, 1, 0, 0.3, 0, 0.3, 1, 0, 0.2, 0)
 tracks/1/type = "rotation_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
@@ -100,7 +100,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0.2, 1, 0, 0, 0, 1, 0.53333336, 1, 0.004319, 0.004319, 0.707094, 0.707094)
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Body/DamageArea/CollisionShape3D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -112,7 +112,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("HitBox/CollisionShape3D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -166,6 +166,7 @@ die_animation = "die"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015058924, -0.5, -0.003975204)
 
 [node name="Mesh" type="Node3D" parent="Body" unique_id=991836782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0002594064, 0, 0)
 
 [node name="in" type="MeshInstance3D" parent="Body/Mesh" unique_id=710784243]
 transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8000002, 0, -0.8, 0, -3.4969112e-08, -0.123560406, 0.099999994, -0.1)

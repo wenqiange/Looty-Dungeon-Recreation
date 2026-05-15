@@ -8,18 +8,16 @@ extends Camera3D
 @export var max_x:float
 
 @export var lock:bool
+var lock_position:Vector3
 
 var ini_offset:Vector3
 
 func _ready() -> void:
-	#reset_ini_offset()
 	pass
 
 func _process(_delta: float) -> void:
-	if lock:  return
-	var new_pos = follow.position + ini_offset + off_set
+	var new_pos = Vector3.ZERO
+	if lock:  new_pos = lock_position + off_set
+	else: new_pos = follow.position + off_set
 	new_pos.x = clamp(new_pos.x,min_x,max_x)
 	position = position.lerp(new_pos,0.1)
-
-func reset_ini_offset():
-	ini_offset = position - follow.position
