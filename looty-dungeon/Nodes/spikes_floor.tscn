@@ -47,7 +47,7 @@ _data = {
 }
 
 [node name="Spikes_Floor" type="StaticBody3D" unique_id=1092495601]
-transform = Transform3D(0.836, 0, 0, 0, 0.836, 0, 0, 0, 0.836, 0, 0, 0)
+transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=575329052]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002746582, 0.5949974, -0.095947266)

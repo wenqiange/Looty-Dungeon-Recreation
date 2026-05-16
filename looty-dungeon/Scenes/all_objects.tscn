@@ -20,6 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://gyjh3tmgue4g" path="res://Nodes/solid_lamp.tscn" id="18_nhfcm"]
 [ext_resource type="ArrayMesh" uid="uid://c13i4nrbp7ay" path="res://Models/Decorative_objects/obstacle_solid.obj" id="19_ko8nj"]
 [ext_resource type="PackedScene" uid="uid://d3i066x4iht6l" path="res://Scenes/coin.tscn" id="20_3qy4e"]
+[ext_resource type="PackedScene" uid="uid://dluhwo6us7iir" path="res://Nodes/door.tscn" id="21_7koev"]
+[ext_resource type="PackedScene" uid="uid://b7xjfjybpqqow" path="res://Nodes/ground_tile.tscn" id="22_nhfcm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8od7v"]
 
@@ -115,7 +117,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.067745745, 0, -2.7322354)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98214424, 0, -2.7214823)
 
 [node name="Spikes_Floor2" parent="." unique_id=814033304 instance=ExtResource("9_m0inc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7241418, -0.7430252, -4.7928267)
+transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, -2.7241418, -0.7430252, -4.7928267)
 
 [node name="Trident_Trap" parent="." unique_id=776772037 instance=ExtResource("9_63apu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8877968, -0.73250645, -4.9770184)
@@ -161,3 +163,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007385254, 0.36193848, 0.00
 shape = SubResource("BoxShape3D_00xw6")
 
 [node name="coin" parent="." unique_id=1589209570 instance=ExtResource("20_3qy4e")]
+
+[node name="Door" parent="." unique_id=1781724774 instance=ExtResource("21_7koev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.512196, 0, -7.1203747)
+
+[node name="GroundTile" parent="." unique_id=1690565268 instance=ExtResource("22_nhfcm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.721013, 0, -4.889926)
