@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dqx2ty1287qwm" path="res://Nodes/solid_elephant.tscn" id="17_7koev"]
 [ext_resource type="PackedScene" uid="uid://gyjh3tmgue4g" path="res://Nodes/solid_lamp.tscn" id="18_nhfcm"]
 [ext_resource type="ArrayMesh" uid="uid://c13i4nrbp7ay" path="res://Models/Decorative_objects/obstacle_solid.obj" id="19_ko8nj"]
+[ext_resource type="PackedScene" uid="uid://d3i066x4iht6l" path="res://Scenes/coin.tscn" id="20_3qy4e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8od7v"]
 
@@ -158,3 +159,5 @@ mesh = ExtResource("19_ko8nj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="solid_object" unique_id=1613601177]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007385254, 0.36193848, 0.008392334)
 shape = SubResource("BoxShape3D_00xw6")
+
+[node name="coin" parent="." unique_id=1589209570 instance=ExtResource("20_3qy4e")]
