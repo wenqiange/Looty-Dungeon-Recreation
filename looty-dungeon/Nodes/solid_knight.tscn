@@ -9,9 +9,9 @@ size = Vector3(1.0254517, 1.21344, 0.8112793)
 collision_layer = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=555719907]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.8251352)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0025138855)
 mesh = ExtResource("1_ililo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1278415741]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00088500977, 0.59555054, 1.8259897)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00088500977, 0.59555054, 0.003368616)
 shape = SubResource("BoxShape3D_s5pmr")

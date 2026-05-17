@@ -8,8 +8,9 @@ size = Vector3(0.53063965, 1.0585327, 0.3605957)
 [node name="solid_lamp" type="StaticBody3D" unique_id=590701283]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=544888782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.053545356, 0, 0)
 mesh = ExtResource("1_ui41b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=996022735]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.057922363, 0.49893188, 0.04699707)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00017619133, 0.49893188, 0.04699707)
 shape = SubResource("BoxShape3D_ya81m")

@@ -8,9 +8,9 @@ size = Vector3(0.97143555, 1.0734863, 0.6711426)
 [node name="solid_elephant" type="StaticBody3D" unique_id=653262875]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=840730376]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14515162, 0.68981934, 1.9229136)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0036337376, 0.68981934, 0.0026516914)
 shape = SubResource("BoxShape3D_j337e")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1384801756]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.8251352)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14413571, 0, -0.09865269)
 mesh = ExtResource("1_683t1")
