@@ -11,6 +11,7 @@ signal death()
 
 func _ready() -> void:
 	cur_health = max_health
+	health_updated.emit(cur_health)
 	for c in get_parent().get_children():
 		if c is HitBox:
 			var hb = c as HitBox

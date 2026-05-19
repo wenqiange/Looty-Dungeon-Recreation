@@ -9,6 +9,7 @@ extends Node3D
 @onready var animator: AnimationPlayer = $AnimationPlayer
 @onready var attack_timer: Timer = $"Attack timer"
 @onready var slime_delay: Timer = $SlimeDelay
+@onready var hit_animator: AnimationPlayer = $HitAnimator
 
 @export var Attack_animation:String
 
@@ -89,6 +90,7 @@ func die():
 
 func on_hit():
 	health.invincible = true
+	hit_animator.play("Hit")
 	invincibility_timer.start()
 
 func end_invincibility():
