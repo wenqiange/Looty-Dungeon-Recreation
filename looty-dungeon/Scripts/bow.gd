@@ -52,7 +52,7 @@ func shoot(strength:float):
 	var arrow = preload(Arrow_path).instantiate() as Arrow
 	arrow.distance = dist
 	arrow.rotation = player.get_look_rot()
-	arrow.position = player.position
+	arrow.position = player.position + Vector3.BACK.rotated(Vector3.UP, player.get_look_rot().y)*0.5
 	player.add_sibling(arrow)
 	delay_timer.start()
 

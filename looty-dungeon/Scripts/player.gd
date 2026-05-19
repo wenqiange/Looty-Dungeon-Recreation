@@ -40,7 +40,6 @@ func _physics_process(_delta: float) -> void:
 	if can_move:
 		if not grid_movement.on_ground and not grid_movement.is_moving:
 			can_move = false
-			print("hey")
 			animator.play("Basic/Fall")
 			dead.emit()
 			return
@@ -66,6 +65,16 @@ func attack(_entity:Node3D):
 	attack_timer.start()
 	await attack_timer.timeout
 	can_move = true
+
+func reset_player(new_health:int = -1):
+	just_attacked = false
+	can_move = true
+	if new_health >= 0:
+		health.on_heal(new_health)
+	else:
+		health.on_heal(health.max_health)
+	grid_movement.cur_effect = 0
+	animator.play("Basic/Idle")
 
 func remove_slime():
 	can_move = false

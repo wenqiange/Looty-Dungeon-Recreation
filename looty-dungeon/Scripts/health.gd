@@ -18,6 +18,7 @@ func _ready() -> void:
 
 func on_heal(val:int):
 	cur_health += val
+	if cur_health > max_health: cur_health = max_health
 	health_updated.emit(cur_health)
 	if cur_health <= 0:
 		cur_health = 0
