@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cvsyxjmfuqlgg"]
+[gd_scene format=3 uid="uid://bq2prpavc2n5y"]
 
 [ext_resource type="Script" uid="uid://c8shfwjulwbe1" path="res://Scripts/level.gd" id="1_s7pm1"]
 [ext_resource type="PackedScene" uid="uid://di5fq0hk2r255" path="res://Nodes/falling_ground.tscn" id="2_un88s"]
@@ -181,40 +181,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0064114, -0.49860936, 7.003
 [node name="Spikes_Floor" parent="Level/Falling_Ground" unique_id=1092495601 instance=ExtResource("4_1bxtf")]
 transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 1.0095339, -1.0248046, 9.076481)
 
-[node name="Traps" type="Node3D" parent="Level/Falling_Ground" unique_id=1918634747]
+[node name="GroundTile49" parent="Level/Falling_Ground" unique_id=1691546553 instance=ExtResource("3_pxok7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02927494, -0.50308627, 11.965003)
 
-[node name="Spikes_Floor" parent="Level/Falling_Ground/Traps" unique_id=1643416093 instance=ExtResource("4_1bxtf")]
-transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 0.005733013, -1.0120229, 2.083081)
+[node name="GroundTile58" parent="Level/Falling_Ground" unique_id=855766515 instance=ExtResource("3_pxok7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02927494, -0.50308627, 12.965003)
 
-[node name="Spikes_Floor2" parent="Level/Falling_Ground/Traps" unique_id=85538149 instance=ExtResource("4_1bxtf")]
-transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 1.0155625, -1.0113482, 2.081692)
+[node name="GroundTile62" parent="Level/Falling_Ground" unique_id=2129067410 instance=ExtResource("3_pxok7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02927494, -0.50308627, 13.965003)
 
-[node name="Spikes_Floor3" parent="Level/Falling_Ground/Traps" unique_id=108916202 instance=ExtResource("4_1bxtf")]
-transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 1.9914956, -1.0104644, 2.0835764)
+[node name="GroundTile63" parent="Level/Falling_Ground" unique_id=1744994708 instance=ExtResource("3_pxok7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97072506, -0.50308627, 12.965003)
 
-[node name="Spikes_Floor4" parent="Level/Falling_Ground/Traps" unique_id=1950936582 instance=ExtResource("4_1bxtf")]
-transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, -1.0074118, -1.0104659, 2.0815718)
+[node name="GroundTile64" parent="Level/Falling_Ground" unique_id=152314588 instance=ExtResource("3_pxok7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97072506, -0.50308627, 13.965003)
 
-[node name="Spikes_Floor5" parent="Level/Falling_Ground/Traps" unique_id=990409246 instance=ExtResource("4_1bxtf")]
-transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, -2.0267475, -1.0156009, 2.0776331)
+[node name="GroundTile65" parent="Level/Falling_Ground" unique_id=1003567978 instance=ExtResource("3_pxok7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.970725, -0.50308627, 11.965003)
 
-[node name="Trident_Trap" parent="Level/Falling_Ground/Traps" unique_id=776772037 instance=ExtResource("5_b22na")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.002794981, 0, 4.9991164)
+[node name="GroundTile66" parent="Level/Falling_Ground" unique_id=34275854 instance=ExtResource("3_pxok7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.970725, -0.50308627, 12.965003)
 
-[node name="Trident_Trap2" parent="Level/Falling_Ground/Traps" unique_id=1718926280 instance=ExtResource("5_b22na")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.9992113, 0, 4.9912257)
+[node name="GroundTile67" parent="Level/Falling_Ground" unique_id=1839808717 instance=ExtResource("3_pxok7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.970725, -0.50308627, 13.965003)
 
-[node name="Trident_Trap3" parent="Level/Falling_Ground/Traps" unique_id=335176552 instance=ExtResource("5_b22na")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.0021043, 0, 5.0123262)
+[node name="GroundTile68" parent="Level/Falling_Ground" unique_id=1112567282 instance=ExtResource("3_pxok7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.029275, -0.50308627, 11.965003)
 
-[node name="Spikes_Floor6" parent="Level/Falling_Ground/Traps" unique_id=136439538 instance=ExtResource("4_1bxtf")]
-transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, -0.99888027, -1.0013806, 8.088405)
+[node name="GroundTile69" parent="Level/Falling_Ground" unique_id=134765838 instance=ExtResource("3_pxok7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.029275, -0.50308627, 12.965003)
 
-[node name="Spikes_Floor7" parent="Level/Falling_Ground/Traps" unique_id=590935668 instance=ExtResource("4_1bxtf")]
-transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, -0.99801683, -1.0189487, 9.092604)
+[node name="GroundTile70" parent="Level/Falling_Ground" unique_id=94360693 instance=ExtResource("3_pxok7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.029275, -0.50308627, 13.965003)
 
-[node name="Spikes_Floor8" parent="Level/Falling_Ground/Traps" unique_id=1623340012 instance=ExtResource("4_1bxtf")]
-transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 1.002759, -1.0130926, 8.08765)
+[node name="GroundTile71" parent="Level/Falling_Ground" unique_id=996460063 instance=ExtResource("3_pxok7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.029275, -0.50308627, 12.965003)
+
+[node name="GroundTile72" parent="Level/Falling_Ground" unique_id=1926290478 instance=ExtResource("3_pxok7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.029275, -0.50308627, 13.965003)
 
 [node name="Walls" type="Node3D" parent="Level" unique_id=1806617892]
 
@@ -251,41 +255,64 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.50
 [node name="WallBasic3" parent="Level/Walls" unique_id=627129360 instance=ExtResource("7_mon36")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.5450656, 0, 10.989558)
 
-[node name="Wall12" parent="Level/Walls" unique_id=77051050 instance=ExtResource("8_376iy")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.0008335, 0, 11.494009)
+[node name="Wall12" parent="Level/Walls" unique_id=1578792029 instance=ExtResource("6_ff71j")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.5308995, 0, 11.965579)
 
-[node name="WallBasic4" parent="Level/Walls" unique_id=923958337 instance=ExtResource("7_mon36")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0039603, 0, 11.524829)
+[node name="Wall13" parent="Level/Walls" unique_id=1796033987 instance=ExtResource("9_mj8uk")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.5260322, 0, 12.968551)
 
-[node name="WallBasic5" parent="Level/Walls" unique_id=1103935076 instance=ExtResource("7_mon36")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9991759, 0, 11.526403)
+[node name="WallBasic4" parent="Level/Walls" unique_id=448868847 instance=ExtResource("7_mon36")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.5670168, 0, 13.961026)
 
-[node name="Wall13" parent="Level/Walls" unique_id=1132262585 instance=ExtResource("8_376iy")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.9980056, 0, 11.501631)
+[node name="Wall14" parent="Level/Walls" unique_id=614898134 instance=ExtResource("8_376iy")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.0008335, 0, 14.468212)
 
-[node name="Door" parent="Level" unique_id=1781724774 instance=ExtResource("11_u7d8k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00613147, 0, 11.534859)
+[node name="WallBasic5" parent="Level/Walls" unique_id=2006024960 instance=ExtResource("7_mon36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0039603, 0, 14.499032)
 
-[node name="solid_stone" parent="Level" unique_id=603252229 instance=ExtResource("12_1bxtf")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.9963322, 0, 7.996764)
+[node name="WallBasic6" parent="Level/Walls" unique_id=873032647 instance=ExtResource("7_mon36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9991759, 0, 14.500607)
 
-[node name="solid_stone2" parent="Level" unique_id=90581155 instance=ExtResource("12_1bxtf")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.9964182, 0, 8.984962)
+[node name="Wall15" parent="Level/Walls" unique_id=1002518494 instance=ExtResource("8_376iy")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.9980056, 0, 14.475834)
 
-[node name="solid_lamp" parent="Level" unique_id=590701283 instance=ExtResource("12_31n1s")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.0069932938, 9.021378)
-
-[node name="solid_elephant" parent="Level" unique_id=653262875 instance=ExtResource("14_b22na")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.03514409, -0.21203792, 8.020923)
+[node name="Door" parent="Level/Walls" unique_id=1781724774 instance=ExtResource("11_u7d8k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00613147, 0, 14.509062)
 
 [node name="Slime" parent="Level" unique_id=1608742070 instance=ExtResource("15_ff71j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50361824, 9.998101)
 
-[node name="solid_stone3" parent="Level" unique_id=742329573 instance=ExtResource("12_1bxtf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.006466, 0, 8.989377)
+[node name="Traps" type="Node3D" parent="Level" unique_id=1918634747]
 
-[node name="solid_stone4" parent="Level" unique_id=1244943399 instance=ExtResource("12_1bxtf")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.0056221, 0, 7.99269)
+[node name="Spikes_Floor" parent="Level/Traps" unique_id=1643416093 instance=ExtResource("4_1bxtf")]
+transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 0.005733013, -1.0120229, 2.083081)
+
+[node name="Spikes_Floor2" parent="Level/Traps" unique_id=85538149 instance=ExtResource("4_1bxtf")]
+transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 1.0155625, -1.0113482, 2.081692)
+
+[node name="Spikes_Floor3" parent="Level/Traps" unique_id=108916202 instance=ExtResource("4_1bxtf")]
+transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 1.9914956, -1.0104644, 2.0835764)
+
+[node name="Spikes_Floor4" parent="Level/Traps" unique_id=1950936582 instance=ExtResource("4_1bxtf")]
+transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, -1.0074118, -1.0104659, 2.0815718)
+
+[node name="Spikes_Floor5" parent="Level/Traps" unique_id=990409246 instance=ExtResource("4_1bxtf")]
+transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, -2.0267475, -1.0156009, 2.0776331)
+
+[node name="Spikes_Floor6" parent="Level/Traps" unique_id=136439538 instance=ExtResource("4_1bxtf")]
+transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, -0.99888027, -1.0013806, 8.088405)
+
+[node name="Spikes_Floor7" parent="Level/Traps" unique_id=590935668 instance=ExtResource("4_1bxtf")]
+transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, -0.99801683, -1.0189487, 9.092604)
+
+[node name="Spikes_Floor8" parent="Level/Traps" unique_id=1623340012 instance=ExtResource("4_1bxtf")]
+transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 1.002759, -1.0130926, 8.08765)
+
+[node name="Trident_Trap" parent="Level/Traps" unique_id=776772037 instance=ExtResource("5_b22na")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.9998353, 0, 4.0197353)
+
+[node name="Trident_Trap2" parent="Level/Traps" unique_id=36464480 instance=ExtResource("5_b22na")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.9862795, 0, 3.9854412)
 
 [node name="Arquero" parent="." unique_id=1232147745 instance=ExtResource("13_bpnxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -301,3 +328,23 @@ min_x = -4.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2049277993]
 transform = Transform3D(0.9330128, 0.25881907, -0.25000006, 0.2588191, -4.222196e-08, 0.96592593, 0.25, -0.9659258, -0.06698735, 0, 0, -3)
+
+[node name="Objects" type="Node3D" parent="." unique_id=1966972315]
+
+[node name="solid_stone3" parent="Objects" unique_id=742329573 instance=ExtResource("12_1bxtf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.006466, 0, 8.989377)
+
+[node name="solid_stone4" parent="Objects" unique_id=1244943399 instance=ExtResource("12_1bxtf")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.0056221, 0, 7.99269)
+
+[node name="solid_stone" parent="Objects" unique_id=603252229 instance=ExtResource("12_1bxtf")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.9963322, 0, 7.996764)
+
+[node name="solid_stone2" parent="Objects" unique_id=90581155 instance=ExtResource("12_1bxtf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.9964182, 0, 8.984962)
+
+[node name="solid_lamp" parent="Objects" unique_id=590701283 instance=ExtResource("12_31n1s")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.0069932938, 9.021378)
+
+[node name="solid_elephant" parent="Objects" unique_id=653262875 instance=ExtResource("14_b22na")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.03514409, -0.21203792, 8.020923)

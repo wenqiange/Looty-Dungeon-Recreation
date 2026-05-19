@@ -8,7 +8,7 @@
 size = Vector3(1.2232666, 1.2521896, 1.2407227)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qbuxw"]
-size = Vector3(1, 0.5054321, 1.00354)
+size = Vector3(1, 0.5054321, 1.0149231)
 
 [sub_resource type="Animation" id="Animation_eg6cg"]
 length = 0.001
@@ -24,6 +24,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, -0.07, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.8847375, -0.092636146)]
+}
 
 [sub_resource type="Animation" id="Animation_u1bph"]
 resource_name = "Spikes_up"
@@ -38,6 +50,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -0.07, 0), Vector3(0, -0.02, 0), Vector3(0, -0.02, 0), Vector3(0, 0.4, 0), Vector3(0, -0.07, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.22, 0.41, 0.63, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.8847375, -0.092636146), Vector3(0, 0.93, -0.093), Vector3(0, 0.93, -0.093), Vector3(0, 1.335, -0.093), Vector3(0, 0.8847375, -0.092636146)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_13d5c"]
@@ -62,7 +86,7 @@ collision_mask = 10
 script = ExtResource("2_adgxc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Spikes" unique_id=355803620]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94540405, -0.09539795)
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 0.8847375, -0.092636146)
 shape = SubResource("BoxShape3D_qbuxw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spikes" unique_id=63812216]
