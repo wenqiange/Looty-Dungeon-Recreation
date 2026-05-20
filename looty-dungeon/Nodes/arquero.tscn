@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="4_sg4uk"]
 [ext_resource type="Script" uid="uid://ce5ur84jdnf6g" path="res://Scripts/health.gd" id="5_5nirr"]
 [ext_resource type="Script" uid="uid://sd0cn462nyjn" path="res://Scripts/bow.gd" id="6_kf4pe"]
-[ext_resource type="Texture2D" uid="uid://8ug4o0kk1sgr" path="res://Assest/Heart.png" id="8_1negf"]
+[ext_resource type="Texture2D" uid="uid://8ug4o0kk1sgr" path="res://Assets/Heart.png" id="8_1negf"]
 [ext_resource type="Script" uid="uid://btgpbt4h6okiv" path="res://Scripts/life_bar.gd" id="9_sg4uk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sg4uk"]
