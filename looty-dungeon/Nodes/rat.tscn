@@ -52,6 +52,17 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Mesh:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_hsg8s"]
 resource_name = "attack"
@@ -123,6 +134,45 @@ tracks/3/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_mrh0h"]
+resource_name = "fall"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/DamageArea/CollisionShape3D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HitBox/CollisionShape3D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Mesh:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, -0.24999996, 0.003091691, 0.16666667, -0.002061128, -5, -0.10000001, 3.1677885, 0, 0),
+"times": PackedFloat32Array(0, 0.26666668)
+}
+
 [sub_resource type="Animation" id="Animation_sxu4g"]
 resource_name = "idle"
 loop_mode = 1
@@ -150,6 +200,7 @@ _data = {
 &"RESET": SubResource("Animation_cphv2"),
 &"attack": SubResource("Animation_hsg8s"),
 &"die": SubResource("Animation_bn6ew"),
+&"fall": SubResource("Animation_mrh0h"),
 &"idle": SubResource("Animation_sxu4g"),
 &"walk": SubResource("Animation_2235k")
 }
@@ -161,12 +212,12 @@ idle_animation = "idle"
 walk_animation = "walk"
 attack_animation = "attack"
 die_animation = "die"
+fall_animation = "fall"
 
 [node name="Body" type="Node3D" parent="." unique_id=2091126645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015058924, -0.5, -0.003975204)
 
 [node name="Mesh" type="Node3D" parent="Body" unique_id=991836782]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0002594064, 0, 0)
 
 [node name="in" type="MeshInstance3D" parent="Body/Mesh" unique_id=710784243]
 transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8000002, 0, -0.8, 0, -3.4969112e-08, -0.123560406, 0.099999994, -0.1)
@@ -215,6 +266,9 @@ autoplay = &"idle"
 [node name="Delay" type="Timer" parent="." unique_id=1221007529]
 wait_time = 1.5
 autostart = true
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=70729745]
+path_desired_distance = 0.5
 
 [connection signal="got_hit" from="HitBox" to="." method="on_die"]
 [connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]

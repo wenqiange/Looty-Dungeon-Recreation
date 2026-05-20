@@ -4,6 +4,7 @@ extends Node3D
 @onready var movement: GridMovement = $GridMovement
 @onready var delay: Timer = $Delay
 @onready var animator: AnimationPlayer = $AnimationPlayer
+@onready var navigation: NavigationAgent3D = $NavigationAgent3D
 
 var player: Node3D
 var player_seen = false
@@ -15,6 +16,7 @@ var can_move = true
 @export var walk_animation:String
 @export var attack_animation:String
 @export var die_animation:String
+@export var fall_animation:String
 
 signal dead
 
@@ -30,6 +32,12 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	var dir = player.position - position
 	player_seen = dir.length() <= see_radius
+	
+	navigation.target_position = player.position
+	
+	if not movement.on_ground and not movement.is_moving:
+		fall()
+		return
 
 func _on_delay_timeout() -> void:
 	if not can_move: return
@@ -39,7 +47,9 @@ func _on_delay_timeout() -> void:
 	
 	animator.play(walk_animation)
 	
-	var dir = player.position - position
+	var next_pos = navigation.get_next_path_position()
+	
+	var dir = next_pos - position
 	var idir = global.vec_to_dir(Vector2(dir.x,dir.z).normalized())
 	movement.move(idir)
 
@@ -49,6 +59,12 @@ func attack(entity:Node3D):
 	animator.play(attack_animation)
 	await animator.animation_finished
 	can_move = true
+
+func fall():
+	can_move = false
+	animator.play(fall_animation)
+	await animator.animation_finished
+	queue_free()
 
 func on_die():
 	can_move = false

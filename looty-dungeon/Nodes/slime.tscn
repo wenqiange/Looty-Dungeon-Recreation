@@ -71,6 +71,47 @@ _data = {
 &"RESET": SubResource("Animation_wv5nn")
 }
 
+[sub_resource type="Animation" id="Animation_p20v5"]
+resource_name = "Fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/DamageArea/CollisionShape3D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HitBox/CollisionShape3D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Mesh")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.06666667, 1, 0, -0.3, 0, 0.6, 1, 0, -5, 0)
+tracks/3/type = "scale_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Mesh")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.06666667, 1, 0.9, 1.3, 0.9, 0.6, 1, 0.8, 1.5, 0.8)
+
 [sub_resource type="Animation" id="Animation_tmemv"]
 length = 0.6
 tracks/0/type = "scale_3d"
@@ -197,6 +238,7 @@ tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.10000001, 1, 0.9, 1.2, 0.9, 
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wv5nn"]
 _data = {
+&"Fall": SubResource("Animation_p20v5"),
 &"attack": SubResource("Animation_tmemv"),
 &"die": SubResource("Animation_gdo7j"),
 &"idle": SubResource("Animation_moyba"),
@@ -210,11 +252,13 @@ idle_animation = "slime/idle"
 walk_animation = "slime/walk"
 attack_animation = "slime/attack"
 die_animation = "slime/die"
+fall_animation = "slime/fall"
 
 [node name="Body" type="Node3D" parent="." unique_id=2091126645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015058924, -0.5, -0.003975204)
 
 [node name="Mesh" type="Node3D" parent="Body" unique_id=991836782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 
 [node name="out" type="MeshInstance3D" parent="Body/Mesh" unique_id=955970294]
 transform = Transform3D(0.8, 0, 0, 0, 0.8000001, 0, 0, 0, 0.8, 0, 0, 0)
@@ -270,6 +314,9 @@ autostart = true
 
 [node name="Sliming" type="Node" parent="." unique_id=1532130270]
 script = ExtResource("8_gdo7j")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1910053987]
+path_desired_distance = 0.5
 
 [connection signal="got_hit" from="HitBox" to="." method="on_die"]
 [connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]
