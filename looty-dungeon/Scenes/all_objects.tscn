@@ -169,3 +169,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.512196, 0, -7.1203747)
 
 [node name="GroundTile" parent="." unique_id=1690565268 instance=ExtResource("22_nhfcm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.721013, 0, -4.889926)
+
+[node name="Spikes_Floor" parent="." unique_id=1092495601 instance=ExtResource("9_m0inc")]
+transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, -2.6957934, -0.8070105, -4.806662)

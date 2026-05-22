@@ -8,7 +8,7 @@
 size = Vector3(0.9128113, 1.3349762, 0.8310547)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ubtbl"]
-size = Vector3(0.14923096, 0.5479126, 0.56147003)
+size = Vector3(0.27789688, 0.5479126, 0.63029146)
 
 [sub_resource type="Animation" id="Animation_tsvo2"]
 length = 1.2
@@ -23,24 +23,25 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.5775578, 0.23163682, 0.2807591)]
+"values": [Vector3(0.4936679, 0.23163682, 0.2807591)]
 }
 
 [sub_resource type="Animation" id="Animation_3nf13"]
 resource_name = "new_animation"
 length = 2.0
 loop_mode = 1
+capture_included = true
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = false
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.53333336, 1.27),
+"times": PackedFloat32Array(0, 0.53333336, 1.0333333),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.5775578, 0.23163682, 0.2807591), Vector3(0.9622119, 0.23163682, 0.2807591), Vector3(0.5775578, 0.23163682, 0.2807591)]
+"update": 2,
+"values": [Vector3(0.4936679, 0.23163682, 0.2807591), Vector3(0.82116693, 0.23163682, 0.2807591), Vector3(0.4936679, 0.23163682, 0.2807591)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yamyc"]
@@ -60,17 +61,17 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 mesh = ExtResource("1_b73bw")
 
 [node name="Trident" type="Area3D" parent="." unique_id=920369124]
-transform = Transform3D(-3.30021e-08, 0, 0.755, 0, 0.755, 0, -0.755, 0, -3.30021e-08, 0.5775578, 0.23163682, 0.2807591)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.4936679, 0.23163682, 0.2807591)
 collision_layer = 4
 collision_mask = 10
 script = ExtResource("2_b73bw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trident" unique_id=76619855]
-transform = Transform3D(1.0000029, 0, -3.5527137e-14, 0, 1.0000029, 0, 3.5527137e-14, 0, 1.0000029, 0.3879092, 0.46104842, -0.3927439)
+transform = Transform3D(1.0000029, 0, -3.5527137e-14, 0, 1.0000029, 0, 3.5527137e-14, 0, 1.0000029, 0.37004724, 0.46104842, -0.35833335)
 shape = SubResource("BoxShape3D_ubtbl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Trident" unique_id=874578422]
-transform = Transform3D(1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000004, 0.41888323, 0.033844948, -0.006823659)
+transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 0.31100252, 0.0753665, 0.061957598)
 mesh = ExtResource("3_5ntvu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1684208753]
