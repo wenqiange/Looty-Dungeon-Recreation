@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cpydsau6jxfgf"]
 
 [ext_resource type="Script" uid="uid://dbswlsvai4bpg" path="res://Scripts/game_manager.gd" id="1_wrm1d"]
-[ext_resource type="PackedScene" uid="uid://w34tbud2e5mv" path="res://Nodes/levels/level_test.tscn" id="2_3dryh"]
+[ext_resource type="PackedScene" uid="uid://dblv1x6lrurh2" path="res://Nodes/levels/level_1.tscn" id="2_3dryh"]
 [ext_resource type="PackedScene" uid="uid://cy003rfen1a3a" path="res://Nodes/arquero.tscn" id="4_v158k"]
 [ext_resource type="Script" uid="uid://ox6kstvmsf0i" path="res://Scripts/camera_follow.gd" id="5_h4fw4"]
 

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dycm5q334jh7f"]
+
+[ext_resource type="Script" uid="uid://xi4vp5bvanhy" path="res://Scenes/main_menu.gd" id="1_tt5f1"]
+[ext_resource type="Texture2D" uid="uid://chon63xn6fvpa" path="res://Assets/Buttons/Start_white.png" id="2_853f1"]
+[ext_resource type="Texture2D" uid="uid://ipg761my1v5" path="res://Assets/Buttons/Credits_white.png" id="2_xim88"]
+[ext_resource type="Texture2D" uid="uid://c2s8m7f3xtco2" path="res://Assets/Buttons/Credits_yellow.png" id="3_koqhg"]
+[ext_resource type="Texture2D" uid="uid://bn664bbb3le0y" path="res://Assets/Buttons/Quit_white.png" id="4_cmrfp"]
+[ext_resource type="Texture2D" uid="uid://dspc8bam324bs" path="res://Assets/Buttons/Quit_yellow.png" id="5_loo7a"]
+[ext_resource type="Texture2D" uid="uid://b74dkbyvc73hv" path="res://Assets/Buttons/Start_yellow.png" id="7_if7li"]
+
+[node name="MainMenu" type="Node2D" unique_id=1739102161]
+script = ExtResource("1_tt5f1")
+
+[node name="Button_manager" type="Control" parent="." unique_id=1691351018]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Credits" type="TextureButton" parent="Button_manager" unique_id=345718222]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 273.0
+offset_right = 890.0
+offset_bottom = 442.0
+texture_normal = ExtResource("2_xim88")
+texture_hover = ExtResource("3_koqhg")
+
+[node name="Quit" type="TextureButton" parent="Button_manager" unique_id=1307826199]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 468.0
+offset_right = 883.0
+offset_bottom = 639.0
+texture_normal = ExtResource("4_cmrfp")
+texture_hover = ExtResource("5_loo7a")
+
+[node name="Start" type="TextureButton" parent="Button_manager" unique_id=93210925]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 84.0
+offset_right = 884.0
+offset_bottom = 256.0
+texture_normal = ExtResource("2_853f1")
+texture_hover = ExtResource("7_if7li")
+stretch_mode = 3
+
+[connection signal="pressed" from="Button_manager/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Button_manager/Quit" to="." method="_on_quit_pressed"]

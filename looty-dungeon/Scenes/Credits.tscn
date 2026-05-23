@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bd7u7tkgsbl5e"]
+
+[node name="Credits" type="Node2D" unique_id=1063609272]
+
+[node name="Label" type="Label" parent="." unique_id=2011579257]
+offset_right = 1280.0
+offset_bottom = 722.0
+text = "DONE BY:
+
+WENQIANG HE
+
+ALEX VIVES "
+horizontal_alignment = 1
+vertical_alignment = 1
+tab_stops = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
