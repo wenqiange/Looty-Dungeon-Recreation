@@ -10,13 +10,16 @@ var player:Player
 
 var changing:bool = false
 
-func _ready() -> void:
+func _ready() -> void: 
+	$fade_transition/AnimationPlayer.play("fade_out")
+	
 	player = get_tree().get_first_node_in_group("Player")
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	changing = true
 	await enter_level(initial_level)
 	changing = false
+	
 
 func enter_level(level:PackedScene):
 	camera.lock = true

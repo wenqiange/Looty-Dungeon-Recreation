@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dkkjwel1efltt"]
 
 [ext_resource type="ArrayMesh" uid="uid://qyaso6m5mldb" path="res://Models/Traps/trident_trap.obj" id="1_b73bw"]
-[ext_resource type="Script" uid="uid://dt7mlkuqo5idd" path="res://Nodes/trident.gd" id="2_b73bw"]
+[ext_resource type="Script" uid="uid://dt7mlkuqo5idd" path="res://Scripts/trident.gd" id="2_b73bw"]
 [ext_resource type="ArrayMesh" uid="uid://dfso66ihsb7go" path="res://Models/Traps/trident.obj" id="3_5ntvu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yamyc"]

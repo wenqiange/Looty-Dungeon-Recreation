@@ -1,15 +1,12 @@
 [gd_scene format=3 uid="uid://bd7u7tkgsbl5e"]
 
+[ext_resource type="Script" uid="uid://w3n4k74ifw2u" path="res://Scripts/credits.gd" id="1_xbebw"]
+[ext_resource type="Texture2D" uid="uid://gt4e64ts0aly" path="res://Assets/Credits_image (2).png" id="2_7xmno"]
+
 [node name="Credits" type="Node2D" unique_id=1063609272]
+script = ExtResource("1_xbebw")
 
-[node name="Label" type="Label" parent="." unique_id=2011579257]
-offset_right = 1280.0
-offset_bottom = 722.0
-text = "DONE BY:
-
-WENQIANG HE
-
-ALEX VIVES "
-horizontal_alignment = 1
-vertical_alignment = 1
-tab_stops = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=666043999]
+position = Vector2(642, 360.00003)
+scale = Vector2(0.46959707, 0.46744788)
+texture = ExtResource("2_7xmno")

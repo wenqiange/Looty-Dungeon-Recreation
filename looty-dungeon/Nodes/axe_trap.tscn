@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c20nxqsdyiuwj"]
 
 [ext_resource type="ArrayMesh" uid="uid://cpv7i30eyix07" path="res://Models/Traps/axe_base_obs.obj" id="1_bwrha"]
-[ext_resource type="Script" uid="uid://c66gbvtqd53bm" path="res://Nodes/axe_trap.gd" id="1_t6p5g"]
+[ext_resource type="Script" uid="uid://c66gbvtqd53bm" path="res://Scripts/axe_trap.gd" id="1_t6p5g"]
 [ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="3_3jvbo"]
 [ext_resource type="ArrayMesh" uid="uid://bejhd5lbq2s7i" path="res://Models/Traps/axe.obj" id="4_gbypq"]
 
