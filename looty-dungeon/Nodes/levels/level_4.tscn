@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://gyjh3tmgue4g" path="res://Nodes/solid_lamp.tscn" id="12_31n1s"]
 [ext_resource type="PackedScene" uid="uid://dqx2ty1287qwm" path="res://Nodes/solid_elephant.tscn" id="14_b22na"]
 [ext_resource type="PackedScene" uid="uid://coippum77fhr3" path="res://Nodes/slime.tscn" id="15_ff71j"]
+[ext_resource type="PackedScene" uid="uid://d3i066x4iht6l" path="res://Nodes/coin.tscn" id="16_pxok7"]
 
 [node name="Level4" type="Node3D" unique_id=9582675 node_paths=PackedStringArray("player_spawn")]
 script = ExtResource("1_s7pm1")
@@ -324,3 +325,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -
 
 [node name="solid_elephant" parent="Objects" unique_id=653262875 instance=ExtResource("14_b22na")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.03514409, -0.21203792, 8.020923)
+
+[node name="coin" parent="Objects" unique_id=773630964 instance=ExtResource("16_pxok7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.9562423)

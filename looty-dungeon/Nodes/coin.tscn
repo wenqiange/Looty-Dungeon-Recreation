@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://d3i066x4iht6l"]
+
+[ext_resource type="ArrayMesh" uid="uid://cv77tgk5t3avf" path="res://Models/Character/coin.obj" id="1_2qo34"]
+[ext_resource type="Script" uid="uid://bphtd0w3jbl12" path="res://Nodes/coin.gd" id="1_pwt7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pwt7s"]
+size = Vector3(0.42993164, 0.5883789, 0.17333984)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwt7s"]
+albedo_color = Color(1, 1, 0, 1)
+metallic = 0.05
+metallic_specular = 0.0
+backlight_enabled = true
+backlight = Color(1.9746203, 2.137626, 0, 1)
+
+[node name="coin" type="Area3D" unique_id=773630964]
+script = ExtResource("1_pwt7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=334822843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011108398, 0.20581055, -0.009033203)
+shape = SubResource("BoxShape3D_pwt7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1532888138]
+transform = Transform3D(0.665, 0, 0, 0, 0.665, 0, 0, 0, 0.665, 0.030830383, 0, 0.035133123)
+material_override = SubResource("StandardMaterial3D_pwt7s")
+mesh = ExtResource("1_2qo34")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
