@@ -1,3 +1,4 @@
 # Godot 4+ specific ignores
 ziva_installer/bin/
-.godot/
+.godot/addons/ziva_agent/
+ziva_installer/
