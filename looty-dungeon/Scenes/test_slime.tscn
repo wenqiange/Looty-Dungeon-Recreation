@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cy003rfen1a3a" path="res://Nodes/arquero.tscn" id="1_tmemv"]
 [ext_resource type="Script" uid="uid://ox6kstvmsf0i" path="res://Scripts/camera_follow.gd" id="2_moyba"]
 [ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="3_qitfk"]
-[ext_resource type="PackedScene" uid="uid://6c1gdumh0lvv" path="res://Nodes/ground_slime.tscn" id="4_d46s6"]
-[ext_resource type="PackedScene" uid="uid://coippum77fhr3" path="res://Nodes/slime.tscn" id="6_siafu"]
+[ext_resource type="PackedScene" uid="uid://6c1gdumh0lvv" path="res://Nodes/Traps/ground_slime.tscn" id="4_d46s6"]
+[ext_resource type="PackedScene" uid="uid://coippum77fhr3" path="res://Nodes/Enemies/slime.tscn" id="6_siafu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8od7v"]
 

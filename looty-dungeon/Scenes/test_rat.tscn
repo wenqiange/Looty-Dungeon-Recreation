@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cy003rfen1a3a" path="res://Nodes/arquero.tscn" id="1_5yeu2"]
 [ext_resource type="Script" uid="uid://ox6kstvmsf0i" path="res://Scripts/camera_follow.gd" id="2_glaca"]
-[ext_resource type="PackedScene" uid="uid://gpauov8g8ppc" path="res://Nodes/rat.tscn" id="4_k1ebl"]
+[ext_resource type="PackedScene" uid="uid://gpauov8g8ppc" path="res://Nodes/Enemies/rat.tscn" id="4_k1ebl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8od7v"]
 

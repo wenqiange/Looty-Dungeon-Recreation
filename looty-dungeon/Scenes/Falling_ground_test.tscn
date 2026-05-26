@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://6l4fq11fr1ni"]
 
 [ext_resource type="PackedScene" uid="uid://di5fq0hk2r255" path="res://Nodes/falling_ground.tscn" id="1_enulc"]
-[ext_resource type="PackedScene" uid="uid://b7xjfjybpqqow" path="res://Nodes/ground_tile.tscn" id="2_enulc"]
+[ext_resource type="PackedScene" uid="uid://b7xjfjybpqqow" path="res://Nodes/Tiles/ground_tile.tscn" id="2_enulc"]
 
 [node name="FallingGroundTest" type="Node3D" unique_id=1204698194]
 

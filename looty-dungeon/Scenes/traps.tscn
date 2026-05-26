@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://2yc4mt6dmjb6"]
 
-[ext_resource type="PackedScene" uid="uid://c20nxqsdyiuwj" path="res://Nodes/axe_trap.tscn" id="1_q0un5"]
-[ext_resource type="PackedScene" uid="uid://c2uwtqp0iswjw" path="res://Nodes/spikes_floor.tscn" id="2_y4pun"]
-[ext_resource type="PackedScene" uid="uid://dkkjwel1efltt" path="res://Nodes/trident_trap.tscn" id="3_im1sb"]
+[ext_resource type="PackedScene" uid="uid://c20nxqsdyiuwj" path="res://Nodes/Traps/axe_trap.tscn" id="1_q0un5"]
+[ext_resource type="PackedScene" uid="uid://c2uwtqp0iswjw" path="res://Nodes/Tiles/spikes_floor.tscn" id="2_y4pun"]
+[ext_resource type="PackedScene" uid="uid://dkkjwel1efltt" path="res://Nodes/Traps/trident_trap.tscn" id="3_im1sb"]
 
 [node name="Traps" type="Node3D" unique_id=1660021779]
 

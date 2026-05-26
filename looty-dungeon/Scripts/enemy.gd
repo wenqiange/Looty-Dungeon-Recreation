@@ -2,9 +2,7 @@ class_name Enemy
 extends Node3D
 
 @onready var movement: GridMovement = $GridMovement
-@onready var delay: Timer = $Delay
 @onready var animator: AnimationPlayer = $AnimationPlayer
-@onready var navigation: NavigationAgent3D = $NavigationAgent3D
 var player: Node3D
 var player_seen = false
 var can_move = true
@@ -29,28 +27,21 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	var dir = player.position - position
-	player_seen = dir.length() <= see_radius
-	
-	navigation.target_position = player.position
-	
 	if not movement.on_ground and not movement.is_moving:
 		fall()
 		return
 
-func _on_delay_timeout() -> void:
+func step(direction: global.direction):
 	if not can_move: return
-	if not player_seen or movement.is_moving: 
-		animator.play(idle_animation)
-		return
+	if movement.is_moving: return
 	
 	animator.play(walk_animation)
-	
-	var next_pos = navigation.get_next_path_position()
-	
-	var dir = next_pos - position
-	var idir = global.vec_to_dir(Vector2(dir.x,dir.z).normalized())
-	movement.move(idir)
+	movement.move(direction)
+	await movement.finished_step
+	animator.play(idle_animation)
+
+func idle():
+	animator.play(idle_animation)
 
 func attack(entity:Node3D):
 	if entity is not Player: return
@@ -58,7 +49,6 @@ func attack(entity:Node3D):
 	animator.play(attack_animation)
 	await animator.animation_finished
 	can_move = true
-	
 
 func fall():
 	can_move = false

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dblv1x6lrurh2"]
 
 [ext_resource type="Script" uid="uid://c8shfwjulwbe1" path="res://Scripts/level.gd" id="1_ff3h8"]
-[ext_resource type="PackedScene" uid="uid://b7xjfjybpqqow" path="res://Nodes/ground_tile.tscn" id="3_dbp6f"]
-[ext_resource type="PackedScene" uid="uid://bvfeff13hqro0" path="res://Nodes/wall_1.tscn" id="5_3n56g"]
-[ext_resource type="PackedScene" uid="uid://d32wpetkiei63" path="res://Nodes/wall_basic.tscn" id="6_nqeri"]
-[ext_resource type="PackedScene" uid="uid://bpamdq6vfk3wj" path="res://Nodes/wall_4.tscn" id="7_i6l3h"]
-[ext_resource type="PackedScene" uid="uid://crqvugbsp47nd" path="res://Nodes/wall_3.tscn" id="8_xdnbo"]
-[ext_resource type="PackedScene" uid="uid://dpv1jbdcc6qi3" path="res://Nodes/wall_2.tscn" id="9_v6ic0"]
-[ext_resource type="PackedScene" uid="uid://dluhwo6us7iir" path="res://Nodes/door.tscn" id="10_b2eeu"]
+[ext_resource type="PackedScene" uid="uid://b7xjfjybpqqow" path="res://Nodes/Tiles/ground_tile.tscn" id="3_dbp6f"]
+[ext_resource type="PackedScene" uid="uid://bvfeff13hqro0" path="res://Nodes/Walls/wall_1.tscn" id="5_3n56g"]
+[ext_resource type="PackedScene" uid="uid://d32wpetkiei63" path="res://Nodes/Walls/wall_basic.tscn" id="6_nqeri"]
+[ext_resource type="PackedScene" uid="uid://bpamdq6vfk3wj" path="res://Nodes/Walls/wall_4.tscn" id="7_i6l3h"]
+[ext_resource type="PackedScene" uid="uid://crqvugbsp47nd" path="res://Nodes/Walls/wall_3.tscn" id="8_xdnbo"]
+[ext_resource type="PackedScene" uid="uid://dpv1jbdcc6qi3" path="res://Nodes/Walls/wall_2.tscn" id="9_v6ic0"]
+[ext_resource type="PackedScene" uid="uid://dluhwo6us7iir" path="res://Nodes/Walls/door.tscn" id="10_b2eeu"]
 
 [node name="Level1" type="Node3D" unique_id=1002928981 node_paths=PackedStringArray("player_spawn")]
 script = ExtResource("1_ff3h8")
