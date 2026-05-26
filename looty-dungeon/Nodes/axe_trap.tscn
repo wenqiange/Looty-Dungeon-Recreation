@@ -2,7 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://cpv7i30eyix07" path="res://Models/Traps/axe_base_obs.obj" id="1_bwrha"]
 [ext_resource type="Script" uid="uid://c66gbvtqd53bm" path="res://Scripts/axe_trap.gd" id="1_t6p5g"]
-[ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="3_3jvbo"]
+[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="3_3jvbo"]
 [ext_resource type="ArrayMesh" uid="uid://bejhd5lbq2s7i" path="res://Models/Traps/axe.obj" id="4_gbypq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yamyc"]
@@ -55,7 +55,7 @@ _data = {
 &"axe_down": SubResource("Animation_t6p5g")
 }
 
-[node name="Axe_Trap" type="AnimatableBody3D" unique_id=862690607]
+[node name="Axe_Trap" type="StaticBody3D" unique_id=125386657]
 script = ExtResource("1_t6p5g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=97797561]

@@ -1,14 +1,12 @@
 [gd_scene format=3 uid="uid://c2uwtqp0iswjw"]
 
 [ext_resource type="ArrayMesh" uid="uid://c8mfa3lywevxb" path="res://Models/Traps/floor_trap.obj" id="1_32cfw"]
-[ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="2_adgxc"]
+[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="2_adgxc"]
 [ext_resource type="ArrayMesh" uid="uid://cqqjkpfhfbac6" path="res://Models/Traps/spikes.obj" id="3_blkkn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_im1sb"]
-size = Vector3(1.2232666, 1.2521896, 1.2407227)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qbuxw"]
-size = Vector3(1, 0.5054321, 1.0149231)
 
 [sub_resource type="Animation" id="Animation_eg6cg"]
 length = 0.001
@@ -22,7 +20,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, -0.07, 0)]
+"values": [Vector3(0, -0.07, 0.085)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -34,7 +32,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0.8847375, -0.092636146)]
+"values": [Vector3(0, 0.385, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_u1bph"]
@@ -49,7 +47,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.62, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -0.07, 0), Vector3(0, -0.02, 0), Vector3(0, -0.02, 0), Vector3(0, 0.4, 0), Vector3(0, -0.07, 0)]
+"values": [Vector3(0, -0.07, 0.085), Vector3(0, -0.02, 0.085), Vector3(0, -0.02, 0.085), Vector3(0, 0.4, 0.085), Vector3(0, -0.07, 0.085)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -61,7 +59,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.22, 0.41, 0.63, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0.8847375, -0.092636146), Vector3(0, 0.93, -0.093), Vector3(0, 0.93, -0.093), Vector3(0, 1.335, -0.093), Vector3(0, 0.8847375, -0.092636146)]
+"values": [Vector3(0, 0.385, 0), Vector3(0, 0.43, 0), Vector3(0, 0.43, 0), Vector3(0, 0.835, 0), Vector3(0, 0.385, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_13d5c"]
@@ -70,27 +68,38 @@ _data = {
 &"Spikes_up": SubResource("Animation_u1bph")
 }
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_32cfw"]
+vertices = PackedVector3Array(-0.2479999, -0.22904181, -0.24599987, -0.2479999, -0.22904181, 0.25400013, 0.2520001, -0.22904181, 0.25400013, 0.2520001, -0.22904181, -0.24599987)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+sample_partition_type = 1
+geometry_source_geometry_mode = 1
+geometry_source_group_name = &"LevelPathing"
+agent_radius = 0.25
+
 [node name="Spikes_Floor" type="StaticBody3D" unique_id=1092495601]
-transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=575329052]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002746582, 0.5949974, -0.095947266)
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0.5, 0)
+visible = false
 shape = SubResource("BoxShape3D_im1sb")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1217546213]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1217546213 groups=["LevelPathing"]]
+transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, 0, 0, 0.085)
 mesh = ExtResource("1_32cfw")
 
 [node name="Spikes" type="Area3D" parent="." unique_id=1240939986]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 collision_layer = 4
 collision_mask = 10
 script = ExtResource("2_adgxc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Spikes" unique_id=355803620]
-transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 0.8847375, -0.092636146)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.385, 0)
 shape = SubResource("BoxShape3D_qbuxw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spikes" unique_id=63812216]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07, 0)
+transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, 0, -0.07, 0.085)
 mesh = ExtResource("3_blkkn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Spikes" unique_id=1064195683]
@@ -98,5 +107,33 @@ libraries/ = SubResource("AnimationLibrary_13d5c")
 
 [node name="Timer" type="Timer" parent="Spikes" unique_id=439107201]
 autostart = true
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1469034171]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 1.4790422, 0)
+navigation_mesh = SubResource("NavigationMesh_32cfw")
+
+[node name="NavigationLink3D" type="NavigationLink3D" parent="." unique_id=453583295]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 1.2185632, 0)
+visible = false
+bidirectional = false
+end_position = Vector3(1, 0, 0)
+
+[node name="NavigationLink3D2" type="NavigationLink3D" parent="." unique_id=515406241]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 1.2185632, 0)
+visible = false
+bidirectional = false
+end_position = Vector3(0, 0, 1)
+
+[node name="NavigationLink3D3" type="NavigationLink3D" parent="." unique_id=1970896759]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 1.2185632, 0)
+visible = false
+bidirectional = false
+end_position = Vector3(-1, 0, 0)
+
+[node name="NavigationLink3D4" type="NavigationLink3D" parent="." unique_id=1148409185]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 1.2185632, 0)
+visible = false
+bidirectional = false
+end_position = Vector3(0, 0, -1)
 
 [connection signal="timeout" from="Spikes/Timer" to="Spikes/AnimationPlayer" method="play" binds= [&"Spikes_up"]]

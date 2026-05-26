@@ -245,7 +245,7 @@ _data = {
 &"walk": SubResource("Animation_qitfk")
 }
 
-[node name="Slime" type="Node3D" unique_id=1608742070]
+[node name="Slime" type="Node3D" unique_id=1608742070 groups=["enemies"]]
 script = ExtResource("1_cwq58")
 see_radius = 5.0
 idle_animation = "slime/idle"
@@ -258,7 +258,6 @@ fall_animation = "slime/fall"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015058924, -0.5, -0.003975204)
 
 [node name="Mesh" type="Node3D" parent="Body" unique_id=991836782]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 
 [node name="out" type="MeshInstance3D" parent="Body/Mesh" unique_id=955970294]
 transform = Transform3D(0.8, 0, 0, 0, 0.8000001, 0, 0, 0, 0.8, 0, 0, 0)

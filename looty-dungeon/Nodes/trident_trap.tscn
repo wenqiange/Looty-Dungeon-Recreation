@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dkkjwel1efltt"]
 
 [ext_resource type="ArrayMesh" uid="uid://qyaso6m5mldb" path="res://Models/Traps/trident_trap.obj" id="1_b73bw"]
-[ext_resource type="Script" uid="uid://dt7mlkuqo5idd" path="res://Scripts/trident.gd" id="2_b73bw"]
+[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="2_b73bw"]
 [ext_resource type="ArrayMesh" uid="uid://dfso66ihsb7go" path="res://Models/Traps/trident.obj" id="3_5ntvu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yamyc"]
@@ -67,7 +67,7 @@ collision_mask = 10
 script = ExtResource("2_b73bw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trident" unique_id=76619855]
-transform = Transform3D(1.0000029, 0, -3.5527137e-14, 0, 1.0000029, 0, 3.5527137e-14, 0, 1.0000029, 0.37004724, 0.46104842, -0.35833335)
+transform = Transform3D(1.0000029, 0, -3.5527137e-14, 0, 1.0000029, 0, 3.5527137e-14, 0, 1.0000029, 0.37004724, 0.46104842, -0.35833338)
 shape = SubResource("BoxShape3D_ubtbl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Trident" unique_id=874578422]

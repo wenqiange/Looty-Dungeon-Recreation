@@ -1,4 +1,4 @@
-extends AnimatableBody3D
+extends StaticBody3D
 
 
 func _ready():
@@ -10,9 +10,9 @@ func rotar_loop():
 	tween.tween_property(
 		self,
 		"rotation_degrees:y",
-		rotation_degrees.y + 90,
+		90,
 		1.0
-	)
+	).as_relative()
 	
 	tween.tween_interval(1.0) 
 	
