@@ -1,10 +1,20 @@
 [gd_scene format=3 uid="uid://b7xjfjybpqqow"]
 
+[ext_resource type="Script" uid="uid://cmja61gswvmry" path="res://Scripts/ground_tile.gd" id="1_806lj"]
 [ext_resource type="ArrayMesh" uid="uid://citujwimw82mj" path="res://Models/Floor_and_walls/floor_cube.obj" id="1_tar0w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sf8ll"]
 
-[node name="GroundTile" type="StaticBody3D" unique_id=1690565268]
+[sub_resource type="NavigationMesh" id="NavigationMesh_tar0w"]
+vertices = PackedVector3Array(-0.25, 0, -0.25, -0.25, 0, 0.25, 0.25, 0, 0.25, 0.25, 0, -0.25)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+sample_partition_type = 1
+geometry_source_geometry_mode = 1
+geometry_source_group_name = &"LevelPathing"
+agent_radius = 0.25
+
+[node name="GroundTile" type="StaticBody3D" unique_id=1690565268 groups=["LevelPathing"]]
+script = ExtResource("1_806lj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=570839307]
 transform = Transform3D(0.83236337, 0, 0, 0, 0.8259125, 0, 0, 0, 0.82681406, 0, -0.49574915, 0.08268387)
@@ -12,3 +22,27 @@ mesh = ExtResource("1_tar0w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1830856]
 shape = SubResource("BoxShape3D_sf8ll")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=304446016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+navigation_mesh = SubResource("NavigationMesh_tar0w")
+
+[node name="NavigationLink3D" type="NavigationLink3D" parent="." unique_id=998106102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+bidirectional = false
+end_position = Vector3(1, 0, 0)
+
+[node name="NavigationLink3D2" type="NavigationLink3D" parent="." unique_id=929913968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+bidirectional = false
+end_position = Vector3(0, 0, 1)
+
+[node name="NavigationLink3D3" type="NavigationLink3D" parent="." unique_id=266556436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+bidirectional = false
+end_position = Vector3(-1, 0, 0)
+
+[node name="NavigationLink3D4" type="NavigationLink3D" parent="." unique_id=1139422828]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+bidirectional = false
+end_position = Vector3(0, 0, -1)

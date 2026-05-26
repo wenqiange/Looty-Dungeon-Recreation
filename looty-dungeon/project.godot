@@ -39,6 +39,7 @@ folder_colors={
 
 Player="Grupo que forma el player para ubicarlo"
 enemies=""
+LevelPathing=""
 
 [input]
 

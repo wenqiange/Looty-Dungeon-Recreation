@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cpydsau6jxfgf"]
 
 [ext_resource type="Script" uid="uid://dbswlsvai4bpg" path="res://Scripts/game_manager.gd" id="1_wrm1d"]
-[ext_resource type="PackedScene" uid="uid://bq2prpavc2n5y" path="res://Nodes/levels/level_4.tscn" id="2_3dryh"]
+[ext_resource type="PackedScene" uid="uid://bedrvyvtxmla5" path="res://Nodes/levels/level_2.tscn" id="2_wowpa"]
 [ext_resource type="PackedScene" uid="uid://bxhah2i5mjsp5" path="res://Nodes/fade_transition.tscn" id="3_wowpa"]
 [ext_resource type="PackedScene" uid="uid://cy003rfen1a3a" path="res://Nodes/arquero.tscn" id="4_v158k"]
 [ext_resource type="Script" uid="uid://ox6kstvmsf0i" path="res://Scripts/camera_follow.gd" id="5_h4fw4"]
@@ -13,7 +13,7 @@ ambient_light_energy = 0.1
 
 [node name="Game" type="Node3D" unique_id=161529061]
 script = ExtResource("1_wrm1d")
-initial_level = ExtResource("2_3dryh")
+initial_level = ExtResource("2_wowpa")
 
 [node name="fade_transition" parent="." unique_id=702973857 instance=ExtResource("3_wowpa")]
 

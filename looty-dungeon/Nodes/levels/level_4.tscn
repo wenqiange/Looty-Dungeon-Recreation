@@ -17,6 +17,14 @@
 [ext_resource type="PackedScene" uid="uid://coippum77fhr3" path="res://Nodes/slime.tscn" id="15_ff71j"]
 [ext_resource type="PackedScene" uid="uid://d3i066x4iht6l" path="res://Nodes/coin.tscn" id="16_pxok7"]
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_pxok7"]
+vertices = PackedVector3Array(-2.285168, -0.550771, 2.75, -1.5351679, -0.550771, 2.75, -2.035168, -0.550771, 1.75, 0.71483207, -0.550771, -1.25, 0.46483207, -0.550771, -2.25, -0.28516793, -0.550771, -2.25, -0.53516793, -0.550771, -1.25, -2.285168, -0.550771, -1.25, -1.5351679, -0.550771, 1.25, -0.28516793, -0.550771, 1.5, -0.53516793, -0.550771, 2.75, 1.4648321, -0.550771, 2.75, 1.2148321, -0.550771, 1.5, 2.214832, -0.550771, 1, 2.214832, -0.550771, -1.25, -1.2851679, 0.699229, 1.75, -1.2851679, 0.699229, 2.25, -0.78516793, 0.699229, 2.25, -0.78516793, 0.699229, 1.75, 1.7148321, 0.699229, 1.75, 1.7148321, 0.699229, 2.25, 2.214832, 0.699229, 2.25, 2.214832, 0.699229, 1.75, -1.0351679, -0.550771, 7.5, -0.28516793, -0.550771, 7.5, -0.78516793, -0.550771, 6.5, -1.0351679, -0.550771, 5.5, -0.53516793, -0.550771, 5.25, 2.214832, -0.550771, 5.25, 2.214832, -0.550771, 2.75, -2.285168, -0.550771, 5.25, 0.71483207, -0.550771, 5.5, 0.46483207, -0.550771, 7.5, 1.2148321, -0.550771, 7.5, 1.2148321, -0.550771, 5.5, -2.285168, 0.199229, 5.75, -2.285168, 0.199229, 7.25, -1.5351679, 0.199229, 7.25, -1.5351679, 0.199229, 5.75, -0.28516793, 0.449229, 5.75, -0.28516793, 0.449229, 6.25, 0.21483207, 0.449229, 6.25, 0.21483207, 0.449229, 5.75, 1.7148321, 0.199229, 5.75, 1.7148321, 0.199229, 7.25, 2.214832, 0.199229, 7.25, 2.214832, 0.199229, 5.75, 1.7148321, -0.550771, 9.5, 1.4648321, -0.550771, 10.5, 2.214832, -0.550771, 10.5, 2.214832, -0.550771, 7.75, -0.28516793, -0.550771, 9.5, -0.53516793, -0.550771, 10.5, 0.71483207, -0.550771, 10.5, 0.71483207, -0.550771, 9.25, -1.2851679, -0.550771, 9.25, -2.285168, -0.550771, 7.75, -2.285168, -0.550771, 9.25, -1.5351679, -0.550771, 10.25, -2.285168, -0.550771, 12.25, 2.214832, -0.550771, 12.25)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 6), PackedInt32Array(2, 7, 8), PackedInt32Array(8, 7, 6), PackedInt32Array(12, 11, 9), PackedInt32Array(9, 11, 10), PackedInt32Array(7, 2, 0), PackedInt32Array(12, 9, 13), PackedInt32Array(13, 9, 8), PackedInt32Array(13, 8, 3), PackedInt32Array(3, 8, 6), PackedInt32Array(3, 14, 13), PackedInt32Array(18, 17, 15), PackedInt32Array(15, 17, 16), PackedInt32Array(22, 21, 19), PackedInt32Array(19, 21, 20), PackedInt32Array(25, 24, 23), PackedInt32Array(27, 25, 26), PackedInt32Array(26, 25, 23), PackedInt32Array(11, 29, 28), PackedInt32Array(26, 30, 27), PackedInt32Array(27, 30, 1), PackedInt32Array(27, 1, 10), PackedInt32Array(34, 33, 31), PackedInt32Array(31, 33, 32), PackedInt32Array(34, 31, 28), PackedInt32Array(28, 31, 27), PackedInt32Array(28, 27, 11), PackedInt32Array(11, 27, 10), PackedInt32Array(30, 0, 1), PackedInt32Array(38, 37, 35), PackedInt32Array(35, 37, 36), PackedInt32Array(42, 41, 39), PackedInt32Array(39, 41, 40), PackedInt32Array(46, 45, 43), PackedInt32Array(43, 45, 44), PackedInt32Array(48, 47, 49), PackedInt32Array(49, 47, 50), PackedInt32Array(54, 53, 51), PackedInt32Array(51, 53, 52), PackedInt32Array(51, 55, 54), PackedInt32Array(54, 55, 24), PackedInt32Array(24, 55, 23), PackedInt32Array(33, 50, 32), PackedInt32Array(32, 50, 54), PackedInt32Array(54, 50, 47), PackedInt32Array(57, 56, 55), PackedInt32Array(55, 56, 23), PackedInt32Array(54, 24, 32), PackedInt32Array(55, 58, 57), PackedInt32Array(57, 58, 59), PackedInt32Array(48, 49, 60), PackedInt32Array(53, 60, 52), PackedInt32Array(52, 60, 59), PackedInt32Array(53, 48, 60), PackedInt32Array(59, 58, 52)]
+sample_partition_type = 1
+geometry_source_geometry_mode = 1
+geometry_source_group_name = &"LevelPathing"
+agent_radius = 0.25
+
 [node name="Level4" type="Node3D" unique_id=9582675 node_paths=PackedStringArray("player_spawn")]
 script = ExtResource("1_s7pm1")
 player_spawn = NodePath("PlayerSpawn")
@@ -24,7 +32,7 @@ player_spawn = NodePath("PlayerSpawn")
 [node name="PlayerSpawn" type="Node3D" parent="." unique_id=78700717]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="Falling_Ground" parent="." unique_id=1422386578 instance=ExtResource("2_un88s")]
+[node name="Falling_Ground" parent="." unique_id=1422386578 groups=["LevelPathing"] instance=ExtResource("2_un88s")]
 initialZ = -1
 falling_time = 5.0
 animation_time = 2.0
@@ -272,9 +280,9 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00613147, 0, 14.509062)
 
 [node name="Slime" parent="." unique_id=1608742070 instance=ExtResource("15_ff71j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.520215, 9.998101)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52021503, 9.998101)
 
-[node name="Traps" type="Node3D" parent="." unique_id=1800888517]
+[node name="Traps" type="Node3D" parent="." unique_id=1800888517 groups=["LevelPathing"]]
 
 [node name="Spikes_Floor" parent="Traps" unique_id=330003944 instance=ExtResource("4_1bxtf")]
 transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 0.005733013, -1.0120229, 2.083081)
@@ -306,7 +314,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.99
 [node name="Trident_Trap2" parent="Traps" unique_id=2035628166 instance=ExtResource("5_b22na")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.9862795, 0, 3.9854412)
 
-[node name="Objects" type="Node3D" parent="." unique_id=21551382]
+[node name="Objects" type="Node3D" parent="." unique_id=21551382 groups=["LevelPathing"]]
 
 [node name="solid_stone3" parent="Objects" unique_id=603252229 instance=ExtResource("12_1bxtf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.006466, 0, 8.989377)
@@ -328,3 +336,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.0
 
 [node name="coin" parent="Objects" unique_id=773630964 instance=ExtResource("16_pxok7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.9562423)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=136995714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+navigation_mesh = SubResource("NavigationMesh_pxok7")
