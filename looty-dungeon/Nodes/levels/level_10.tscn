@@ -53,6 +53,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0012321, -0.50478005, 3.99
 [node name="GroundTile22" parent="Falling_Ground" unique_id=672466278 instance=ExtResource("3_onla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0012321, -0.50478005, 2.9917874)
 
+[node name="solid_object2" parent="Falling_Ground/GroundTile22" unique_id=22515423 instance=ExtResource("14_0a407")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.066612005, 0.49999976, -0.014742851)
+
 [node name="GroundTile24" parent="Falling_Ground" unique_id=2110964717 instance=ExtResource("3_onla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0012321, -0.50478005, 4.9917874)
 
@@ -74,6 +77,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0060076714, -0.5094147, 7.9
 [node name="GroundTile34" parent="Falling_Ground" unique_id=303579594 instance=ExtResource("3_onla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9939923, -0.5094147, 5.9995294)
 
+[node name="Axe_Trap2" parent="Falling_Ground/GroundTile34" unique_id=1969009800 instance=ExtResource("11_qox3i")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.035588264, 0.49999952, -0.006547451)
+
 [node name="GroundTile35" parent="Falling_Ground" unique_id=219639220 instance=ExtResource("3_onla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9939923, -0.5094147, 6.9995294)
 
@@ -85,6 +91,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9939923, -0.5094147, 5.999
 
 [node name="GroundTile38" parent="Falling_Ground" unique_id=570364373 instance=ExtResource("3_onla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9939923, -0.5094147, 6.9995294)
+
+[node name="solid_object" parent="Falling_Ground/GroundTile38" unique_id=1437750553 instance=ExtResource("14_0a407")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024078012, 0.49999976, -0.02914238)
 
 [node name="GroundTile39" parent="Falling_Ground" unique_id=1502830736 instance=ExtResource("3_onla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9939923, -0.5094147, 7.9995294)
@@ -98,8 +107,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0060077, -0.5094147, 6.9995
 [node name="GroundTile42" parent="Falling_Ground" unique_id=1700479363 instance=ExtResource("3_onla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0060077, -0.5094147, 7.9995294)
 
+[node name="Trident_Trap" parent="Falling_Ground/GroundTile42" unique_id=776772037 instance=ExtResource("16_hopvt")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.024497509, 0.49999952, -0.026199818)
+
 [node name="GroundTile43" parent="Falling_Ground" unique_id=1534327801 instance=ExtResource("3_onla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0060077, -0.5092912, 5.9995294)
+
+[node name="Axe_Trap" parent="Falling_Ground/GroundTile43" unique_id=862690607 instance=ExtResource("11_qox3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00301826, 0.5, -0.009447098)
 
 [node name="GroundTile45" parent="Falling_Ground" unique_id=559133240 instance=ExtResource("3_onla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0060077, -0.5094147, 7.9995294)
@@ -109,6 +124,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004775524, -0.5141947, 8.99
 
 [node name="GroundTile47" parent="Falling_Ground" unique_id=629696049 instance=ExtResource("3_onla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004775524, -0.5141947, 9.991317)
+
+[node name="Trident_Trap3" parent="Falling_Ground/GroundTile47" unique_id=2139017471 instance=ExtResource("16_hopvt")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.022305846, 0.5000005, -0.034863472)
 
 [node name="GroundTile48" parent="Falling_Ground" unique_id=556491039 instance=ExtResource("3_onla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004775524, -0.5141947, 10.991317)
@@ -131,6 +149,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9952245, -0.5141947, 9.991
 [node name="GroundTile54" parent="Falling_Ground" unique_id=104048986 instance=ExtResource("3_onla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9952245, -0.5141947, 10.991317)
 
+[node name="solid_elephant" parent="Falling_Ground/GroundTile54" unique_id=653262875 instance=ExtResource("15_onla2")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.00621891, 0.47850466, 0.0042591095)
+
 [node name="GroundTile55" parent="Falling_Ground" unique_id=1082961528 instance=ExtResource("3_onla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0047755, -0.5141947, 8.991317)
 
@@ -142,6 +163,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0047755, -0.5141947, 10.991
 
 [node name="GroundTile58" parent="Falling_Ground" unique_id=877612625 instance=ExtResource("3_onla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0047755, -0.5141947, 8.991317)
+
+[node name="Trident_Trap2" parent="Falling_Ground/GroundTile58" unique_id=1147183726 instance=ExtResource("16_hopvt")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.0029492378, 0.50000024, -0.022096634)
 
 [node name="GroundTile59" parent="Falling_Ground" unique_id=1966907383 instance=ExtResource("3_onla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0047755, -0.5141947, 9.991317)
@@ -157,6 +181,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00964, -0.5081645, 1.99523
 
 [node name="GroundTile63" parent="Falling_Ground" unique_id=1661653171 instance=ExtResource("3_onla2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9721904, -0.5167078, 2.0002823)
+
+[node name="Spikes_Floor" parent="Falling_Ground" unique_id=1092495601 instance=ExtResource("10_s43od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 2)
+
+[node name="Spikes_Floor3" parent="Falling_Ground" unique_id=986384439 instance=ExtResource("10_s43od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 2)
+
+[node name="Spikes_Floor5" parent="Falling_Ground" unique_id=510723118 instance=ExtResource("10_s43od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1, 2)
+
+[node name="Spikes_Floor2" parent="Falling_Ground" unique_id=236756312 instance=ExtResource("10_s43od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002, -1, 4)
+
+[node name="Spikes_Floor4" parent="Falling_Ground" unique_id=104073091 instance=ExtResource("10_s43od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.002, -1.007, 5)
+
+[node name="Spikes_Floor6" parent="Falling_Ground" unique_id=1450379026 instance=ExtResource("10_s43od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 5)
+
+[node name="Spikes_Floor7" parent="Falling_Ground" unique_id=1375582905 instance=ExtResource("10_s43od")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 6)
 
 [node name="Walls" type="Node3D" parent="." unique_id=1596512253]
 
@@ -208,58 +253,11 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.9
 [node name="Door" parent="." unique_id=1781724774 instance=ExtResource("9_nygm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00613147, 0, 11.534859)
 
-[node name="Traps" type="Node3D" parent="." unique_id=282644366]
-
-[node name="Spikes_Floor" parent="Traps" unique_id=1092495601 instance=ExtResource("10_s43od")]
-transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 0.005733013, -1.0120229, 2.083081)
-
-[node name="Spikes_Floor3" parent="Traps" unique_id=986384439 instance=ExtResource("10_s43od")]
-transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 1.9914956, -1.0104644, 2.076146)
-
-[node name="Spikes_Floor5" parent="Traps" unique_id=510723118 instance=ExtResource("10_s43od")]
-transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, -2.015902, -1.0156009, 2.0939012)
-
-[node name="Spikes_Floor2" parent="Traps" unique_id=236756312 instance=ExtResource("10_s43od")]
-transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, -0.0022321343, -1.01543, 4.069223)
-
-[node name="Spikes_Floor4" parent="Traps" unique_id=104073091 instance=ExtResource("10_s43od")]
-transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, -1.0022323, -1.0066451, 5.084504)
-
-[node name="Spikes_Floor6" parent="Traps" unique_id=1450379026 instance=ExtResource("10_s43od")]
-transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 1.0036992, -1.0194885, 5.072767)
-
-[node name="Spikes_Floor7" parent="Traps" unique_id=1375582905 instance=ExtResource("10_s43od")]
-transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 0.0054951906, -1.0290246, 6.077761)
-
-[node name="Axe_Trap" parent="Traps" unique_id=862690607 instance=ExtResource("11_qox3i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0090259, -0.009291172, 5.9900823)
-
-[node name="Axe_Trap2" parent="Traps" unique_id=1969009800 instance=ExtResource("11_qox3i")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.95840406, -0.00941515, 5.992982)
-
-[node name="Trident_Trap" parent="Traps" unique_id=776772037 instance=ExtResource("16_hopvt")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.9815102, -0.00941515, 7.9733295)
-
-[node name="Trident_Trap2" parent="Traps" unique_id=1147183726 instance=ExtResource("16_hopvt")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.0018263, -0.0141944885, 8.96922)
-
-[node name="Trident_Trap3" parent="Traps" unique_id=2139017471 instance=ExtResource("16_hopvt")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.02708137, -0.01419425, 9.956453)
-
-[node name="solid_object" parent="." unique_id=1437750553 instance=ExtResource("14_0a407")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9699143, -0.009414911, 6.970387)
-
-[node name="solid_object2" parent="." unique_id=22515423 instance=ExtResource("14_0a407")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9346201, -0.0047802925, 2.9770446)
-
-[node name="solid_elephant" parent="." unique_id=653262875 instance=ExtResource("15_onla2")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.0014434, -0.03569007, 10.995576)
-
 [node name="Slime" parent="." unique_id=1608742070 instance=ExtResource("16_msdj1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9592392, 5.485805, 8.968055)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9592392, 0.48580503, 8.968055)
 
 [node name="Slime2" parent="." unique_id=1874670437 instance=ExtResource("16_msdj1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98733544, 5.5013905, 6.9533396)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98733544, 0.50139046, 6.9533396)
 
 [node name="Rat" parent="." unique_id=404569977 instance=ExtResource("15_5s560")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06877446, 0.4952197, 4.963815)
