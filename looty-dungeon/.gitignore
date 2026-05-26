@@ -2,3 +2,4 @@
 ziva_installer/bin/
 .godot/addons/ziva_agent/
 ziva_installer/
+.godot/
