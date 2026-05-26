@@ -5,7 +5,6 @@ extends Node3D
 @onready var delay: Timer = $Delay
 @onready var animator: AnimationPlayer = $AnimationPlayer
 @onready var navigation: NavigationAgent3D = $NavigationAgent3D
-
 var player: Node3D
 var player_seen = false
 var can_move = true
@@ -59,6 +58,7 @@ func attack(entity:Node3D):
 	animator.play(attack_animation)
 	await animator.animation_finished
 	can_move = true
+	
 
 func fall():
 	can_move = false

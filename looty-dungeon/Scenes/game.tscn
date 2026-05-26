@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bxhah2i5mjsp5" path="res://Nodes/fade_transition.tscn" id="3_wowpa"]
 [ext_resource type="PackedScene" uid="uid://cy003rfen1a3a" path="res://Nodes/arquero.tscn" id="4_v158k"]
 [ext_resource type="Script" uid="uid://ox6kstvmsf0i" path="res://Scripts/camera_follow.gd" id="5_h4fw4"]
+[ext_resource type="AudioStream" uid="uid://c8ui7h4yyl8t4" path="res://Sounds/Music.mp3" id="6_i6g32"]
 
 [sub_resource type="Environment" id="Environment_wowpa"]
 ambient_light_source = 2
@@ -34,3 +35,7 @@ max_x = -2.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2049277993]
 transform = Transform3D(0.9330128, 0.25881907, -0.25000006, 0.2588191, -4.222196e-08, 0.96592593, 0.25, -0.9659258, -0.06698735, 0, 0, -3)
+
+[node name="Music" type="AudioStreamPlayer3D" parent="." unique_id=1228342619]
+stream = ExtResource("6_i6g32")
+volume_db = -13.675

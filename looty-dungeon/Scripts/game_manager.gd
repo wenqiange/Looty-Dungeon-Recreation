@@ -12,7 +12,7 @@ var changing:bool = false
 
 func _ready() -> void: 
 	$fade_transition/AnimationPlayer.play("fade_out")
-	
+	$Music.play()
 	player = get_tree().get_first_node_in_group("Player")
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 	

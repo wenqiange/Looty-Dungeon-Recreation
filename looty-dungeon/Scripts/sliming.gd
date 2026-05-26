@@ -10,6 +10,7 @@ func _process(_delta: float) -> void:
 		slime.movement.finished_step.connect(on_step)
 
 func on_step():
+	$SlimeSound.play()
 	#check no slime
 	var space = slime.get_world_3d().direct_space_state
 	var query = PhysicsRayQueryParameters3D.create(slime.position+Vector3.UP,slime.position+Vector3.DOWN,32)
