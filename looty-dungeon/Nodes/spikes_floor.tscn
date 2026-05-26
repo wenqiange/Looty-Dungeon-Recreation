@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c2uwtqp0iswjw"]
 
 [ext_resource type="ArrayMesh" uid="uid://c8mfa3lywevxb" path="res://Models/Traps/floor_trap.obj" id="1_32cfw"]
-[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="2_adgxc"]
+[ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="2_adgxc"]
 [ext_resource type="ArrayMesh" uid="uid://cqqjkpfhfbac6" path="res://Models/Traps/spikes.obj" id="3_blkkn"]
+[ext_resource type="AudioStream" uid="uid://lo3gkrge34a7" path="res://Sounds/SpikeSound.mp3" id="4_adgxc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_im1sb"]
 
@@ -61,6 +62,21 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0.385, 0), Vector3(0, 0.43, 0), Vector3(0, 0.43, 0), Vector3(0, 0.835, 0), Vector3(0, 0.385, 0)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpikeSound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 1.3599999,
+"start_offset": 0.18,
+"stream": ExtResource("4_adgxc")
+}],
+"times": PackedFloat32Array(0.2)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_13d5c"]
 _data = {
@@ -107,6 +123,11 @@ libraries/ = SubResource("AnimationLibrary_13d5c")
 
 [node name="Timer" type="Timer" parent="Spikes" unique_id=439107201]
 autostart = true
+
+[node name="SpikeSound" type="AudioStreamPlayer3D" parent="Spikes" unique_id=1081940940]
+attenuation_model = 2
+volume_db = -38.146
+max_db = -1.172
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1469034171]
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 1.4790422, 0)

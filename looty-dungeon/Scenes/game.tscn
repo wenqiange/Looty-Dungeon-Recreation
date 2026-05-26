@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cpydsau6jxfgf"]
 
 [ext_resource type="Script" uid="uid://dbswlsvai4bpg" path="res://Scripts/game_manager.gd" id="1_wrm1d"]
-[ext_resource type="PackedScene" uid="uid://bsa6nkmlppons" path="res://Nodes/levels/level_10.tscn" id="2_wowpa"]
+[ext_resource type="PackedScene" uid="uid://bq2prpavc2n5y" path="res://Nodes/levels/level_4.tscn" id="2_i6g32"]
 [ext_resource type="PackedScene" uid="uid://bxhah2i5mjsp5" path="res://Nodes/fade_transition.tscn" id="3_wowpa"]
 [ext_resource type="PackedScene" uid="uid://cy003rfen1a3a" path="res://Nodes/arquero.tscn" id="4_v158k"]
 [ext_resource type="Script" uid="uid://ox6kstvmsf0i" path="res://Scripts/camera_follow.gd" id="5_h4fw4"]
@@ -14,7 +14,7 @@ ambient_light_energy = 0.1
 
 [node name="Game" type="Node3D" unique_id=161529061]
 script = ExtResource("1_wrm1d")
-initial_level = ExtResource("2_wowpa")
+initial_level = ExtResource("2_i6g32")
 
 [node name="fade_transition" parent="." unique_id=702973857 instance=ExtResource("3_wowpa")]
 
@@ -38,4 +38,4 @@ transform = Transform3D(0.9330128, 0.25881907, -0.25000006, 0.2588191, -4.222196
 
 [node name="Music" type="AudioStreamPlayer3D" parent="." unique_id=1228342619]
 stream = ExtResource("6_i6g32")
-volume_db = -13.675
+volume_db = -16.963

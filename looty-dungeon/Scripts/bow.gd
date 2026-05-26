@@ -55,6 +55,7 @@ func shoot(strength:float):
 	arrow.position = player.position + Vector3.BACK.rotated(Vector3.UP, player.get_look_rot().y)*0.5
 	player.add_sibling(arrow)
 	delay_timer.start()
+	$ArrowSound.play()
 
 func _on_hold_timer_timeout() -> void:
 	animator.play("Arquero/Action")

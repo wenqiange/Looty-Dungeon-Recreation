@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dkkjwel1efltt"]
 
 [ext_resource type="ArrayMesh" uid="uid://qyaso6m5mldb" path="res://Models/Traps/trident_trap.obj" id="1_b73bw"]
-[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="2_b73bw"]
+[ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="2_b73bw"]
 [ext_resource type="ArrayMesh" uid="uid://dfso66ihsb7go" path="res://Models/Traps/trident.obj" id="3_5ntvu"]
+[ext_resource type="AudioStream" uid="uid://dbqfvmfgb2ycg" path="res://Sounds/Trident_Sound.mp3" id="4_mcpan"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yamyc"]
 size = Vector3(0.9128113, 1.3349762, 0.8310547)
@@ -43,6 +44,21 @@ tracks/0/keys = {
 "update": 2,
 "values": [Vector3(0.4936679, 0.23163682, 0.2807591), Vector3(0.82116693, 0.23163682, 0.2807591), Vector3(0.4936679, 0.23163682, 0.2807591)]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TridentSound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_mcpan")
+}],
+"times": PackedFloat32Array(0.06666668)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yamyc"]
 _data = {
@@ -78,3 +94,5 @@ mesh = ExtResource("3_5ntvu")
 root_node = NodePath("../Trident")
 libraries/ = SubResource("AnimationLibrary_yamyc")
 autoplay = &"new_animation"
+
+[node name="TridentSound" type="AudioStreamPlayer3D" parent="." unique_id=1996172311]

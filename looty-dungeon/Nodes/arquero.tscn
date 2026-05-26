@@ -7,7 +7,10 @@
 [ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="4_sg4uk"]
 [ext_resource type="Script" uid="uid://ce5ur84jdnf6g" path="res://Scripts/health.gd" id="5_5nirr"]
 [ext_resource type="Script" uid="uid://sd0cn462nyjn" path="res://Scripts/bow.gd" id="6_kf4pe"]
+[ext_resource type="AudioStream" uid="uid://dx0xfw562xtxh" path="res://Sounds/HitSound.mp3" id="7_kf4pe"]
 [ext_resource type="Texture2D" uid="uid://8ug4o0kk1sgr" path="res://Assets/Heart.png" id="8_1negf"]
+[ext_resource type="AudioStream" uid="uid://tjy60rw312pc" path="res://Sounds/arrow_sound.mp3" id="8_5nirr"]
+[ext_resource type="AudioStream" uid="uid://bgfr86edb8mdh" path="res://Sounds/Death_sound.mp3" id="8_t7njs"]
 [ext_resource type="Script" uid="uid://btgpbt4h6okiv" path="res://Scripts/life_bar.gd" id="9_sg4uk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sg4uk"]
@@ -349,6 +352,14 @@ inmune_to = 0
 script = ExtResource("5_5nirr")
 max_health = 3
 
+[node name="HitSound" type="AudioStreamPlayer3D" parent="Health" unique_id=672295384]
+stream = ExtResource("7_kf4pe")
+volume_db = -9.54
+
+[node name="DeathSound" type="AudioStreamPlayer3D" parent="Health" unique_id=271627859]
+stream = ExtResource("8_t7njs")
+volume_db = 1.748
+
 [node name="Bow" type="Node" parent="." unique_id=660424687]
 script = ExtResource("6_kf4pe")
 max_dist = 6
@@ -362,6 +373,10 @@ one_shot = true
 [node name="DelayTimer" type="Timer" parent="Bow" unique_id=464886449]
 wait_time = 0.2
 one_shot = true
+
+[node name="ArrowSound" type="AudioStreamPlayer3D" parent="Bow" unique_id=1550762623]
+stream = ExtResource("8_5nirr")
+volume_db = -19.32
 
 [node name="HitAnimator" type="AnimationPlayer" parent="." unique_id=712445031]
 root_node = NodePath("../AnimationPlayer")

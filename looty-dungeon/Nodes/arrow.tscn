@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://o68de7frxg5w"]
 
 [ext_resource type="Script" uid="uid://bigkwcxyg1qgx" path="res://Scripts/arrow.gd" id="1_4kvq3"]
-[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="2_5h5os"]
+[ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="2_5h5os"]
 [ext_resource type="ArrayMesh" uid="uid://cw2vyc3aiuxvn" path="res://Models/Character/arrow.obj" id="2_w6sw4"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2cgwh"]
