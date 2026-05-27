@@ -9,7 +9,14 @@ size = Vector3(0.5, 0.5, 0.5)
 [node name="EndTile" unique_id=1690565268 instance=ExtResource("1_eaww1")]
 script = ExtResource("2_qska4")
 
+[node name="MeshInstance3D" parent="." index="0" unique_id=570839307]
+transform = Transform3D(0.83236337, 0, 0, 0, 0.8259125, 0, 0, 0, 0.82681406, 0, -0.9957491, 0.08268387)
+
+[node name="CollisionShape3D" parent="." index="1" unique_id=1830856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
 [node name="EndTrigger" type="Area3D" parent="." index="2" unique_id=2146924130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 collision_layer = 0
 collision_mask = 8
 

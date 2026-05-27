@@ -8,9 +8,9 @@ size = Vector3(1.0222168, 1.7007141, 0.09680176)
 [node name="Door" type="StaticBody3D" unique_id=1781724774]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1531589074]
-transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, -0.0019450188, 0, 0.45499492)
+transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 0, 0, 0.41682562)
 mesh = ExtResource("1_bspd1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=972175762]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207031, 0.841629, -0.0040893555)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.842, -0.033174384)
 shape = SubResource("BoxShape3D_1l5s0")

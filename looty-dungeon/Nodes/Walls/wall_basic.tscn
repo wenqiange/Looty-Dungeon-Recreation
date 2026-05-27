@@ -8,9 +8,9 @@ size = Vector3(1.0067978, 1.6796303, 0.091178894)
 [node name="WallBasic" type="StaticBody3D" unique_id=1255375245]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1969640079]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0016212463, 0.83265114, 0.0035142526)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0016212463, 0.83265114, -0.043044902)
 shape = SubResource("BoxShape3D_s5pmr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=725797915]
-transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, 0, 0, 0.46198028)
+transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, 0, 0, 0.41542113)
 mesh = ExtResource("1_osf5i")

@@ -16,6 +16,8 @@ func _ready() -> void:
 			c.process_mode = Node.PROCESS_MODE_DISABLED
 			num_enemies += 1
 			(c as Enemy).dead.connect(enemy_dead)
+	if num_enemies == 0:
+		finished()
 
 func start_falling():
 	falling_ground.start()
