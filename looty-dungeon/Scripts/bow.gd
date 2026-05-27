@@ -6,6 +6,7 @@ var animator:AnimationPlayer
 @export var max_dist:int
 @export var min_dist:int
 @export var min_hold_time:float
+@export var hold_to_max:float
 const Arrow_path = "uid://o68de7frxg5w"
 
 @onready var hold_timer: Timer = $HoldTimer
@@ -36,7 +37,7 @@ func _process(_delta: float) -> void:
 		player.can_move = false
 	elif Input.is_action_just_released("Action"):
 		if hold_timer.is_stopped(): return
-		var strength = 1 - hold_timer.time_left / hold_timer.wait_time  
+		var strength = min((hold_timer.wait_time - hold_timer.time_left) / (hold_timer.wait_time - hold_to_max),1)
 		if hold_timer.wait_time-hold_timer.time_left < min_hold_time:
 			hold_timer.stop()
 			player.can_move = true
