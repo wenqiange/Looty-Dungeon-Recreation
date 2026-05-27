@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c2uwtqp0iswjw"]
 
 [ext_resource type="ArrayMesh" uid="uid://c8mfa3lywevxb" path="res://Models/Traps/floor_trap.obj" id="1_32cfw"]
-[ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="2_adgxc"]
+[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="2_adgxc"]
 [ext_resource type="ArrayMesh" uid="uid://cqqjkpfhfbac6" path="res://Models/Traps/spikes.obj" id="3_blkkn"]
 [ext_resource type="AudioStream" uid="uid://lo3gkrge34a7" path="res://Sounds/SpikeSound.mp3" id="4_adgxc"]
 
@@ -84,16 +84,7 @@ _data = {
 &"Spikes_up": SubResource("Animation_u1bph")
 }
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_32cfw"]
-vertices = PackedVector3Array(-0.2479999, -0.22904181, -0.24599987, -0.2479999, -0.22904181, 0.25400013, 0.2520001, -0.22904181, 0.25400013, 0.2520001, -0.22904181, -0.24599987)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
-sample_partition_type = 1
-geometry_source_geometry_mode = 1
-geometry_source_group_name = &"LevelPathing"
-agent_radius = 0.25
-
 [node name="Spikes_Floor" type="StaticBody3D" unique_id=1092495601]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=575329052]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0.5, 0)
@@ -128,33 +119,5 @@ autostart = true
 attenuation_model = 2
 volume_db = -38.146
 max_db = -1.172
-
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1469034171]
-transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 1.4790422, 0)
-navigation_mesh = SubResource("NavigationMesh_32cfw")
-
-[node name="NavigationLink3D" type="NavigationLink3D" parent="." unique_id=453583295]
-transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 1.2185632, 0)
-visible = false
-bidirectional = false
-end_position = Vector3(1, 0, 0)
-
-[node name="NavigationLink3D2" type="NavigationLink3D" parent="." unique_id=515406241]
-transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 1.2185632, 0)
-visible = false
-bidirectional = false
-end_position = Vector3(0, 0, 1)
-
-[node name="NavigationLink3D3" type="NavigationLink3D" parent="." unique_id=1970896759]
-transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 1.2185632, 0)
-visible = false
-bidirectional = false
-end_position = Vector3(-1, 0, 0)
-
-[node name="NavigationLink3D4" type="NavigationLink3D" parent="." unique_id=1148409185]
-transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 1.2185632, 0)
-visible = false
-bidirectional = false
-end_position = Vector3(0, 0, -1)
 
 [connection signal="timeout" from="Spikes/Timer" to="Spikes/AnimationPlayer" method="play" binds= [&"Spikes_up"]]
