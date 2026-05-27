@@ -114,6 +114,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9939923, 0, 5.9995294)
 [node name="GroundTile38" parent="Falling_Ground" unique_id=967119429 instance=ExtResource("3_pxok7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9939923, 0, 6.9995294)
 
+[node name="coin" parent="Falling_Ground/GroundTile38" unique_id=773630964 instance=ExtResource("18_ff71j")]
+
 [node name="GroundTile39" parent="Falling_Ground" unique_id=603218491 instance=ExtResource("3_pxok7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9939923, 0, 7.9995294)
 
@@ -125,6 +127,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5.9995294)
 
 [node name="GroundTile41" parent="Falling_Ground" unique_id=739343105 instance=ExtResource("3_pxok7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6.9995294)
+
+[node name="coin" parent="Falling_Ground/GroundTile41" unique_id=267839035 instance=ExtResource("18_ff71j")]
 
 [node name="GroundTile42" parent="Falling_Ground" unique_id=1202449027 instance=ExtResource("3_pxok7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7.9995294)
@@ -206,6 +210,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97072506, 0, 14)
 
 [node name="GroundTile65" parent="Falling_Ground" unique_id=1200019059 instance=ExtResource("3_pxok7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.970725, 0, 12)
+
+[node name="coin" parent="Falling_Ground/GroundTile65" unique_id=1786771390 instance=ExtResource("18_ff71j")]
 
 [node name="GroundTile66" parent="Falling_Ground" unique_id=1899487891 instance=ExtResource("3_pxok7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.970725, 0, 13)
@@ -345,5 +351,5 @@ script = ExtResource("14_1bxtf")
 [node name="EndTile" parent="." unique_id=364346 instance=ExtResource("18_b22na")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
 
-[node name="coin" parent="." unique_id=773630964 instance=ExtResource("18_ff71j")]
+[node name="coin" parent="." unique_id=1820158665 instance=ExtResource("18_ff71j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.7553253)

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b7xjfjybpqqow" path="res://Nodes/Tiles/ground_tile.tscn" id="3_2f42k"]
 [ext_resource type="PackedScene" uid="uid://bvfeff13hqro0" path="res://Nodes/Walls/wall_1.tscn" id="4_y5y5m"]
 [ext_resource type="PackedScene" uid="uid://d32wpetkiei63" path="res://Nodes/Walls/wall_basic.tscn" id="5_xeay7"]
+[ext_resource type="PackedScene" uid="uid://d3i066x4iht6l" path="res://Nodes/coin.tscn" id="5_y5y5m"]
 [ext_resource type="PackedScene" uid="uid://bpamdq6vfk3wj" path="res://Nodes/Walls/wall_4.tscn" id="6_3g7nw"]
 [ext_resource type="PackedScene" uid="uid://crqvugbsp47nd" path="res://Nodes/Walls/wall_3.tscn" id="7_aljs8"]
 [ext_resource type="PackedScene" uid="uid://dpv1jbdcc6qi3" path="res://Nodes/Walls/wall_2.tscn" id="8_d0eg2"]
@@ -129,6 +130,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9952245, 0, 11)
 [node name="GroundTile52" parent="Falling_Ground" unique_id=1672638924 instance=ExtResource("3_2f42k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9952245, 0, 8.991317)
 
+[node name="coin" parent="Falling_Ground/GroundTile52" unique_id=773630964 instance=ExtResource("5_y5y5m")]
+
 [node name="GroundTile53" parent="Falling_Ground" unique_id=1582781267 instance=ExtResource("3_2f42k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9952245, 0, 9.991317)
 
@@ -146,6 +149,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 9.991317)
 
 [node name="GroundTile57" parent="Falling_Ground" unique_id=1793833222 instance=ExtResource("3_2f42k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 11)
+
+[node name="coin" parent="Falling_Ground/GroundTile57" unique_id=1588098570 instance=ExtResource("5_y5y5m")]
 
 [node name="GroundTile58" parent="Falling_Ground" unique_id=843001942 instance=ExtResource("3_2f42k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0047755, 0, 8.991317)
@@ -215,6 +220,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
 
 [node name="Spikes_Floor8" parent="Falling_Ground" unique_id=1718467986 instance=ExtResource("10_nunlj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 5)
+
+[node name="coin" parent="Falling_Ground/Spikes_Floor8" unique_id=1516516074 instance=ExtResource("5_y5y5m")]
 
 [node name="Spikes_Floor9" parent="Falling_Ground" unique_id=1258543185 instance=ExtResource("10_nunlj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5)
