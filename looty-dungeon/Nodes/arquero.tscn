@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://btgpbt4h6okiv" path="res://Scripts/life_bar.gd" id="9_sg4uk"]
 [ext_resource type="Texture2D" uid="uid://j70kbl1oxa1t" path="res://Assets/Coin.png" id="13_q16sl"]
 [ext_resource type="Script" uid="uid://stu0lfk6l1wq" path="res://Scripts/PlayerCoins.gd" id="14_83j8p"]
-[ext_resource type="Script" uid="uid://dcyqech0lgxm8" path="res://Scripts/coin_counter.gd" id="14_m2ivu"]
+[ext_resource type="Script" uid="uid://cu1xdmaqkpae7" path="res://Nodes/coin_counter.gd" id="14_m2ivu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sg4uk"]
 albedo_texture = ExtResource("2_1negf")
@@ -427,16 +427,8 @@ offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
 
-<<<<<<< HEAD
 [node name="CoinCounter" type="Label" parent="PlayerUI/HBoxContainer" unique_id=429404630]
 layout_mode = 2
-=======
-[node name="CoinCounter" type="Label" parent="PlayerUI" unique_id=429404630]
-offset_left = 1126.0
-offset_top = 15.0
-offset_right = 1166.0
-offset_bottom = 92.0
->>>>>>> origin/main
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.76862746, 0.38039216, 0, 0)
 theme_override_colors/font_outline_color = Color(0.90588236, 0.13333334, 0.2784314, 1)
@@ -455,3 +447,4 @@ script = ExtResource("14_83j8p")
 
 [connection signal="health_updated" from="Health" to="PlayerUI/LifeBar" method="setLives"]
 [connection signal="timeout" from="Bow/HoldTimer" to="Bow" method="_on_hold_timer_timeout"]
+[connection signal="coins_changed" from="PlayerCoins" to="PlayerUI/HBoxContainer/CoinCounter" method="_on_coins_changed"]
