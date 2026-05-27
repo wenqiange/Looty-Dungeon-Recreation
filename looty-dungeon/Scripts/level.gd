@@ -1,7 +1,7 @@
 class_name Level
 extends Node3D
 
-@onready var falling_ground: Node3D = $Falling_Ground
+@onready var falling_ground: FallingGround = null
 
 @export var player_spawn:Node3D
 var num_enemies
@@ -16,11 +16,14 @@ func _ready() -> void:
 			c.process_mode = Node.PROCESS_MODE_DISABLED
 			num_enemies += 1
 			(c as Enemy).dead.connect(enemy_dead)
+		if c is FallingGround:
+			falling_ground = c
 	if num_enemies == 0:
-		finished()
+		no_enemies.emit()
 
 func start_falling():
-	falling_ground.start()
+	if falling_ground:
+		falling_ground.start()
 	for c in get_children():
 		if c.is_in_group("enemies"):
 			c.process_mode = Node.PROCESS_MODE_INHERIT

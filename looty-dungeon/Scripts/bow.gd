@@ -62,3 +62,14 @@ func _on_hold_timer_timeout() -> void:
 	shoot(1.)
 	await  animator.animation_finished
 	player.can_move = true
+
+func _input(event: InputEvent) -> void:
+	if hold_timer.is_stopped(): return
+	if event.is_action_pressed("move_right"):
+		player.grid_movement.rotate(Vector2.LEFT)
+	if event.is_action_pressed("move_left"):
+		player.grid_movement.rotate(Vector2.RIGHT)
+	if event.is_action_pressed("move_up"):
+		player.grid_movement.rotate(Vector2.DOWN)
+	if event.is_action_pressed("move_down"):
+		player.grid_movement.rotate(Vector2.UP)

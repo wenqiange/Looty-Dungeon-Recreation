@@ -51,13 +51,7 @@ func move(direction:global.direction):
 	var dir = global.dir_to_vec(direction)
 	
 	#rotate body
-	var new_angle = (dir*Vector2(1,-1)).angle() + PI/2
-	var angle_dif = angle_difference(body.rotation.y,new_angle)
-	var new_rotation = Vector3(0,angle_dif,0)
-	if rot_tween: rot_tween.kill()
-	rot_tween = create_tween()
-	rot_tween.set_ease(Tween.EASE_IN_OUT)
-	rot_tween.tween_property(body,"rotation",new_rotation,abs(angle_dif)/rotate_speed).as_relative()
+	rotate(dir)
 	
 	#if on slime -> attack
 	if cur_effect == 1:
@@ -104,6 +98,15 @@ func move(direction:global.direction):
 	mov_tween.tween_property(parent,"position",new_pos,step_time)
 	mov_tween.chain().tween_callback(func(): is_moving = false)
 	mov_tween.chain().tween_callback(func(): finished_step.emit())
+
+func rotate(dir:Vector2):
+	var new_angle = (dir*Vector2(1,-1)).angle() + PI/2
+	var angle_dif = angle_difference(body.rotation.y,new_angle)
+	var new_rotation = Vector3(0,angle_dif,0)
+	if rot_tween: rot_tween.kill()
+	rot_tween = create_tween()
+	rot_tween.set_ease(Tween.EASE_IN_OUT)
+	rot_tween.tween_property(body,"rotation",new_rotation,abs(angle_dif)/rotate_speed).as_relative()
 
 func on_hitbox_collide(area:Area3D):
 	if area is not HitBox: return

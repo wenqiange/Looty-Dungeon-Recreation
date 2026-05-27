@@ -1,3 +1,4 @@
+class_name FallingGround
 extends Node3D
 
 

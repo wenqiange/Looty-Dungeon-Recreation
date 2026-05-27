@@ -114,8 +114,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.984654, 0, 3.988607)
 [node name="GroundTile34" parent="Ground" unique_id=1356069357 instance=ExtResource("3_dbp6f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9971566, 0, 8.0029335)
 
-[node name="Door" parent="." unique_id=1781724774 instance=ExtResource("10_b2eeu")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 8.5)
-
 [node name="EndTile" parent="." unique_id=2021840468 instance=ExtResource("9_d62q4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+
+[node name="Door2" parent="." unique_id=1781724774 instance=ExtResource("10_b2eeu")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 8.5)
