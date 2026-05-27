@@ -7,6 +7,7 @@ var player: Node3D
 var player_seen = false
 var can_move = true
 
+
 @export var see_radius:float
 
 @export var idle_animation:String
@@ -38,7 +39,8 @@ func step(direction: global.direction):
 	animator.play(walk_animation)
 	movement.move(direction)
 	await movement.finished_step
-	animator.play(idle_animation)
+	if can_move:
+		animator.play(idle_animation)
 
 func idle():
 	animator.play(idle_animation)

@@ -14,7 +14,8 @@ func _on_area_entered(area: Area3D) -> void:
 		if player_coins:
 			player_coins.add_coin()
 		
-		monitoring = false 
+		#monitoring = false 
+		$CollisionShape3D.disabled = true
 		hide() 
 		if has_node("CoinSound"):
 			$CoinSound.play()

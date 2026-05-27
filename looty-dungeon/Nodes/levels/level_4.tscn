@@ -346,4 +346,4 @@ script = ExtResource("14_1bxtf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
 
 [node name="coin" parent="." unique_id=773630964 instance=ExtResource("18_ff71j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.7553253)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.9553254)
