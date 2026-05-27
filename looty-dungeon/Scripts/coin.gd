@@ -1,20 +1,23 @@
+class_name Coin
 extends Area3D
 
-const ROTATE = 1
+const ROTATE = 1.0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	rotate_y(deg_to_rad(ROTATE))
 	
-
-
+func _on_area_entered(area: Area3D) -> void:
+	var owner_node: Node = area.get_parent()
 	
-
-
-func _on_body_entered(body: Node3D) -> void:
-	queue_free()
+	if owner_node is Player:
+		var player_coins: PlayerCoins = owner_node.get_node_or_null("PlayerCoins")
+		if player_coins:
+			player_coins.add_coin()
+		
+		monitoring = false 
+		hide() 
+		if has_node("CoinSound"):
+			$CoinSound.play()
+			$CoinSound.finished.connect(queue_free)
+		else:
+			queue_free()

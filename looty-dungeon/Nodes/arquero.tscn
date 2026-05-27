@@ -12,6 +12,9 @@
 [ext_resource type="AudioStream" uid="uid://tjy60rw312pc" path="res://Sounds/arrow_sound.mp3" id="8_5nirr"]
 [ext_resource type="AudioStream" uid="uid://bgfr86edb8mdh" path="res://Sounds/Death_sound.mp3" id="8_t7njs"]
 [ext_resource type="Script" uid="uid://btgpbt4h6okiv" path="res://Scripts/life_bar.gd" id="9_sg4uk"]
+[ext_resource type="Texture2D" uid="uid://j70kbl1oxa1t" path="res://Assets/Coin.png" id="13_q16sl"]
+[ext_resource type="Script" uid="uid://stu0lfk6l1wq" path="res://Scripts/PlayerCoins.gd" id="14_83j8p"]
+[ext_resource type="Script" uid="uid://dcyqech0lgxm8" path="res://Nodes/coin_counter.gd" id="14_m2ivu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sg4uk"]
 albedo_texture = ExtResource("2_1negf")
@@ -415,6 +418,32 @@ scale = Vector2(8, 8)
 texture = ExtResource("8_1negf")
 stretch_mode = 1
 script = ExtResource("9_sg4uk")
+
+[node name="Coins" type="TextureRect" parent="PlayerUI" unique_id=843676084]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -99.0
+offset_bottom = 97.0
+grow_horizontal = 0
+texture = ExtResource("13_q16sl")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CoinCounter" type="Label" parent="PlayerUI" unique_id=429404630]
+offset_left = 1136.0
+offset_top = 15.0
+offset_right = 1176.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.76862746, 0.38039216, 0, 0)
+theme_override_colors/font_outline_color = Color(0.90588236, 0.13333334, 0.2784314, 1)
+theme_override_font_sizes/font_size = 56
+text = "0"
+script = ExtResource("14_m2ivu")
+
+[node name="PlayerCoins" type="Node" parent="." unique_id=1612102152]
+script = ExtResource("14_83j8p")
 
 [connection signal="health_updated" from="Health" to="PlayerUI/LifeBar" method="setLives"]
 [connection signal="timeout" from="Bow/HoldTimer" to="Bow" method="_on_hold_timer_timeout"]

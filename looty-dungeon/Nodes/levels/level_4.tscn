@@ -16,8 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://dqx2ty1287qwm" path="res://Nodes/Obstacles/solid_elephant.tscn" id="14_b22na"]
 [ext_resource type="PackedScene" uid="uid://coippum77fhr3" path="res://Nodes/Enemies/slime.tscn" id="15_ff71j"]
 [ext_resource type="Script" uid="uid://pgghu6asd23v" path="res://Scripts/FollowDirections.gd" id="15_pxok7"]
-[ext_resource type="PackedScene" uid="uid://d3i066x4iht6l" path="res://Nodes/coin.tscn" id="16_pxok7"]
 [ext_resource type="PackedScene" uid="uid://d2ywg2qsnyf4m" path="res://Nodes/Tiles/end_tile.tscn" id="18_b22na"]
+[ext_resource type="PackedScene" uid="uid://d3i066x4iht6l" path="res://Nodes/coin.tscn" id="18_ff71j"]
 
 [node name="Level4" type="Node3D" unique_id=9582675 node_paths=PackedStringArray("player_spawn")]
 script = ExtResource("1_s7pm1")
@@ -338,14 +338,12 @@ metadata/_custom_type_script = "uid://pgghu6asd23v"
 wait_time = 1.5
 autostart = true
 
-[node name="Objects" type="Node3D" parent="." unique_id=21551382 groups=["LevelPathing"]]
-
-[node name="coin" parent="Objects" unique_id=773630964 instance=ExtResource("16_pxok7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 2.9562423)
-
 [node name="Door" parent="." unique_id=1781724774 instance=ExtResource("11_u7d8k")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.00613147, 0, 14.5)
 script = ExtResource("14_1bxtf")
 
 [node name="EndTile" parent="." unique_id=364346 instance=ExtResource("18_b22na")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+
+[node name="coin" parent="." unique_id=773630964 instance=ExtResource("18_ff71j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.7553253)

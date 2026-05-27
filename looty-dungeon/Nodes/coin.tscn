@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://d3i066x4iht6l"]
 
 [ext_resource type="ArrayMesh" uid="uid://cv77tgk5t3avf" path="res://Models/Character/coin.obj" id="1_2qo34"]
-[ext_resource type="Script" uid="uid://bphtd0w3jbl12" path="res://Nodes/coin.gd" id="1_pwt7s"]
+[ext_resource type="Script" uid="uid://bphtd0w3jbl12" path="res://Scripts/coin.gd" id="1_pwt7s"]
+[ext_resource type="AudioStream" uid="uid://cybgil3o6t2dt" path="res://Sounds/CoinSound.mp3" id="3_c7ncn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pwt7s"]
 size = Vector3(0.42993164, 0.5883789, 0.17333984)
@@ -14,6 +15,7 @@ backlight_enabled = true
 backlight = Color(1.9746203, 2.137626, 0, 1)
 
 [node name="coin" type="Area3D" unique_id=773630964]
+collision_mask = 8
 script = ExtResource("1_pwt7s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=334822843]
@@ -25,4 +27,8 @@ transform = Transform3D(0.665, 0, 0, 0, 0.665, 0, 0, 0, 0.665, 0.030830383, 0, 0
 material_override = SubResource("StandardMaterial3D_pwt7s")
 mesh = ExtResource("1_2qo34")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="CoinSound" type="AudioStreamPlayer3D" parent="." unique_id=1635013723]
+stream = ExtResource("3_c7ncn")
+volume_db = 14.863
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
