@@ -74,3 +74,15 @@ func next_level():
 		#end game
 		return
 	change_level(levels[level_num])
+
+func _input(event: InputEvent) -> void:
+	if changing: return
+	if event is InputEventKey and event.is_pressed():
+		var key_pressed: int = -1
+		var key_str = (event as InputEventKey).as_text_keycode()
+		if key_str.is_valid_int():
+			key_pressed = int(key_str)-1
+			if key_pressed <= -1: key_pressed = 9
+		if key_pressed == -1: return
+		level_num = key_pressed
+		change_level(levels[key_pressed])
