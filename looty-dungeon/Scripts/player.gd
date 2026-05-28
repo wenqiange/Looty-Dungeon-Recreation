@@ -13,6 +13,7 @@ extends Node3D
 
 @export var Attack_animation:String
 
+signal finished_step
 signal dead
 
 var can_move:bool = true
@@ -23,7 +24,10 @@ func _ready() -> void:
 	invincibility_timer.timeout.connect(end_invincibility)
 	
 	grid_movement.on_entity.connect(attack)
-	grid_movement.finished_step.connect(func():step_timer.start())
+	grid_movement.finished_step.connect(func():
+		step_timer.start()
+		finished_step.emit()
+		)
 	grid_movement.remove_slime.connect(remove_slime)
 	
 	health.got_hit.connect(on_hit)

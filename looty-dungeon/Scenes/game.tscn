@@ -2,10 +2,19 @@
 
 [ext_resource type="Script" uid="uid://dbswlsvai4bpg" path="res://Scripts/game_manager.gd" id="1_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://dblv1x6lrurh2" path="res://Nodes/levels/level_1.tscn" id="2_i6g32"]
+[ext_resource type="PackedScene" uid="uid://bedrvyvtxmla5" path="res://Nodes/levels/level_2.tscn" id="3_nb51f"]
 [ext_resource type="PackedScene" uid="uid://bxhah2i5mjsp5" path="res://Nodes/fade_transition.tscn" id="3_wowpa"]
+[ext_resource type="PackedScene" uid="uid://cusoh0pr203vx" path="res://Nodes/levels/level_3.tscn" id="4_nnt18"]
 [ext_resource type="PackedScene" uid="uid://cy003rfen1a3a" path="res://Nodes/arquero.tscn" id="4_v158k"]
+[ext_resource type="PackedScene" uid="uid://bq2prpavc2n5y" path="res://Nodes/levels/level_4.tscn" id="5_ewbju"]
 [ext_resource type="Script" uid="uid://ox6kstvmsf0i" path="res://Scripts/camera_follow.gd" id="5_h4fw4"]
+[ext_resource type="PackedScene" uid="uid://cqqfxvwoj0mjt" path="res://Nodes/levels/level_5.tscn" id="6_85qyi"]
 [ext_resource type="AudioStream" uid="uid://c8ui7h4yyl8t4" path="res://Sounds/Music.mp3" id="6_i6g32"]
+[ext_resource type="PackedScene" uid="uid://bh5xe4pncuhcg" path="res://Nodes/levels/level_6.tscn" id="7_iivbl"]
+[ext_resource type="PackedScene" uid="uid://dgqcckk1ruu1h" path="res://Nodes/levels/level_7.tscn" id="8_7nbq1"]
+[ext_resource type="PackedScene" uid="uid://cjxk5nvwsj0hb" path="res://Nodes/levels/level_8.tscn" id="9_exi56"]
+[ext_resource type="PackedScene" uid="uid://c2h4td7e64o33" path="res://Nodes/levels/level_9.tscn" id="10_7t8sx"]
+[ext_resource type="PackedScene" uid="uid://bsa6nkmlppons" path="res://Nodes/levels/level_10.tscn" id="11_mg4q0"]
 
 [sub_resource type="Environment" id="Environment_wowpa"]
 ambient_light_source = 2
@@ -15,6 +24,7 @@ ambient_light_energy = 0.1
 [node name="Game" type="Node3D" unique_id=161529061]
 script = ExtResource("1_wrm1d")
 initial_level = ExtResource("2_i6g32")
+levels = Array[PackedScene]([ExtResource("2_i6g32"), ExtResource("3_nb51f"), ExtResource("4_nnt18"), ExtResource("5_ewbju"), ExtResource("6_85qyi"), ExtResource("7_iivbl"), ExtResource("8_7nbq1"), ExtResource("9_exi56"), ExtResource("10_7t8sx"), ExtResource("11_mg4q0")])
 
 [node name="fade_transition" parent="." unique_id=702973857 instance=ExtResource("3_wowpa")]
 
