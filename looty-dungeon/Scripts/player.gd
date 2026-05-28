@@ -11,12 +11,15 @@ extends Node3D
 @onready var slime_delay: Timer = $SlimeDelay
 @onready var hit_animator: AnimationPlayer = $HitAnimator
 
+@onready var player_coins: PlayerCoins = $PlayerCoins
+
 @export var Attack_animation:String
 
 signal finished_step
 signal dead
 
 var can_move:bool = true
+var is_freeze: bool = false
 
 var just_attacked:bool = false
 
@@ -36,16 +39,19 @@ func _ready() -> void:
 	animator.play("Basic/Idle")
 
 func _process(_delta: float) -> void:
+	if is_freeze: return
 	if grid_movement.is_moving:
 		animator.play("Basic/Walk")
 	elif can_move:
 		animator.play("Basic/Idle")
 
 func _physics_process(_delta: float) -> void:
+	if is_freeze: return
 	if can_move:
 		if not grid_movement.on_ground and not grid_movement.is_moving:
 			can_move = false
 			animator.play("Basic/Fall")
+			await animator.animation_finished
 			dead.emit()
 			return
 		
@@ -79,7 +85,7 @@ func reset_player(new_health:int = -1):
 	else:
 		health.on_heal(health.max_health)
 	grid_movement.cur_effect = 0
-	animator.play("Basic/Idle")
+	animator.play("RESET")
 
 func remove_slime():
 	can_move = false
@@ -90,6 +96,7 @@ func remove_slime():
 func die():
 	can_move = false
 	animator.play("Basic/Die")
+	await animator.animation_finished
 	dead.emit()
 
 func on_hit():
@@ -102,3 +109,11 @@ func end_invincibility():
 
 func get_look_rot():
 	return body.rotation
+
+func freeze():
+	is_freeze = true
+	#grid_movement.process_mode = Node.PROCESS_MODE_DISABLED
+
+func un_freeze():
+	is_freeze = false
+	#grid_movement.process_mode = Node.PROCESS_MODE_INHERIT

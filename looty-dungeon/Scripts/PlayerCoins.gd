@@ -11,3 +11,7 @@ func _ready() -> void:
 func add_coin() -> void:
 	coins += 1
 	coins_changed.emit(coins)
+
+func remove_coins(num:int) -> void:
+	coins -= num
+	coins_changed.emit(coins)

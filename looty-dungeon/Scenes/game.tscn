@@ -19,6 +19,8 @@
 [ext_resource type="Theme" uid="uid://cmt8euj1nkipj" path="res://Assets/Basic_UI.tres" id="16_nnt18"]
 [ext_resource type="Script" uid="uid://b2wneb1seiu8i" path="res://Scripts/quit_button.gd" id="18_85qyi"]
 [ext_resource type="PackedScene" uid="uid://dycm5q334jh7f" path="res://Scenes/MainMenu.tscn" id="19_iivbl"]
+[ext_resource type="Script" uid="uid://v864l0kvxjcg" path="res://Scripts/revive_button.gd" id="20_7nbq1"]
+[ext_resource type="Script" uid="uid://4f2hukpm28vb" path="res://Scripts/death_menu.gd" id="20_exi56"]
 
 [sub_resource type="Environment" id="Environment_wowpa"]
 ambient_light_source = 2
@@ -26,14 +28,14 @@ ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.1
 
 [sub_resource type="LabelSettings" id="LabelSettings_ewbju"]
-font_size = 124
+font_size = 92
+font_color = Color(0.8235294, 0.07058824, 0.09019608, 1)
 
 [node name="Game" type="Node3D" unique_id=161529061]
 script = ExtResource("1_wrm1d")
 levels = Array[PackedScene]([ExtResource("2_i6g32"), ExtResource("3_nb51f"), ExtResource("4_nnt18"), ExtResource("5_ewbju"), ExtResource("6_85qyi"), ExtResource("7_iivbl"), ExtResource("8_7nbq1"), ExtResource("9_exi56"), ExtResource("10_7t8sx"), ExtResource("11_mg4q0")])
 
 [node name="Arquero" parent="." unique_id=1232147745 instance=ExtResource("4_v158k")]
-process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -4)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=385508313 node_paths=PackedStringArray("follow")]
@@ -126,5 +128,73 @@ next_scene = ExtResource("19_iivbl")
 fade = NodePath("../../../fade_transition")
 UI = NodePath("../..")
 
+[node name="DeathMenu" type="ColorRect" parent="UI" unique_id=2021708240]
+process_mode = 3
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -208.0
+offset_right = 200.0
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.25882354)
+script = ExtResource("20_exi56")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/DeathMenu" unique_id=1026743568]
+process_mode = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("16_nnt18")
+
+[node name="Label" type="Label" parent="UI/DeathMenu/VBoxContainer" unique_id=188906842]
+layout_mode = 2
+size_flags_vertical = 3
+text = "You died"
+label_settings = SubResource("LabelSettings_ewbju")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI/DeathMenu/VBoxContainer" unique_id=1397817021]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="ReviveButton" type="Button" parent="UI/DeathMenu/VBoxContainer" unique_id=1977685204 node_paths=PackedStringArray("player")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+disabled = true
+text = "Retry level
+5 coins"
+script = ExtResource("20_7nbq1")
+player = NodePath("../../../../Arquero")
+
+[node name="HSeparator2" type="HSeparator" parent="UI/DeathMenu/VBoxContainer" unique_id=581506166]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="UI/DeathMenu/VBoxContainer" unique_id=8090489 node_paths=PackedStringArray("fade", "UI")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Quit
+"
+script = ExtResource("18_85qyi")
+next_scene = ExtResource("19_iivbl")
+fade = NodePath("../../../fade_transition")
+UI = NodePath("../..")
+
+[connection signal="dead" from="Arquero" to="UI/DeathMenu" method="on_death"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer/ResumeButton" to="UI/PauseMenu" method="unpause_game"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer/QuitButton" to="UI/PauseMenu/VBoxContainer/QuitButton" method="_on_pressed"]
+[connection signal="pressed" from="UI/DeathMenu/VBoxContainer/ReviveButton" to="." method="revive"]
+[connection signal="pressed" from="UI/DeathMenu/VBoxContainer/ReviveButton" to="UI/DeathMenu" method="revive"]
+[connection signal="pressed" from="UI/DeathMenu/VBoxContainer/QuitButton" to="UI/DeathMenu/VBoxContainer/QuitButton" method="_on_pressed"]

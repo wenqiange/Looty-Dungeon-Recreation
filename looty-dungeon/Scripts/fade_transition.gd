@@ -3,6 +3,7 @@ extends ColorRect
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+
 func fade_in():
 	show()
 	animation_player.play("fade_in")

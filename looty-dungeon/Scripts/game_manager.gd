@@ -17,7 +17,7 @@ func _ready() -> void:
 	
 	$Music.play()
 	player = get_tree().get_first_node_in_group("Player")
-	player.process_mode = Node.PROCESS_MODE_DISABLED
+	player.freeze()
 	
 	changing = true
 	level_num = 0
@@ -40,7 +40,7 @@ func enter_level(level:PackedScene):
 	tween.tween_property(cur_level,"position",Vector3.ZERO,3)
 	tween.parallel().tween_property(player,"position",player_pos,3)
 	await tween.finished
-	player.process_mode = Node.PROCESS_MODE_INHERIT
+	player.un_freeze()
 	camera.lock = false
 	cur_level.on_level_finished.connect(next_level)
 	cur_level.start_falling()
@@ -49,7 +49,7 @@ func exit_level():
 	camera.lock_position = player.position
 	camera.lock = true
 	
-	player.process_mode = Node.PROCESS_MODE_DISABLED
+	player.freeze()
 	
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CIRC)
@@ -86,3 +86,11 @@ func _input(event: InputEvent) -> void:
 		if key_pressed != -1:
 			level_num = key_pressed
 			change_level(levels[key_pressed])
+
+func revive():
+	changing = true
+	await exit_level()
+	player.player_coins.remove_coins(5)
+	player.reset_player()
+	await enter_level(levels[level_num])
+	changing = false
