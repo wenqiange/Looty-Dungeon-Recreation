@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://tjy60rw312pc" path="res://Sounds/arrow_sound.mp3" id="8_5nirr"]
 [ext_resource type="AudioStream" uid="uid://bgfr86edb8mdh" path="res://Sounds/Death_sound.mp3" id="8_t7njs"]
 [ext_resource type="Script" uid="uid://btgpbt4h6okiv" path="res://Scripts/life_bar.gd" id="9_sg4uk"]
+[ext_resource type="Theme" uid="uid://cmt8euj1nkipj" path="res://Assets/Basic_UI.tres" id="13_eprvr"]
 [ext_resource type="Texture2D" uid="uid://j70kbl1oxa1t" path="res://Assets/Coin.png" id="13_q16sl"]
 [ext_resource type="Script" uid="uid://stu0lfk6l1wq" path="res://Scripts/PlayerCoins.gd" id="14_83j8p"]
 [ext_resource type="Script" uid="uid://cu1xdmaqkpae7" path="res://Nodes/coin_counter.gd" id="14_m2ivu"]
@@ -318,6 +319,12 @@ _data = {
 &"Walk": SubResource("Animation_qpfo2")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_lsb7o"]
+font_size = 80
+font_color = Color(1, 1, 0, 1)
+outline_size = 4
+outline_color = Color(0.90588236, 0.13333334, 0.2784314, 1)
+
 [node name="Arquero" type="Node3D" unique_id=1232147745 groups=["Player"]]
 script = ExtResource("1_dv83t")
 Attack_animation = "Arquero/Attack"
@@ -430,11 +437,9 @@ grow_horizontal = 0
 
 [node name="CoinCounter" type="Label" parent="PlayerUI/HBoxContainer" unique_id=429404630]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0.76862746, 0.38039216, 0, 0)
-theme_override_colors/font_outline_color = Color(0.90588236, 0.13333334, 0.2784314, 1)
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("13_eprvr")
 text = "0"
+label_settings = SubResource("LabelSettings_lsb7o")
 script = ExtResource("14_m2ivu")
 
 [node name="Coins" type="TextureRect" parent="PlayerUI/HBoxContainer" unique_id=843676084]

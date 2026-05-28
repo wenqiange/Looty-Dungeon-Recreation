@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bxhah2i5mjsp5"]
 
+[ext_resource type="Script" uid="uid://c30g5577x12h7" path="res://Scripts/fade_transition.gd" id="1_dmdyd"]
+
 [sub_resource type="Animation" id="Animation_xxfwt"]
 length = 0.001
 tracks/0/type = "value"
@@ -56,6 +58,7 @@ _data = {
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0, 0, 0, 1)
+script = ExtResource("1_dmdyd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1547021705]
 libraries/ = SubResource("AnimationLibrary_rjsss")

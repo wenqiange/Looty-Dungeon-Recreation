@@ -1,8 +1,7 @@
 extends Node3D
 
 @onready var camera: CameraFollow = $Camera3D
-
-@export var initial_level:PackedScene
+@onready var fade_transition: FadeTransition = $UI/fade_transition
 
 @export var levels: Array[PackedScene]
 var level_num = 0
@@ -14,7 +13,8 @@ var player:Player
 var changing:bool = false
 
 func _ready() -> void: 
-	$fade_transition/AnimationPlayer.play("fade_out")
+	fade_transition.fade_out()
+	
 	$Music.play()
 	player = get_tree().get_first_node_in_group("Player")
 	player.process_mode = Node.PROCESS_MODE_DISABLED
@@ -83,6 +83,6 @@ func _input(event: InputEvent) -> void:
 		if key_str.is_valid_int():
 			key_pressed = int(key_str)-1
 			if key_pressed <= -1: key_pressed = 9
-		if key_pressed == -1: return
-		level_num = key_pressed
-		change_level(levels[key_pressed])
+		if key_pressed != -1:
+			level_num = key_pressed
+			change_level(levels[key_pressed])
