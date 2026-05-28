@@ -4,6 +4,9 @@ extends Node3D
 
 @export var initial_level:PackedScene
 
+@export var levels: Array[PackedScene]
+var level_num = 0
+
 var cur_level:Level
 
 var player:Player
@@ -17,7 +20,8 @@ func _ready() -> void:
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	changing = true
-	await enter_level(initial_level)
+	level_num = 0
+	await enter_level(levels[0])
 	changing = false
 	
 
@@ -38,6 +42,7 @@ func enter_level(level:PackedScene):
 	await tween.finished
 	player.process_mode = Node.PROCESS_MODE_INHERIT
 	camera.lock = false
+	cur_level.on_level_finished.connect(next_level)
 	cur_level.start_falling()
 
 func exit_level():
@@ -48,8 +53,8 @@ func exit_level():
 	
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CIRC)
-	tween.tween_property(cur_level,"position",Vector3.FORWARD*30,3)
-	tween.parallel().tween_property(player,"position",Vector3.FORWARD*30,3)
+	tween.tween_property(cur_level,"position",Vector3.FORWARD*30,3).as_relative()
+	tween.parallel().tween_property(player,"position",Vector3.FORWARD*30,3).as_relative()
 	await tween.finished
 	cur_level.queue_free()
 	cur_level = null
@@ -62,6 +67,22 @@ func change_level(level:PackedScene):
 	await enter_level(level)
 	changing = false
 
+func next_level():
+	await player.finished_step
+	level_num += 1
+	if level_num >= levels.size():
+		#end game
+		return
+	change_level(levels[level_num])
+
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("debug"):
-		change_level(initial_level)
+	if changing: return
+	if event is InputEventKey and event.is_pressed():
+		var key_pressed: int = -1
+		var key_str = (event as InputEventKey).as_text_keycode()
+		if key_str.is_valid_int():
+			key_pressed = int(key_str)-1
+			if key_pressed <= -1: key_pressed = 9
+		if key_pressed == -1: return
+		level_num = key_pressed
+		change_level(levels[key_pressed])
