@@ -7,7 +7,7 @@
 [node name="GroundTile_nopathing" type="StaticBody3D" unique_id=1690565268 groups=["LevelPathing"]]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=570839307]
-transform = Transform3D(0.83236337, 0, 0, 0, 0.8259125, 0, 0, 0, 0.82681406, 0, -0.49574915, 0.08268387)
+transform = Transform3D(0.84, 0, 0, 0, 0.84, 0, 0, 0, 0.84, -0.004028797, -0.49574915, 0.085090935)
 mesh = ExtResource("2_3g5uu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1830856]

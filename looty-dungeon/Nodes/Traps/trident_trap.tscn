@@ -99,6 +99,6 @@ autoplay = &"new_animation"
 [node name="TridentSound" type="AudioStreamPlayer3D" parent="." unique_id=1996172311]
 volume_db = -22.588
 
-[node name="Ground" type="MeshInstance3D" parent="." unique_id=832744743]
-transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, 0, -1, 0.086000025)
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1191193148]
+transform = Transform3D(0.84, 0, 0, 0, 0.84, 0, 0, 0, 0.84, 0, -1, 0.08440435)
 mesh = ExtResource("5_5c20n")

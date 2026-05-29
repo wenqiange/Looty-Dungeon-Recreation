@@ -15,6 +15,6 @@ mesh = ExtResource("1_i5cuh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007385254, 0.36193848, 0.008392334)
 shape = SubResource("BoxShape3D_00xw6")
 
-[node name="Ground" type="MeshInstance3D" parent="." unique_id=420083724]
-transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, 0, -1, 0.1)
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1045303553]
+transform = Transform3D(0.84, 0, 0, 0, 0.84, 0, 0, 0, 0.84, 0, -1, 0.08440435)
 mesh = ExtResource("2_yliin")

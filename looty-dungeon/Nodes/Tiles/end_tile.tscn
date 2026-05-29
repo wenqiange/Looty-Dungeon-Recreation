@@ -10,7 +10,7 @@ size = Vector3(0.5, 0.5, 0.5)
 script = ExtResource("2_qska4")
 
 [node name="MeshInstance3D" parent="." index="0" unique_id=570839307]
-transform = Transform3D(0.83236337, 0, 0, 0, 0.8259125, 0, 0, 0, 0.82681406, 0, -0.9957491, 0.08268387)
+transform = Transform3D(0.84, 0, 0, 0, 0.84, 0, 0, 0, 0.84, 0, -0.9957491, 0.08268387)
 
 [node name="CollisionShape3D" parent="." index="1" unique_id=1830856]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)

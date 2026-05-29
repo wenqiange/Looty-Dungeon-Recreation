@@ -104,6 +104,6 @@ autoplay = &"axe_down"
 [node name="AxeSound" type="AudioStreamPlayer3D" parent="." unique_id=2125872387]
 volume_db = -25.43
 
-[node name="Ground" type="MeshInstance3D" parent="." unique_id=205915163]
-transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, -0.0016400814, -1, 0.08395183)
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1330131596]
+transform = Transform3D(0.84, 0, 0, 0, 0.84, 0, 0, 0, 0.84, 0, -1, 0.08440435)
 mesh = ExtResource("6_xkgfy")
