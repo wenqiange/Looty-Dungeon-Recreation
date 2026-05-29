@@ -2,6 +2,8 @@ extends ColorRect
 
 func on_death():
 	show()
+	$GameOver.play()
+	await $GameOver.finished
 	get_tree().paused = true
 
 

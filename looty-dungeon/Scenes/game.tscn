@@ -193,6 +193,8 @@ next_scene = ExtResource("19_iivbl")
 fade = NodePath("../../../fade_transition")
 UI = NodePath("../..")
 
+[node name="GameOver" type="AudioStreamPlayer3D" parent="UI/DeathMenu" unique_id=672904164]
+
 [connection signal="dead" from="Arquero" to="UI/DeathMenu" method="on_death"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer/ResumeButton" to="UI/PauseMenu" method="unpause_game"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer/QuitButton" to="UI/PauseMenu/VBoxContainer/QuitButton" method="_on_pressed"]

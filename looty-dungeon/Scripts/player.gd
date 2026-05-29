@@ -56,8 +56,6 @@ func _physics_process(_delta: float) -> void:
 			await animator.animation_finished
 			await $FallSound.finished
 			$DeathSound.play()
-			$GameOver.play()
-			await $GameOver.finished
 			dead.emit()
 			return
 		
@@ -105,8 +103,6 @@ func die():
 	animator.play("Basic/Die")
 	$DeathSound.play()
 	await animator.animation_finished
-	$GameOver.play()
-	await $GameOver.finished
 	dead.emit()
 
 func on_hit():
