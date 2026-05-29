@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://fra3io0p4ql5"]
 
-[ext_resource type="Script" uid="uid://cohqj85ihs47j" path="res://Scripts/slime.gd" id="1_11vwg"]
+[ext_resource type="Script" uid="uid://djywhn06oiq43" path="res://Scripts/goblin.gd" id="1_11vwg"]
 [ext_resource type="ArrayMesh" uid="uid://bm0g5gfre4jkm" path="res://Models/Enemies/goblin.obj" id="2_11vwg"]
 [ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="3_6rtym"]
 [ext_resource type="Script" uid="uid://doolqemfcfhdo" path="res://Scripts/hit_box.gd" id="4_5tb8v"]
@@ -207,7 +207,6 @@ _data = {
 
 [node name="goblin" type="Node3D" unique_id=1608742070 groups=["enemies"]]
 script = ExtResource("1_11vwg")
-see_radius = 5.0
 idle_animation = "idle"
 walk_animation = "walk"
 attack_animation = "attack"
@@ -255,16 +254,11 @@ rotate_speed = 20.0
 ground_raycast = NodePath("../GroundCheck")
 enemy_collision = 10
 exclude_colision = [NodePath("../HitBox")]
-inmune_to = 1
+inmune_to = 0
 metadata/_custom_type_script = "uid://3t50y6pxtmjf"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=353505092]
 libraries/ = SubResource("AnimationLibrary_mrh0h")
 autoplay = &"idle"
 
-[node name="Delay" type="Timer" parent="." unique_id=1221007529]
-wait_time = 1.5
-autostart = true
-
 [connection signal="got_hit" from="HitBox" to="." method="on_die"]
-[connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]

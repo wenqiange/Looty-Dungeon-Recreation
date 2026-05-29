@@ -7,9 +7,6 @@ var player: Node3D
 var player_seen = false
 var can_move = true
 
-
-@export var see_radius:float
-
 @export var idle_animation:String
 @export var walk_animation:String
 @export var attack_animation:String

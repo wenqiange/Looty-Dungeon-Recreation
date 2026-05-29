@@ -42,6 +42,10 @@ func _ready() -> void:
 			break
 	
 	hit_box.area_entered.connect(on_hitbox_collide)
+	
+	var rot = parent.rotation_degrees.y
+	parent.rotation_degrees.y = 0
+	body.rotation_degrees.y = rot
 
 func _process(_delta: float) -> void:
 	on_ground = ground_raycast.is_colliding()
