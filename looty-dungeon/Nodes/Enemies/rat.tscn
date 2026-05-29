@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://gpauov8g8ppc"]
+[gd_scene format=3 uid="uid://biycv3w8mr2sd"]
 
-[ext_resource type="Script" uid="uid://cohqj85ihs47j" path="res://Scripts/slime.gd" id="1_sxu4g"]
-[ext_resource type="ArrayMesh" uid="uid://cyc7olncjo5cs" path="res://Models/Enemies/rat_enemy.obj" id="2_cphv2"]
-[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="5_qnuwp"]
-[ext_resource type="Script" uid="uid://doolqemfcfhdo" path="res://Scripts/hit_box.gd" id="6_umjvq"]
-[ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="7_cnq74"]
+[ext_resource type="Script" uid="uid://cohqj85ihs47j" path="res://Scripts/slime.gd" id="1_jf8ml"]
+[ext_resource type="ArrayMesh" uid="uid://cyc7olncjo5cs" path="res://Models/Enemies/rat_enemy.obj" id="2_sxiit"]
+[ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="3_sinwf"]
+[ext_resource type="Script" uid="uid://doolqemfcfhdo" path="res://Scripts/hit_box.gd" id="4_uul48"]
+[ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="5_rjj2e"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tmemv"]
 radius = 0.3
@@ -206,7 +206,7 @@ _data = {
 }
 
 [node name="Rat" type="Node3D" unique_id=1608742070 groups=["enemies"]]
-script = ExtResource("1_sxu4g")
+script = ExtResource("1_jf8ml")
 see_radius = 5.0
 idle_animation = "idle"
 walk_animation = "walk"
@@ -221,12 +221,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015058924, -0.5, -0.003975
 
 [node name="in" type="MeshInstance3D" parent="Body/Mesh" unique_id=710784243]
 transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8000002, 0, -0.8, 0, -3.4969112e-08, -0.123560406, 0.099999994, -0.1)
-mesh = ExtResource("2_cphv2")
+mesh = ExtResource("2_sxiit")
 
 [node name="DamageArea" type="Area3D" parent="Body" unique_id=1122252032]
 collision_layer = 4
 collision_mask = 8
-script = ExtResource("5_qnuwp")
+script = ExtResource("3_sinwf")
 metadata/_custom_type_script = "uid://dte1wrypmyej1"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body/DamageArea" unique_id=614330038]
@@ -237,7 +237,7 @@ disabled = true
 [node name="HitBox" type="Area3D" parent="." unique_id=613163342 node_paths=PackedStringArray("exceptions")]
 collision_layer = 2
 collision_mask = 30
-script = ExtResource("6_umjvq")
+script = ExtResource("4_uul48")
 exceptions = [NodePath("../Body/DamageArea")]
 metadata/_custom_type_script = "uid://doolqemfcfhdo"
 
@@ -249,7 +249,7 @@ shape = SubResource("BoxShape3D_qpfo2")
 debug_shape_thickness = 3
 
 [node name="GridMovement" type="Node" parent="." unique_id=461652925 node_paths=PackedStringArray("body", "ground_raycast", "exclude_colision")]
-script = ExtResource("7_cnq74")
+script = ExtResource("5_rjj2e")
 step_time = 0.3
 body = NodePath("../Body")
 rotate_speed = 20.0

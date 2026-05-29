@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://6ohd0kweg6bw"]
 
 [ext_resource type="ArrayMesh" uid="uid://bf806q5snlsqe" path="res://Models/Decorative_objects/solid_knight.obj" id="1_ililo"]
+[ext_resource type="ArrayMesh" uid="uid://citujwimw82mj" path="res://Models/Floor_and_walls/floor_cube.obj" id="2_waaa5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s5pmr"]
-size = Vector3(1.0254517, 1.21344, 0.8112793)
+size = Vector3(1.0254517, 1.21344, 0.6)
 
 [node name="solid_knight" type="StaticBody3D" unique_id=136595844]
 collision_layer = 2
@@ -13,5 +14,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0025138855)
 mesh = ExtResource("1_ililo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1278415741]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00088500977, 0.59555054, 0.003368616)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00088500977, 0.59555054, 0.009008251)
 shape = SubResource("BoxShape3D_s5pmr")
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=814416605]
+transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, 0, -1, 0.1)
+mesh = ExtResource("2_waaa5")

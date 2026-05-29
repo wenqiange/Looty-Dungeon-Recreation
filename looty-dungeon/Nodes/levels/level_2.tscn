@@ -69,12 +69,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012321472, 0, 4.9917874)
 [node name="GroundTile19" parent="Falling_Ground" unique_id=1670937304 instance=ExtResource("3_pl4ho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0012321, 0, 2.9917874)
 
-[node name="GroundTile20" parent="Falling_Ground" unique_id=1812941766 instance=ExtResource("3_pl4ho")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0012321, 0, 3.9917874)
-
-[node name="solid_knight" parent="Falling_Ground/GroundTile20" unique_id=136595844 instance=ExtResource("16_3c4d5")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.0048646927, 0, -0.010386944)
-collision_layer = 3
+[node name="solid_knight" parent="Falling_Ground" unique_id=136595844 instance=ExtResource("16_3c4d5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, 0, 4)
+collision_layer = 1
 
 [node name="GroundTile21" parent="Falling_Ground" unique_id=1629192381 instance=ExtResource("3_pl4ho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0012321, 0, 4.9917874)
@@ -82,11 +79,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0012321, 0, 4.9917874)
 [node name="GroundTile22" parent="Falling_Ground" unique_id=1557733094 instance=ExtResource("3_pl4ho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0012321, 0, 2.9917874)
 
-[node name="GroundTile23" parent="Falling_Ground" unique_id=1295939636 instance=ExtResource("3_pl4ho")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0012321, 0, 3.9917874)
-
-[node name="solid_stone" parent="Falling_Ground/GroundTile23" unique_id=603252229 instance=ExtResource("14_odawt")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.005259514, 0, 0.00015830994)
+[node name="solid_stone" parent="Falling_Ground" unique_id=603252229 instance=ExtResource("14_odawt")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2, 0, 4)
 
 [node name="GroundTile24" parent="Falling_Ground" unique_id=1494839006 instance=ExtResource("3_pl4ho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0012321, 0, 4.9917874)
@@ -100,11 +94,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9987679, 0, 4.9917874)
 [node name="GroundTile28" parent="Falling_Ground" unique_id=1958590447 instance=ExtResource("3_pl4ho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99876785, 0, 2.9917874)
 
-[node name="GroundTile29" parent="Falling_Ground" unique_id=498725093 instance=ExtResource("3_pl4ho")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99876785, 0, 3.9917874)
-
-[node name="solid_knight2" parent="Falling_Ground/GroundTile29" unique_id=1190609159 instance=ExtResource("16_3c4d5")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.009729028, 0, -0.028286457)
+[node name="solid_knight2" parent="Falling_Ground" unique_id=1190609159 instance=ExtResource("16_3c4d5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, 0, 4)
+collision_layer = 1
 
 [node name="GroundTile30" parent="Falling_Ground" unique_id=766338007 instance=ExtResource("3_pl4ho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99876785, 0, 4.9917874)
@@ -164,11 +156,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9961252, 0, 1.9899344)
 [node name="GroundTile46" parent="Falling_Ground" unique_id=1279764180 instance=ExtResource("3_pl4ho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011122704, 0, 1.9910517)
 
-[node name="GroundTile47" parent="Falling_Ground" unique_id=562434596 instance=ExtResource("3_pl4ho")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9713721, 0, 3.9918852)
-
-[node name="solid_elephant" parent="Falling_Ground/GroundTile47" unique_id=653262875 instance=ExtResource("15_jxxp8")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.029856086, 0.009918615, 0.07749319)
+[node name="solid_elephant" parent="Falling_Ground" unique_id=653262875 instance=ExtResource("15_jxxp8")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2, 0.01, 4)
 
 [node name="Walls" type="Node3D" parent="." unique_id=860973984]
 

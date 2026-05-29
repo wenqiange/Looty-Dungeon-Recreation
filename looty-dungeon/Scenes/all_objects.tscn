@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cy003rfen1a3a" path="res://Nodes/arquero.tscn" id="1_5rrx5"]
 [ext_resource type="Script" uid="uid://ox6kstvmsf0i" path="res://Scripts/camera_follow.gd" id="2_2h6w4"]
-[ext_resource type="PackedScene" uid="uid://gpauov8g8ppc" path="res://Nodes/Enemies/rat.tscn" id="5_dp5el"]
+[ext_resource type="PackedScene" uid="uid://gpauov8g8ppc" path="res://Nodes/Enemies/boss.tscn" id="5_dp5el"]
 [ext_resource type="PackedScene" uid="uid://coippum77fhr3" path="res://Nodes/Enemies/slime.tscn" id="6_5rrx5"]
 [ext_resource type="PackedScene" uid="uid://c20nxqsdyiuwj" path="res://Nodes/Traps/axe_trap.tscn" id="7_2h6w4"]
 [ext_resource type="PackedScene" uid="uid://6c1gdumh0lvv" path="res://Nodes/Traps/ground_slime.tscn" id="8_ipplf"]

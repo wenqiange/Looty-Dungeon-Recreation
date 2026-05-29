@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c8shfwjulwbe1" path="res://Scripts/level.gd" id="1_dr6u1"]
 [ext_resource type="PackedScene" uid="uid://di5fq0hk2r255" path="res://Nodes/falling_ground.tscn" id="2_h2e3a"]
 [ext_resource type="PackedScene" uid="uid://b7xjfjybpqqow" path="res://Nodes/Tiles/ground_tile.tscn" id="3_ab0sl"]
-[ext_resource type="PackedScene" uid="uid://gpauov8g8ppc" path="res://Nodes/Enemies/rat.tscn" id="4_yndsn"]
+[ext_resource type="PackedScene" uid="uid://gpauov8g8ppc" path="res://Nodes/Enemies/boss.tscn" id="4_yndsn"]
 [ext_resource type="PackedScene" uid="uid://bvfeff13hqro0" path="res://Nodes/Walls/wall_1.tscn" id="5_d8b4w"]
 [ext_resource type="PackedScene" uid="uid://d32wpetkiei63" path="res://Nodes/Walls/wall_basic.tscn" id="6_ppshj"]
 [ext_resource type="PackedScene" uid="uid://bpamdq6vfk3wj" path="res://Nodes/Walls/wall_4.tscn" id="7_xqmyh"]

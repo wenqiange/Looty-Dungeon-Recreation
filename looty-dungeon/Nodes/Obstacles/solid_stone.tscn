@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b4tbxldabcmf1"]
 
 [ext_resource type="ArrayMesh" uid="uid://fiws6vsaojpv" path="res://Models/Decorative_objects/rock_solid.obj" id="1_d56xj"]
+[ext_resource type="ArrayMesh" uid="uid://citujwimw82mj" path="res://Models/Floor_and_walls/floor_cube.obj" id="2_4aft0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ptlk0"]
 size = Vector3(0.96591187, 0.8900833, 0.9663696)
@@ -14,3 +15,7 @@ mesh = ExtResource("1_d56xj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2057658135]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0008392334, 0.43107986, 0.0077273846)
 shape = SubResource("BoxShape3D_ptlk0")
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1646542896]
+transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, 0, -1, 0.1)
+mesh = ExtResource("2_4aft0")

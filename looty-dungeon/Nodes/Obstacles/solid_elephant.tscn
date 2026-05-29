@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dqx2ty1287qwm"]
 
 [ext_resource type="ArrayMesh" uid="uid://ccsg211bteh8l" path="res://Models/Decorative_objects/solid_elephant.obj" id="1_683t1"]
+[ext_resource type="ArrayMesh" uid="uid://citujwimw82mj" path="res://Models/Floor_and_walls/floor_cube.obj" id="2_5avjn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j337e"]
 size = Vector3(0.97143555, 1.0734863, 0.6711426)
@@ -14,3 +15,7 @@ shape = SubResource("BoxShape3D_j337e")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1384801756]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14413571, -0.2, -0.09865269)
 mesh = ExtResource("1_683t1")
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1978757917]
+transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, 0, -1, 0.1)
+mesh = ExtResource("2_5avjn")

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://gyjh3tmgue4g"]
 
 [ext_resource type="ArrayMesh" uid="uid://blyuco1wiooqm" path="res://Models/Decorative_objects/solid_lamp.obj" id="1_ui41b"]
+[ext_resource type="ArrayMesh" uid="uid://citujwimw82mj" path="res://Models/Floor_and_walls/floor_cube.obj" id="2_bxufm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ya81m"]
 size = Vector3(0.53063965, 1.0585327, 0.3605957)
@@ -14,3 +15,7 @@ mesh = ExtResource("1_ui41b")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=996022735]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00017619133, 0.49893188, 0.04699707)
 shape = SubResource("BoxShape3D_ya81m")
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=139907688]
+transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, 0, -1, 0.1)
+mesh = ExtResource("2_bxufm")

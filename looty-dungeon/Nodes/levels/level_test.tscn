@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://di5fq0hk2r255" path="res://Nodes/falling_ground.tscn" id="2_1a87j"]
 [ext_resource type="PackedScene" uid="uid://b7xjfjybpqqow" path="res://Nodes/Tiles/ground_tile.tscn" id="3_jkjx0"]
 [ext_resource type="PackedScene" uid="uid://b4tbxldabcmf1" path="res://Nodes/Obstacles/solid_stone.tscn" id="4_1a87j"]
-[ext_resource type="PackedScene" uid="uid://gpauov8g8ppc" path="res://Nodes/Enemies/rat.tscn" id="4_wijeh"]
+[ext_resource type="PackedScene" uid="uid://gpauov8g8ppc" path="res://Nodes/Enemies/boss.tscn" id="4_wijeh"]
 
 [node name="LevelTest" type="Node3D" unique_id=991149701 node_paths=PackedStringArray("player_spawn")]
 script = ExtResource("1_gb8ul")

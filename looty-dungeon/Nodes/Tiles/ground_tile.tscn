@@ -26,24 +26,25 @@ shape = SubResource("BoxShape3D_sf8ll")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=304446016]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
 navigation_mesh = SubResource("NavigationMesh_tar0w")
 
 [node name="NavigationLink3D" type="NavigationLink3D" parent="." unique_id=998106102]
 visible = false
 bidirectional = false
-end_position = Vector3(1, 0, 0)
+end_position = Vector3(0.9, 0, 0)
 
 [node name="NavigationLink3D2" type="NavigationLink3D" parent="." unique_id=929913968]
 visible = false
 bidirectional = false
-end_position = Vector3(0, 0, 1)
+end_position = Vector3(0, 0, 0.9)
 
 [node name="NavigationLink3D3" type="NavigationLink3D" parent="." unique_id=266556436]
 visible = false
 bidirectional = false
-end_position = Vector3(-1, 0, 0)
+end_position = Vector3(-0.9, 0, 0)
 
 [node name="NavigationLink3D4" type="NavigationLink3D" parent="." unique_id=1139422828]
 visible = false
 bidirectional = false
-end_position = Vector3(0, 0, -1)
+end_position = Vector3(0, 0, -0.9)

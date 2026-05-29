@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://gpauov8g8ppc"]
+
+[ext_resource type="Script" uid="uid://bxltb2jmaakwg" path="res://Scripts/Boss.gd" id="1_schd4"]
+[ext_resource type="ArrayMesh" uid="uid://bmn6p8juf1s2d" path="res://Models/Enemies/dwarf_boss.obj" id="2_e3888"]
+[ext_resource type="ArrayMesh" uid="uid://dxb5hvdqlv4ls" path="res://Models/Enemies/hammber_boss.obj" id="3_1ay1c"]
+[ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="4_b817x"]
+[ext_resource type="Script" uid="uid://doolqemfcfhdo" path="res://Scripts/hit_box.gd" id="5_16pqh"]
+[ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="6_q1x00"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tmemv"]
+radius = 0.7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qpfo2"]
+size = Vector3(0.7, 1, 0.90000004)
+
+[node name="Boss" type="Node3D" unique_id=1608742070 groups=["enemies"]]
+script = ExtResource("1_schd4")
+
+[node name="Body" type="Node3D" parent="." unique_id=2091126645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015058924, 0, -0.003975204)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body" unique_id=1822712324]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.05, 0, -0.2)
+mesh = ExtResource("2_e3888")
+
+[node name="Hammer" type="MeshInstance3D" parent="Body/MeshInstance3D" unique_id=1283661312]
+mesh = ExtResource("3_1ay1c")
+
+[node name="DamageArea" type="Area3D" parent="Body/MeshInstance3D/Hammer" unique_id=1122252032]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.2, 0, -0.05000001)
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("4_b817x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/MeshInstance3D/Hammer/DamageArea" unique_id=614330038]
+transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0, 2.6000001, 0)
+shape = SubResource("SphereShape3D_tmemv")
+
+[node name="HitBox" type="Area3D" parent="." unique_id=613163342 node_paths=PackedStringArray("exceptions")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 2
+collision_mask = 30
+script = ExtResource("5_16pqh")
+exceptions = [NodePath("../Body/MeshInstance3D/Hammer/DamageArea")]
+metadata/_custom_type_script = "uid://doolqemfcfhdo"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox" unique_id=1816729946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01373902, 0.121154785, -0.015966803)
+shape = SubResource("BoxShape3D_qpfo2")
+
+[node name="GroundCheck" type="RayCast3D" parent="." unique_id=1078357621]
+debug_shape_thickness = 3
+
+[node name="GridMovement" type="Node" parent="." unique_id=461652925 node_paths=PackedStringArray("body", "ground_raycast", "exclude_colision")]
+script = ExtResource("6_q1x00")
+step_time = 0.3
+body = NodePath("../Body")
+rotate_speed = 20.0
+ground_raycast = NodePath("../GroundCheck")
+enemy_collision = 10
+exclude_colision = [NodePath("../HitBox")]
+inmune_to = 1
+metadata/_custom_type_script = "uid://3t50y6pxtmjf"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=353505092]
+autoplay = &"idle"
+
+[connection signal="got_hit" from="HitBox" to="." method="on_die"]

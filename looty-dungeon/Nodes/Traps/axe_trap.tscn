@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="3_3jvbo"]
 [ext_resource type="ArrayMesh" uid="uid://bejhd5lbq2s7i" path="res://Models/Traps/axe.obj" id="4_gbypq"]
 [ext_resource type="AudioStream" uid="uid://b3ei05sfv2in5" path="res://Sounds/Axe_Sound.mp3" id="5_t6p5g"]
+[ext_resource type="ArrayMesh" uid="uid://citujwimw82mj" path="res://Models/Floor_and_walls/floor_cube.obj" id="6_xkgfy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yamyc"]
 size = Vector3(0.9063721, 0.8247986, 0.829834)
@@ -102,3 +103,7 @@ autoplay = &"axe_down"
 
 [node name="AxeSound" type="AudioStreamPlayer3D" parent="." unique_id=2125872387]
 volume_db = -25.43
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=205915163]
+transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, -0.0016400814, -1, 0.08395183)
+mesh = ExtResource("6_xkgfy")

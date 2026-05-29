@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="2_b73bw"]
 [ext_resource type="ArrayMesh" uid="uid://dfso66ihsb7go" path="res://Models/Traps/trident.obj" id="3_5ntvu"]
 [ext_resource type="AudioStream" uid="uid://dbqfvmfgb2ycg" path="res://Sounds/Trident_Sound.mp3" id="4_mcpan"]
+[ext_resource type="ArrayMesh" uid="uid://citujwimw82mj" path="res://Models/Floor_and_walls/floor_cube.obj" id="5_5c20n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yamyc"]
 size = Vector3(0.9128113, 1.3349762, 0.8310547)
@@ -97,3 +98,7 @@ autoplay = &"new_animation"
 
 [node name="TridentSound" type="AudioStreamPlayer3D" parent="." unique_id=1996172311]
 volume_db = -22.588
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=832744743]
+transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, 0, -1, 0.086000025)
+mesh = ExtResource("5_5c20n")

@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dgqcckk1ruu1h" path="res://Nodes/levels/level_7.tscn" id="8_7nbq1"]
 [ext_resource type="PackedScene" uid="uid://cjxk5nvwsj0hb" path="res://Nodes/levels/level_8.tscn" id="9_exi56"]
 [ext_resource type="PackedScene" uid="uid://c2h4td7e64o33" path="res://Nodes/levels/level_9.tscn" id="10_7t8sx"]
-[ext_resource type="PackedScene" uid="uid://bsa6nkmlppons" path="res://Nodes/levels/level_10.tscn" id="11_mg4q0"]
+[ext_resource type="PackedScene" uid="uid://ioy5py4vvth2" path="res://Nodes/levels/level_boss.tscn" id="11_exi56"]
 [ext_resource type="Script" uid="uid://b60ye2vofbxws" path="res://Scripts/pause_menu.gd" id="16_ewbju"]
 [ext_resource type="Theme" uid="uid://cmt8euj1nkipj" path="res://Assets/Basic_UI.tres" id="16_nnt18"]
 [ext_resource type="Script" uid="uid://b2wneb1seiu8i" path="res://Scripts/quit_button.gd" id="18_85qyi"]
@@ -33,7 +33,7 @@ font_color = Color(0.8235294, 0.07058824, 0.09019608, 1)
 
 [node name="Game" type="Node3D" unique_id=161529061]
 script = ExtResource("1_wrm1d")
-levels = Array[PackedScene]([ExtResource("2_i6g32"), ExtResource("3_nb51f"), ExtResource("4_nnt18"), ExtResource("5_ewbju"), ExtResource("6_85qyi"), ExtResource("7_iivbl"), ExtResource("8_7nbq1"), ExtResource("9_exi56"), ExtResource("10_7t8sx"), ExtResource("11_mg4q0")])
+levels = Array[PackedScene]([ExtResource("2_i6g32"), ExtResource("3_nb51f"), ExtResource("4_nnt18"), ExtResource("5_ewbju"), ExtResource("6_85qyi"), ExtResource("7_iivbl"), ExtResource("8_7nbq1"), ExtResource("9_exi56"), ExtResource("10_7t8sx"), ExtResource("11_exi56")])
 
 [node name="Arquero" parent="." unique_id=1232147745 instance=ExtResource("4_v158k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -4)
