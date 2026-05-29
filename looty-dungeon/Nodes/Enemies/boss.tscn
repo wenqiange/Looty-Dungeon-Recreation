@@ -13,35 +13,144 @@ radius = 0.7
 [sub_resource type="BoxShape3D" id="BoxShape3D_qpfo2"]
 size = Vector3(0.7, 1, 0.90000004)
 
+[sub_resource type="Animation" id="Animation_schd4"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/BodyMesh:scale:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Hammer/HamerMesh:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Hammer:rotation:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_e3888"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/BodyMesh:scale:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 3, 0),
+"points": PackedFloat32Array(0.8, -0.25, 0, 0.1, 0, 0.769, -0.075, 0, 0.075, 0, 0.8, -0.100000024, -0.0003591776, 0, 0),
+"times": PackedFloat32Array(0, 0.3, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Hammer/HamerMesh:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 3, 0),
+"points": PackedFloat32Array(-0.5, 0, 0, 0.1, 0, -0.54, -0.099999994, -9.590387e-05, 0.099999994, 9.590387e-05, -0.5, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 0.3, 0.99965435)
+}
+
+[sub_resource type="Animation" id="Animation_1ay1c"]
+resource_name = "walk"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 3, 3, 3, 0, 3, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.033333335, 0.052412752, 0.2954405, -0.06666666, 0.0015002489, 0.06666666, -0.0015002489, 0.0001857928, -0.024503736, 0, 0.024503736, 0, 0.10334766, -0.041666687, -0.0019901171, 0.041666687, 0.0019901171, -0.0012654662, -0.024503736, 0, 0.024503736, 0, 0.046993494, -0.01666668, -0.0028290376, 0.01666668, 0.0028290376, 0.00095122505, -0.024503736, 0, 0.024503736, 0),
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.33333334, 0.4, 0.43333334, 0.46666667)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Hammer:rotation:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 3, 3, 3, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.06666667, -0.005511166, -0.19547687, -0.0333959, -0.00046364963, 0.0333959, 0.00046364963, -0.19547687, -0.049975425, -0.000109925866, 0.049975425, 0.000109925866, 0, -0.033485353, -0.059356503, 0.033485353, 0.059356503, 0, -0.06666666, -0.04982782, 0, 0),
+"times": PackedFloat32Array(0, 0.10006257, 0.18335791, 0.33318132, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b817x"]
+_data = {
+&"RESET": SubResource("Animation_schd4"),
+&"idle": SubResource("Animation_e3888"),
+&"walk": SubResource("Animation_1ay1c")
+}
+
 [node name="Boss" type="Node3D" unique_id=1608742070 groups=["enemies"]]
 script = ExtResource("1_schd4")
 
 [node name="Body" type="Node3D" parent="." unique_id=2091126645]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015058924, 0, -0.003975204)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Body" unique_id=1822712324]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.05, 0, -0.2)
-mesh = ExtResource("2_e3888")
+[node name="Hammer" type="Node3D" parent="Body" unique_id=164679793]
+transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-08, 0.05000001, 0.4, 6.519258e-09)
 
-[node name="Hammer" type="MeshInstance3D" parent="Body/MeshInstance3D" unique_id=1283661312]
-mesh = ExtResource("3_1ay1c")
-
-[node name="DamageArea" type="Area3D" parent="Body/MeshInstance3D/Hammer" unique_id=1122252032]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.2, 0, -0.05000001)
+[node name="DamageArea" type="Area3D" parent="Body/Hammer" unique_id=1122252032]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.049999993, -0.5, -0.049999997)
 collision_layer = 4
 collision_mask = 8
 script = ExtResource("4_b817x")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/MeshInstance3D/Hammer/DamageArea" unique_id=614330038]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Hammer/DamageArea" unique_id=614330038]
 transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0, 2.6000001, 0)
 shape = SubResource("SphereShape3D_tmemv")
+
+[node name="HamerMesh" type="MeshInstance3D" parent="Body/Hammer" unique_id=1283661312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, -0.5, 0)
+mesh = ExtResource("3_1ay1c")
+
+[node name="BodyMesh" type="MeshInstance3D" parent="Body" unique_id=1822712324]
+transform = Transform3D(-3.496911e-08, 0, 0.79999995, 0, 0.8, 0, -0.79999995, 0, -3.496911e-08, 0.05, 0, -0.2)
+mesh = ExtResource("2_e3888")
 
 [node name="HitBox" type="Area3D" parent="." unique_id=613163342 node_paths=PackedStringArray("exceptions")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 collision_layer = 2
 collision_mask = 30
 script = ExtResource("5_16pqh")
-exceptions = [NodePath("../Body/MeshInstance3D/Hammer/DamageArea")]
+exceptions = [NodePath("../Body/Hammer/DamageArea")]
 metadata/_custom_type_script = "uid://doolqemfcfhdo"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox" unique_id=1816729946]
@@ -49,6 +158,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01373902, 0.121154785, -0.0
 shape = SubResource("BoxShape3D_qpfo2")
 
 [node name="GroundCheck" type="RayCast3D" parent="." unique_id=1078357621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 debug_shape_thickness = 3
 
 [node name="GridMovement" type="Node" parent="." unique_id=461652925 node_paths=PackedStringArray("body", "ground_raycast", "exclude_colision")]
@@ -63,6 +173,5 @@ inmune_to = 1
 metadata/_custom_type_script = "uid://3t50y6pxtmjf"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=353505092]
+libraries/ = SubResource("AnimationLibrary_b817x")
 autoplay = &"idle"
-
-[connection signal="got_hit" from="HitBox" to="." method="on_die"]

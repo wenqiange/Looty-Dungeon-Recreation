@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b4tbxldabcmf1" path="res://Nodes/Obstacles/solid_stone.tscn" id="14_1vca5"]
 [ext_resource type="PackedScene" uid="uid://d2ywg2qsnyf4m" path="res://Nodes/Tiles/end_tile.tscn" id="14_jkhvf"]
 [ext_resource type="PackedScene" uid="uid://6ohd0kweg6bw" path="res://Nodes/Obstacles/solid_knight.tscn" id="14_p0sbx"]
+[ext_resource type="PackedScene" uid="uid://gpauov8g8ppc" path="res://Nodes/Enemies/boss.tscn" id="15_p0sbx"]
 [ext_resource type="PackedScene" uid="uid://dqx2ty1287qwm" path="res://Nodes/Obstacles/solid_elephant.tscn" id="15_pil87"]
 [ext_resource type="PackedScene" uid="uid://gyjh3tmgue4g" path="res://Nodes/Obstacles/solid_lamp.tscn" id="16_pil87"]
 
@@ -248,3 +249,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 
 [node name="EndTile" parent="." unique_id=1031748288 instance=ExtResource("14_jkhvf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="Boss" parent="." unique_id=1608742070 instance=ExtResource("15_p0sbx")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 10)
