@@ -17,6 +17,7 @@ extends Node3D
 
 signal finished_step
 signal dead
+signal reset
 
 var can_move:bool = true
 var is_freeze: bool = false
@@ -85,6 +86,7 @@ func attack(_entity:Node3D):
 func reset_player(new_health:int = -1):
 	just_attacked = false
 	can_move = true
+	reset.emit()
 	if new_health >= 0:
 		health.on_heal(new_health)
 	else:

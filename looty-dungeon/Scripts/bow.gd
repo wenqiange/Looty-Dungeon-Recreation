@@ -17,6 +17,7 @@ var falling = false
 func _ready() -> void:
 	player = get_parent() as Player
 	animator = player.animator
+	player.reset.connect(on_reset)
 
 func _process(_delta: float) -> void:
 	if not animator: animator = player.animator
@@ -57,6 +58,9 @@ func shoot(strength:float):
 	player.add_sibling(arrow)
 	delay_timer.start()
 	$ArrowSound.play()
+
+func on_reset():
+	falling = false
 
 func _on_hold_timer_timeout() -> void:
 	animator.play("Arquero/Action")
