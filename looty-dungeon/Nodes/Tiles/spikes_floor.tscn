@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c2uwtqp0iswjw"]
 
 [ext_resource type="ArrayMesh" uid="uid://c8mfa3lywevxb" path="res://Models/Traps/floor_trap.obj" id="1_32cfw"]
-[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="2_adgxc"]
+[ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="2_adgxc"]
 [ext_resource type="ArrayMesh" uid="uid://cqqjkpfhfbac6" path="res://Models/Traps/spikes.obj" id="3_blkkn"]
 [ext_resource type="AudioStream" uid="uid://lo3gkrge34a7" path="res://Sounds/SpikeSound.mp3" id="4_adgxc"]
 
@@ -117,7 +117,7 @@ autostart = true
 
 [node name="SpikeSound" type="AudioStreamPlayer3D" parent="Spikes" unique_id=1081940940]
 attenuation_model = 2
-volume_db = -38.146
+volume_db = -21.205
 max_db = -1.172
 
 [connection signal="timeout" from="Spikes/Timer" to="Spikes/AnimationPlayer" method="play" binds= [&"Spikes_up"]]

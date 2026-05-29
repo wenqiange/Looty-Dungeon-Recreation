@@ -22,7 +22,6 @@ func on_heal(val:int):
 	if cur_health > max_health: cur_health = max_health
 	health_updated.emit(cur_health)
 	if cur_health <= 0:
-		$DeathSound.play()
 		cur_health = 0
 		death.emit()
 

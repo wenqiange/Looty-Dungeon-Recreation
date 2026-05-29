@@ -16,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://j70kbl1oxa1t" path="res://Assets/Coin.png" id="13_q16sl"]
 [ext_resource type="Script" uid="uid://stu0lfk6l1wq" path="res://Scripts/PlayerCoins.gd" id="14_83j8p"]
 [ext_resource type="Script" uid="uid://cu1xdmaqkpae7" path="res://Nodes/coin_counter.gd" id="14_m2ivu"]
+[ext_resource type="AudioStream" uid="uid://dsqf8rpr2d68w" path="res://Sounds/GameOver.mp3" id="17_lsb7o"]
+[ext_resource type="AudioStream" uid="uid://dunjyn45756d3" path="res://Sounds/FallSound.mp3" id="18_xj43a"]
+[ext_resource type="AudioStream" uid="uid://bvhhveedngx8o" path="res://Sounds/MoveSound.mp3" id="19_4sddp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sg4uk"]
 albedo_texture = ExtResource("2_1negf")
@@ -366,10 +369,6 @@ max_health = 3
 stream = ExtResource("7_kf4pe")
 volume_db = -9.54
 
-[node name="DeathSound" type="AudioStreamPlayer3D" parent="Health" unique_id=271627859]
-stream = ExtResource("8_t7njs")
-volume_db = 1.748
-
 [node name="Bow" type="Node" parent="." unique_id=660424687]
 script = ExtResource("6_kf4pe")
 max_dist = 6
@@ -387,7 +386,7 @@ one_shot = true
 
 [node name="ArrowSound" type="AudioStreamPlayer3D" parent="Bow" unique_id=1550762623]
 stream = ExtResource("8_5nirr")
-volume_db = -19.32
+volume_db = -6.858
 
 [node name="HitAnimator" type="AnimationPlayer" parent="." unique_id=712445031]
 root_node = NodePath("../AnimationPlayer")
@@ -450,6 +449,19 @@ stretch_mode = 4
 
 [node name="PlayerCoins" type="Node" parent="." unique_id=1612102152]
 script = ExtResource("14_83j8p")
+
+[node name="GameOver" type="AudioStreamPlayer3D" parent="." unique_id=130845591]
+stream = ExtResource("17_lsb7o")
+
+[node name="FallSound" type="AudioStreamPlayer3D" parent="." unique_id=1221506039]
+stream = ExtResource("18_xj43a")
+
+[node name="DeathSound" type="AudioStreamPlayer3D" parent="." unique_id=271627859]
+stream = ExtResource("8_t7njs")
+volume_db = 1.748
+
+[node name="MoveSound" type="AudioStreamPlayer3D" parent="." unique_id=1941380594]
+stream = ExtResource("19_4sddp")
 
 [connection signal="health_updated" from="Health" to="PlayerUI/LifeBar" method="setLives"]
 [connection signal="timeout" from="Bow/HoldTimer" to="Bow" method="_on_hold_timer_timeout"]

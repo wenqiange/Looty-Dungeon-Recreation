@@ -92,6 +92,8 @@ func move(direction:global.direction):
 	var new_pos = parent.position + Vector3(grid_size*dir.x,0,grid_size*dir.y)
 	
 	is_moving = true
+	if is_moving and parent is Player:
+		$"../MoveSound".play()
 	if mov_tween: mov_tween.kill()
 	mov_tween = create_tween()
 	mov_tween.set_ease(Tween.EASE_IN_OUT)
