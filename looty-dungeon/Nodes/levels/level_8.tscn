@@ -16,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://d2ywg2qsnyf4m" path="res://Nodes/Tiles/end_tile.tscn" id="16_n1ajq"]
 [ext_resource type="PackedScene" uid="uid://dkkjwel1efltt" path="res://Nodes/Traps/trident_trap.tscn" id="16_yd78k"]
 [ext_resource type="PackedScene" uid="uid://gyjh3tmgue4g" path="res://Nodes/Obstacles/solid_lamp.tscn" id="17_al1qh"]
+[ext_resource type="PackedScene" uid="uid://fra3io0p4ql5" path="res://Nodes/Enemies/goblin.tscn" id="17_xq73e"]
+[ext_resource type="Script" uid="uid://bfh1emwibf3gk" path="res://Scripts/FollowDelay.gd" id="18_i8xbr"]
+[ext_resource type="PackedScene" uid="uid://biycv3w8mr2sd" path="res://Nodes/Enemies/rat.tscn" id="19_vrw1a"]
 
 [node name="Level8" type="Node3D" unique_id=1391559045 node_paths=PackedStringArray("player_spawn")]
 script = ExtResource("1_n1ajq")
@@ -243,3 +246,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0042272, 0.5, 7.015352)
 
 [node name="EndTile" parent="." unique_id=1358480099 instance=ExtResource("16_n1ajq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="goblin" parent="." unique_id=28463697 instance=ExtResource("17_xq73e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09018588, 0.5, 4.9295216)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="goblin" unique_id=984861709]
+path_desired_distance = 0.5
+
+[node name="FollowPlayer" type="Node" parent="goblin" unique_id=1546167340 node_paths=PackedStringArray("agent")]
+script = ExtResource("18_i8xbr")
+agent = NodePath("../NavigationAgent3D")
+metadata/_custom_type_script = "uid://bfh1emwibf3gk"
+
+[node name="Delay" type="Timer" parent="goblin/FollowPlayer" unique_id=1208471357]
+autostart = true
+
+[node name="Rat" parent="goblin" unique_id=530138206 instance=ExtResource("19_vrw1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9179051, -2.3841858e-07, 5.960369)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="goblin/Rat" unique_id=138138149]
+path_desired_distance = 0.5
+
+[node name="FollowPlayer" type="Node" parent="goblin/Rat" unique_id=1050570813 node_paths=PackedStringArray("agent")]
+script = ExtResource("18_i8xbr")
+agent = NodePath("../NavigationAgent3D")
+metadata/_custom_type_script = "uid://bfh1emwibf3gk"
+
+[node name="Delay" type="Timer" parent="goblin/Rat/FollowPlayer" unique_id=876969761]
+autostart = true

@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://dqx2ty1287qwm" path="res://Nodes/Obstacles/solid_elephant.tscn" id="17_3g7nw"]
 [ext_resource type="PackedScene" uid="uid://d2ywg2qsnyf4m" path="res://Nodes/Tiles/end_tile.tscn" id="18_2f42k"]
 [ext_resource type="PackedScene" uid="uid://coippum77fhr3" path="res://Nodes/Enemies/slime.tscn" id="18_aljs8"]
+[ext_resource type="PackedScene" uid="uid://biycv3w8mr2sd" path="res://Nodes/Enemies/rat.tscn" id="19_xeay7"]
+[ext_resource type="Script" uid="uid://bfh1emwibf3gk" path="res://Scripts/FollowDelay.gd" id="20_3g7nw"]
 
 [node name="Level6" type="Node3D" unique_id=117878388 node_paths=PackedStringArray("player_spawn")]
 script = ExtResource("1_sxs85")
@@ -259,3 +261,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02287, 0.5, 2.9658394)
 
 [node name="EndTile" parent="." unique_id=136573387 instance=ExtResource("18_2f42k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="Rat" parent="." unique_id=1608742070 instance=ExtResource("19_xeay7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019626379, 0.5, 7.045999)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Rat" unique_id=373879879]
+path_desired_distance = 0.5
+
+[node name="FollowPlayer" type="Node" parent="Rat" unique_id=1669463953 node_paths=PackedStringArray("agent")]
+script = ExtResource("20_3g7nw")
+agent = NodePath("../NavigationAgent3D")
+metadata/_custom_type_script = "uid://bfh1emwibf3gk"
+
+[node name="Delay" type="Timer" parent="Rat/FollowPlayer" unique_id=2086738550]
+autostart = true

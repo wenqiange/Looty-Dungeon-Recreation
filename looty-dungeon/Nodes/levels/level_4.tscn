@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bvfeff13hqro0" path="res://Nodes/Walls/wall_1.tscn" id="6_ff71j"]
 [ext_resource type="PackedScene" uid="uid://d32wpetkiei63" path="res://Nodes/Walls/wall_basic.tscn" id="7_mon36"]
 [ext_resource type="PackedScene" uid="uid://bpamdq6vfk3wj" path="res://Nodes/Walls/wall_4.tscn" id="8_376iy"]
+[ext_resource type="PackedScene" uid="uid://c20nxqsdyiuwj" path="res://Nodes/Traps/axe_trap.tscn" id="8_b22na"]
 [ext_resource type="PackedScene" uid="uid://crqvugbsp47nd" path="res://Nodes/Walls/wall_3.tscn" id="9_mj8uk"]
 [ext_resource type="PackedScene" uid="uid://dpv1jbdcc6qi3" path="res://Nodes/Walls/wall_2.tscn" id="10_4j2p1"]
 [ext_resource type="PackedScene" uid="uid://dluhwo6us7iir" path="res://Nodes/Walls/door.tscn" id="11_u7d8k"]
@@ -14,9 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://gyjh3tmgue4g" path="res://Nodes/Obstacles/solid_lamp.tscn" id="12_31n1s"]
 [ext_resource type="PackedScene" uid="uid://dqx2ty1287qwm" path="res://Nodes/Obstacles/solid_elephant.tscn" id="14_b22na"]
 [ext_resource type="PackedScene" uid="uid://coippum77fhr3" path="res://Nodes/Enemies/slime.tscn" id="15_ff71j"]
-[ext_resource type="Script" uid="uid://pgghu6asd23v" path="res://Scripts/FollowDirections.gd" id="15_pxok7"]
 [ext_resource type="PackedScene" uid="uid://d2ywg2qsnyf4m" path="res://Nodes/Tiles/end_tile.tscn" id="18_b22na"]
 [ext_resource type="PackedScene" uid="uid://d3i066x4iht6l" path="res://Nodes/coin.tscn" id="18_ff71j"]
+[ext_resource type="Script" uid="uid://bfh1emwibf3gk" path="res://Scripts/FollowDelay.gd" id="19_ff71j"]
 
 [node name="Level4" type="Node3D" unique_id=9582675 node_paths=PackedStringArray("player_spawn")]
 script = ExtResource("1_s7pm1")
@@ -50,9 +51,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
 [node name="GroundTile16" parent="Falling_Ground" unique_id=757014764 instance=ExtResource("3_pxok7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012321472, 0, 2.9917874)
 
-[node name="GroundTile17" parent="Falling_Ground" unique_id=3964856 instance=ExtResource("3_pxok7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012321472, 0, 3.9917874)
-
 [node name="GroundTile18" parent="Falling_Ground" unique_id=902660829 instance=ExtResource("3_pxok7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012321472, 0, 4.9917874)
 
@@ -65,9 +63,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0012321, 0, 3.9917874)
 [node name="GroundTile21" parent="Falling_Ground" unique_id=745573501 instance=ExtResource("3_pxok7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0012321, 0, 4.9917874)
 
-[node name="GroundTile22" parent="Falling_Ground" unique_id=1179147649 instance=ExtResource("3_pxok7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0012321, 0, 2.9917874)
-
 [node name="GroundTile23" parent="Falling_Ground" unique_id=1761701889 instance=ExtResource("3_pxok7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0012321, 0, 3.9917874)
 
@@ -76,9 +71,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0012321, 0, 4.9917874)
 
 [node name="GroundTile25" parent="Falling_Ground" unique_id=628241088 instance=ExtResource("3_pxok7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2.9917874)
-
-[node name="GroundTile27" parent="Falling_Ground" unique_id=1032349771 instance=ExtResource("3_pxok7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4.9917874)
 
 [node name="GroundTile28" parent="Falling_Ground" unique_id=35151528 instance=ExtResource("3_pxok7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99876785, 0, 2.9917874)
@@ -94,9 +86,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0060076714, 0, 5.9995294)
 
 [node name="GroundTile32" parent="Falling_Ground" unique_id=1702152876 instance=ExtResource("3_pxok7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0060076714, 0, 6.9995294)
-
-[node name="GroundTile34" parent="Falling_Ground" unique_id=696081607 instance=ExtResource("3_pxok7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9939923, 0, 5.9995294)
 
 [node name="GroundTile35" parent="Falling_Ground" unique_id=1956100208 instance=ExtResource("3_pxok7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9939923, 0, 6.9995294)
@@ -251,6 +240,18 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2, 
 [node name="solid_stone3" parent="Falling_Ground" unique_id=603252229 instance=ExtResource("12_1bxtf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 9)
 
+[node name="Axe_Trap" parent="Falling_Ground" unique_id=125386657 instance=ExtResource("8_b22na")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.9953382, 0.012446225, 3.0005653)
+
+[node name="Axe_Trap2" parent="Falling_Ground" unique_id=966952720 instance=ExtResource("8_b22na")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.0041542053, 0.031930685, 4.004796)
+
+[node name="Axe_Trap3" parent="Falling_Ground" unique_id=749459295 instance=ExtResource("8_b22na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0212638, 0.0070073605, 4.995125)
+
+[node name="Axe_Trap4" parent="Falling_Ground" unique_id=853739237 instance=ExtResource("8_b22na")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.013023, 0.0047227144, 5.995125)
+
 [node name="Walls" type="Node3D" parent="." unique_id=283763537]
 
 [node name="Wall2" parent="Walls" unique_id=1578792029 instance=ExtResource("6_ff71j")]
@@ -307,18 +308,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.9
 [node name="Wall15" parent="Walls" unique_id=1607241014 instance=ExtResource("8_376iy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.9980056, 0, 14.5)
 
-[node name="Slime" parent="." unique_id=1608742070 instance=ExtResource("15_ff71j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 9.998101)
-
-[node name="followInput" type="Node" parent="Slime" unique_id=1623190088]
-script = ExtResource("15_pxok7")
-input_list = Array[int]([2, 0, 3, 3, 1, 2])
-metadata/_custom_type_script = "uid://pgghu6asd23v"
-
-[node name="Timer" type="Timer" parent="Slime/followInput" unique_id=662003500]
-wait_time = 1.5
-autostart = true
-
 [node name="Door" parent="." unique_id=1781724774 instance=ExtResource("11_u7d8k")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.00613147, 0, 14.5)
 
@@ -327,3 +316,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
 
 [node name="coin" parent="." unique_id=773630964 instance=ExtResource("18_ff71j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.9553254)
+
+[node name="Slime2" parent="." unique_id=865394702 instance=ExtResource("15_ff71j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0069363, 0.64012444, 12.8813095)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Slime2" unique_id=1794187671]
+path_desired_distance = 0.5
+
+[node name="FollowPlayer" type="Node" parent="Slime2" unique_id=960159454 node_paths=PackedStringArray("agent")]
+script = ExtResource("19_ff71j")
+agent = NodePath("../NavigationAgent3D")
+metadata/_custom_type_script = "uid://bfh1emwibf3gk"
+
+[node name="Delay" type="Timer" parent="Slime2/FollowPlayer" unique_id=1372746692]
+autostart = true

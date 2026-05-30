@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://b4tbxldabcmf1" path="res://Nodes/Obstacles/solid_stone.tscn" id="14_m54yw"]
 [ext_resource type="PackedScene" uid="uid://d2ywg2qsnyf4m" path="res://Nodes/Tiles/end_tile.tscn" id="15_jmjwt"]
 [ext_resource type="PackedScene" uid="uid://dkkjwel1efltt" path="res://Nodes/Traps/trident_trap.tscn" id="16_41bky"]
+[ext_resource type="PackedScene" uid="uid://fra3io0p4ql5" path="res://Nodes/Enemies/goblin.tscn" id="16_gk50b"]
+[ext_resource type="Script" uid="uid://bfh1emwibf3gk" path="res://Scripts/FollowDelay.gd" id="17_41bky"]
 
 [node name="Level5" type="Node3D" unique_id=1113013960 node_paths=PackedStringArray("player_spawn")]
 script = ExtResource("1_gk50b")
@@ -253,3 +255,17 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.00
 
 [node name="EndTile" parent="." unique_id=971267744 instance=ExtResource("15_jmjwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="goblin" parent="." unique_id=1608742070 instance=ExtResource("16_gk50b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0287735, 0.5, 5.807521)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="goblin" unique_id=652562350]
+path_desired_distance = 0.5
+
+[node name="FollowPlayer" type="Node" parent="goblin" unique_id=1347307132 node_paths=PackedStringArray("agent")]
+script = ExtResource("17_41bky")
+agent = NodePath("../NavigationAgent3D")
+metadata/_custom_type_script = "uid://bfh1emwibf3gk"
+
+[node name="Delay" type="Timer" parent="goblin/FollowPlayer" unique_id=682992626]
+autostart = true
