@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="3_6rtym"]
 [ext_resource type="Script" uid="uid://doolqemfcfhdo" path="res://Scripts/hit_box.gd" id="4_5tb8v"]
 [ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="5_if708"]
+[ext_resource type="AudioStream" uid="uid://bo0jsj2ld7vrm" path="res://Sounds/GoblinSound.mp3" id="6_ffx5l"]
+[ext_resource type="AudioStream" uid="uid://dshq8nmcimksc" path="res://Sounds/GoblinDeath.mp3" id="7_6rtym"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tmemv"]
 radius = 0.34441915
@@ -205,13 +207,15 @@ _data = {
 &"walk": SubResource("Animation_2235k")
 }
 
-[node name="goblin" type="Node3D" unique_id=1608742070 groups=["enemies"]]
+[node name="goblin" type="Node3D" unique_id=1608742070 node_paths=PackedStringArray("death_sound", "move_sound") groups=["enemies"]]
 script = ExtResource("1_11vwg")
 idle_animation = "idle"
 walk_animation = "walk"
 attack_animation = "attack"
 die_animation = "die"
 fall_animation = "fall"
+death_sound = NodePath("GoblinDeath")
+move_sound = NodePath("GoblinSound")
 
 [node name="Body" type="Node3D" parent="." unique_id=2091126645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015058924, -0.5, -0.003975204)
@@ -260,5 +264,13 @@ metadata/_custom_type_script = "uid://3t50y6pxtmjf"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=353505092]
 libraries/ = SubResource("AnimationLibrary_mrh0h")
 autoplay = &"idle"
+
+[node name="GoblinSound" type="AudioStreamPlayer3D" parent="." unique_id=1551259577]
+stream = ExtResource("6_ffx5l")
+volume_db = -12.308
+
+[node name="GoblinDeath" type="AudioStreamPlayer3D" parent="." unique_id=1827498663]
+stream = ExtResource("7_6rtym")
+volume_db = -6.838
 
 [connection signal="got_hit" from="HitBox" to="." method="on_die"]

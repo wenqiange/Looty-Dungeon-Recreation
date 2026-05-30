@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://d2ywg2qsnyf4m" path="res://Nodes/Tiles/end_tile.tscn" id="9_d62q4"]
 [ext_resource type="PackedScene" uid="uid://dpv1jbdcc6qi3" path="res://Nodes/Walls/wall_2.tscn" id="9_v6ic0"]
 [ext_resource type="PackedScene" uid="uid://dluhwo6us7iir" path="res://Nodes/Walls/door.tscn" id="10_b2eeu"]
+[ext_resource type="PackedScene" uid="uid://biycv3w8mr2sd" path="res://Nodes/Enemies/rat.tscn" id="11_vl0p2"]
+[ext_resource type="Script" uid="uid://bfh1emwibf3gk" path="res://Scripts/FollowDelay.gd" id="12_gfmki"]
 
 [node name="Level1" type="Node3D" unique_id=1002928981 node_paths=PackedStringArray("player_spawn")]
 script = ExtResource("1_ff3h8")
@@ -119,3 +121,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 
 [node name="Door2" parent="." unique_id=1781724774 instance=ExtResource("10_b2eeu")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 8.5)
+
+[node name="Rat" parent="." unique_id=1608742070 instance=ExtResource("11_vl0p2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53717387, 3.9880223)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Rat" unique_id=736095820]
+path_desired_distance = 0.5
+
+[node name="FollowPlayer" type="Node" parent="Rat" unique_id=539497773 node_paths=PackedStringArray("agent")]
+script = ExtResource("12_gfmki")
+agent = NodePath("../NavigationAgent3D")
+metadata/_custom_type_script = "uid://bfh1emwibf3gk"
+
+[node name="Delay" type="Timer" parent="Rat/FollowPlayer" unique_id=996471522]
+autostart = true

@@ -1,2 +1,2 @@
-class_name Slime
+class_name Rat
 extends Enemy

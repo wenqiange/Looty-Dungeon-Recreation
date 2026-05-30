@@ -4,7 +4,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c3vu0lmeq5pmp" path="res://Models/Enemies/outside_slime.obj" id="2_gdo7j"]
 [ext_resource type="Texture2D" uid="uid://bqi62hfa2dcxh" path="res://Models/Enemies/outside_slime.png" id="3_p20v5"]
 [ext_resource type="ArrayMesh" uid="uid://p4u4cnfhs4lr" path="res://Models/Enemies/inside_slime.obj" id="4_vw6wp"]
-[ext_resource type="Script" uid="uid://dte1wrypmyej1" path="res://Scripts/damage_area.gd" id="5_7xbmq"]
+[ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="5_7xbmq"]
 [ext_resource type="Script" uid="uid://doolqemfcfhdo" path="res://Scripts/hit_box.gd" id="6_c00aq"]
 [ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="7_r83aw"]
 [ext_resource type="Script" uid="uid://5tiyg3nrvfqs" path="res://Scripts/sliming.gd" id="8_gdo7j"]
@@ -247,14 +247,15 @@ _data = {
 &"walk": SubResource("Animation_qitfk")
 }
 
-[node name="Slime" type="Node3D" unique_id=1608742070 groups=["enemies"]]
+[node name="Slime" type="Node3D" unique_id=1608742070 node_paths=PackedStringArray("death_sound", "move_sound") groups=["enemies"]]
 script = ExtResource("1_cwq58")
-see_radius = 5.0
 idle_animation = "slime/idle"
 walk_animation = "slime/walk"
 attack_animation = "slime/attack"
 die_animation = "slime/die"
 fall_animation = "slime/fall"
+death_sound = NodePath("Sliming/SlimeDeath")
+move_sound = NodePath("Sliming/SlimeSound")
 
 [node name="Body" type="Node3D" parent="." unique_id=2091126645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015058924, -0.5, -0.003975204)
@@ -314,7 +315,7 @@ script = ExtResource("8_gdo7j")
 [node name="SlimeSound" type="AudioStreamPlayer3D" parent="Sliming" unique_id=1729220509]
 stream = ExtResource("9_p20v5")
 
-[node name="SlimeAttack" type="AudioStreamPlayer3D" parent="Sliming" unique_id=564598616]
+[node name="SlimeDeath" type="AudioStreamPlayer3D" parent="Sliming" unique_id=564598616]
 stream = ExtResource("10_vw6wp")
 
 [connection signal="got_hit" from="HitBox" to="." method="on_die"]
