@@ -71,7 +71,7 @@ func next_level():
 	await player.finished_step
 	level_num += 1
 	if level_num >= levels.size():
-		#end game
+		get_tree().change_scene_to_file("res://Scenes/Credits.tscn")
 		return
 	change_level(levels[level_num])
 

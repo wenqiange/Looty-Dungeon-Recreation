@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bxltb2jmaakwg" path="res://Scripts/Boss.gd" id="1_schd4"]
 [ext_resource type="ArrayMesh" uid="uid://bmn6p8juf1s2d" path="res://Models/Enemies/dwarf_boss.obj" id="2_e3888"]
 [ext_resource type="ArrayMesh" uid="uid://dxb5hvdqlv4ls" path="res://Models/Enemies/hammber_boss.obj" id="3_1ay1c"]
+[ext_resource type="Texture2D" uid="uid://b5271kmmo7427" path="res://Models/Enemies/dwarf_boss.png" id="4_16pqh"]
 [ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="4_b817x"]
 [ext_resource type="Script" uid="uid://doolqemfcfhdo" path="res://Scripts/hit_box.gd" id="5_16pqh"]
 [ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="6_q1x00"]
@@ -12,6 +13,11 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tmemv"]
 radius = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1x00"]
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_16pqh")
+emission_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qpfo2"]
 size = Vector3(0.7, 1, 0.90000004)
@@ -393,6 +399,43 @@ _data = {
 &"walk": SubResource("Animation_1ay1c")
 }
 
+[sub_resource type="Animation" id="Animation_l3tk5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/BodyMesh:material_overlay:emission")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gmsxa"]
+resource_name = "hit"
+length = 0.3465
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/BodyMesh:material_overlay:emission")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666669, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3a6ma"]
+_data = {
+&"RESET": SubResource("Animation_l3tk5"),
+&"hit": SubResource("Animation_gmsxa")
+}
+
 [node name="Boss" type="Node3D" unique_id=1608742070 groups=["enemies"]]
 script = ExtResource("1_schd4")
 idle_animation = "idle"
@@ -422,6 +465,7 @@ mesh = ExtResource("3_1ay1c")
 
 [node name="BodyMesh" type="MeshInstance3D" parent="Body" unique_id=1822712324]
 transform = Transform3D(-3.496911e-08, 0, 0.79999995, 0, 0.8, 0, -0.79999995, 0, -3.496911e-08, 0.05, 0, -0.2)
+material_overlay = SubResource("StandardMaterial3D_q1x00")
 mesh = ExtResource("2_e3888")
 
 [node name="HitBox" type="Area3D" parent="." unique_id=613163342 node_paths=PackedStringArray("exceptions")]
@@ -490,4 +534,8 @@ script = ExtResource("10_16pqh")
 max_health = 3
 metadata/_custom_type_script = "uid://ce5ur84jdnf6g"
 
+[node name="GotHit" type="AnimationPlayer" parent="." unique_id=66868017]
+libraries/ = SubResource("AnimationLibrary_3a6ma")
+
+[connection signal="got_hit" from="HitBox" to="GotHit" method="play" binds= ["hit"]]
 [connection signal="death" from="Health" to="." method="on_die"]
