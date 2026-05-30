@@ -40,7 +40,138 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Body:position:y")
+tracks/2/path = NodePath("Body/Hammer:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitBox/CollisionShape3D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body:rotation:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body:rotation:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Body:rotation:z")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Body/Hammer/DamageArea/CollisionShape3D:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_b817x"]
+resource_name = "attack"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Hammer:rotation:z")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.13333334, -0.7018497, 1.6607682, 0, -0.33190167, 0.100702256, -0.45981956, 1.6582437, -0.099999964, -0.45227683, 0.03333336, -0.26384032, 1.6574355, -0.03333336, -0.2835822, 0, 0, 1.6581397, 0, 0, 0, 0, 0, -0.162, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.39929774, 0.6333333, 0.73333335, 0.8666667, 1.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 3, 0, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.16666667, 0.011357261, 0.126, -0.09929773, -0.030950882, 0, 0, 0.12818392, -0.06666666, 0.024369575, 0.06666666, -0.024369575, 0.13040844, 0, 0, 0.13333333, 0.0014339834, 0.0023979356, -0.099999964, 0.07710413, 0, 0),
+"times": PackedFloat32Array(0.13333334, 0.39929774, 0.53333336, 0.6666667, 1.0333333)
+}
+
+[sub_resource type="Animation" id="Animation_16pqh"]
+resource_name = "die"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.392, -0.099999994, 0.008828014, 0, 0, -0.3874936, -0.061111115, 0, 0.16666669, 0.07132298, -1.5736698, -0.06666672, 0.5455822, 0, 0),
+"times": PackedFloat32Array(0, 0.4, 0.93333334, 1.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 6.283, -0.6, -0.019024849, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:rotation:z")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -55,9 +186,59 @@ tracks/3/path = NodePath("Body/Hammer:rotation:z")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 2, 2, 0, 2, 0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.1, -0.0043090703, -0.17976892, -0.09586618, 0.001562342, 0, 0, -0.17976892, 0, 0, 0.073, 0, 0.31616643, -0.0666666, 0.0039553344, 0, 0, 0.09651676, -0.039525054, 0.036608282, 0, 0, 0.09651676, -0.061642885, 0.15801954, 0, 0, 0.09651676, -0.04800558, 0.12808669, 0, 0),
+"times": PackedFloat32Array(0, 0.19586618, 0.9989175, 1.2666667, 1.503817, 1.6474521, 1.7671481)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Hammer/DamageArea/CollisionShape3D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HitBox/CollisionShape3D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.033038426),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_q1x00"]
+resource_name = "fall"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.4, -0.017133866, -10.518, -0.16666667, 1.753, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HitBox/CollisionShape3D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_e3888"]
@@ -81,7 +262,7 @@ tracks/1/path = NodePath("Body/Hammer/HamerMesh:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(2, 3, 0),
+"handle_modes": PackedInt32Array(0, 0, 0),
 "points": PackedFloat32Array(-0.5, 0, 0, 0.1, 0, -0.54, -0.099999994, -9.590387e-05, 0.099999994, 9.590387e-05, -0.5, -0.1, 0, 0.1, 0),
 "times": PackedFloat32Array(0, 0.3, 0.99965435)
 }
@@ -107,7 +288,7 @@ tracks/1/path = NodePath("Body/Hammer:rotation:z")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 3, 3, 3, 2),
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.06666667, -0.005511166, -0.19547687, -0.0333959, -0.00046364963, 0.0333959, 0.00046364963, -0.19547687, -0.049975425, -0.000109925866, 0.049975425, 0.000109925866, 0, -0.033485353, -0.059356503, 0.033485353, 0.059356503, 0, -0.06666666, -0.04982782, 0, 0),
 "times": PackedFloat32Array(0, 0.10006257, 0.18335791, 0.33318132, 0.5)
 }
@@ -115,17 +296,25 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b817x"]
 _data = {
 &"RESET": SubResource("Animation_schd4"),
+&"attack": SubResource("Animation_b817x"),
+&"die": SubResource("Animation_16pqh"),
+&"fall": SubResource("Animation_q1x00"),
 &"idle": SubResource("Animation_e3888"),
 &"walk": SubResource("Animation_1ay1c")
 }
 
 [node name="Boss" type="Node3D" unique_id=1608742070 groups=["enemies"]]
 script = ExtResource("1_schd4")
+idle_animation = "idle"
+walk_animation = "walk"
+attack_animation = "attack"
+die_animation = "die"
+fall_animation = "fall"
 
 [node name="Body" type="Node3D" parent="." unique_id=2091126645]
 
 [node name="Hammer" type="Node3D" parent="Body" unique_id=164679793]
-transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.4969112e-08, 0.05000001, 0.4, 6.519258e-09)
+transform = Transform3D(-7.950468e-06, 5.7193727e-05, 0.7999998, 0, 0.80000013, -5.71937e-05, -0.8000002, -5.6839594e-10, -7.950463e-06, 0.050000012, 0.40000007, 0)
 
 [node name="DamageArea" type="Area3D" parent="Body/Hammer" unique_id=1122252032]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.049999993, -0.5, -0.049999997)
@@ -161,11 +350,12 @@ shape = SubResource("BoxShape3D_qpfo2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 debug_shape_thickness = 3
 
-[node name="GridMovement" type="Node" parent="." unique_id=461652925 node_paths=PackedStringArray("body", "ground_raycast", "exclude_colision")]
+[node name="GridMovement" type="Node" parent="." unique_id=461652925 node_paths=PackedStringArray("body", "center", "ground_raycast", "exclude_colision")]
 script = ExtResource("6_q1x00")
-step_time = 0.3
+step_time = 0.4
 body = NodePath("../Body")
 rotate_speed = 20.0
+center = NodePath("../Center")
 ground_raycast = NodePath("../GroundCheck")
 enemy_collision = 10
 exclude_colision = [NodePath("../HitBox")]
@@ -175,3 +365,6 @@ metadata/_custom_type_script = "uid://3t50y6pxtmjf"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=353505092]
 libraries/ = SubResource("AnimationLibrary_b817x")
 autoplay = &"idle"
+
+[node name="Center" type="Node3D" parent="." unique_id=540508406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50118315, 0)

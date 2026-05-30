@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://gpauov8g8ppc" path="res://Nodes/Enemies/boss.tscn" id="15_p0sbx"]
 [ext_resource type="PackedScene" uid="uid://dqx2ty1287qwm" path="res://Nodes/Obstacles/solid_elephant.tscn" id="15_pil87"]
 [ext_resource type="PackedScene" uid="uid://gyjh3tmgue4g" path="res://Nodes/Obstacles/solid_lamp.tscn" id="16_pil87"]
+[ext_resource type="Script" uid="uid://pgghu6asd23v" path="res://Scripts/FollowDirections.gd" id="16_w1nth"]
 
 [node name="LevelBoss" type="Node3D" unique_id=1495814909 node_paths=PackedStringArray("player_spawn")]
 script = ExtResource("1_pil87")
@@ -252,3 +253,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 
 [node name="Boss" parent="." unique_id=1608742070 instance=ExtResource("15_p0sbx")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 10)
+
+[node name="followInput" type="Node" parent="Boss" unique_id=975408144]
+script = ExtResource("16_w1nth")
+input_list = Array[int]([1, 2, 0, 3])
+metadata/_custom_type_script = "uid://pgghu6asd23v"
+
+[node name="Timer" type="Timer" parent="Boss/followInput" unique_id=1162347602]
+wait_time = 0.6
+autostart = true

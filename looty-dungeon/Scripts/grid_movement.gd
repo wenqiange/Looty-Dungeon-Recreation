@@ -8,6 +8,8 @@ extends Node
 @export var body:Node3D
 @export var rotate_speed:float
 
+@export var center:Node3D
+
 @export var ground_raycast:RayCast3D
 var on_ground = true
 
@@ -62,10 +64,14 @@ func move(direction:global.direction):
 		remove_slime.emit()
 		return
 	
+	var offset = Vector3.ZERO
+	if center :
+		offset = center.position
+	
 	#check walls or enemies
 	var dir_3d = Vector3(dir.x,0,dir.y)
 	var space = parent.get_world_3d().direct_space_state
-	var wall_query = PhysicsRayQueryParameters3D.create(parent.position,parent.position+dir_3d,1)
+	var wall_query = PhysicsRayQueryParameters3D.create(parent.position+offset,parent.position+offset+dir_3d,1)
 	var result = space.intersect_ray(wall_query)
 	if result:
 		on_wall.emit()
@@ -75,7 +81,7 @@ func move(direction:global.direction):
 	var enemy_query:PhysicsShapeQueryParameters3D = PhysicsShapeQueryParameters3D.new()
 	enemy_query.collide_with_areas = true #Detectar hitboxes
 	enemy_query.collide_with_bodies = false
-	enemy_query.transform = parent.transform.translated(dir_3d*0.5)
+	enemy_query.transform = parent.transform.translated(dir_3d*0.5+offset)
 	enemy_query.motion = Vector3.ZERO
 	var shape_rid = PhysicsServer3D.box_shape_create()
 	PhysicsServer3D.shape_set_data(shape_rid, Vector3(0.4,0.4,0.4) + abs(dir_3d*0.5))
