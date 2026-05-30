@@ -100,6 +100,7 @@ func remove_slime():
 
 func die():
 	can_move = false
+	freeze()
 	animator.play("Basic/Die")
 	$DeathSound.play()
 	await animator.animation_finished

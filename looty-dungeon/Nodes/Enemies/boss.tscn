@@ -108,7 +108,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Body/Hammer/DamageArea/CollisionShape3D:disabled")
+tracks/8/path = NodePath("Body/Hammer/DamageArea/DamageCS:disabled")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -142,6 +142,18 @@ tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 2, 3, 0, 2),
 "points": PackedFloat32Array(0, 0, 0, 0.16666667, 0.011357261, 0.126, -0.09929773, -0.030950882, 0, 0, 0.12818392, -0.06666666, 0.024369575, 0.06666666, -0.024369575, 0.13040844, 0, 0, 0.13333333, 0.0014339834, 0.0023979356, -0.099999964, 0.07710413, 0, 0),
 "times": PackedFloat32Array(0.13333334, 0.39929774, 0.53333336, 0.6666667, 1.0333333)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Hammer/DamageArea/DamageCS:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4194304, 1.4008975),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_16pqh"]
@@ -194,7 +206,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Body/Hammer/DamageArea/CollisionShape3D:disabled")
+tracks/4/path = NodePath("Body/Hammer/DamageArea/DamageCS:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -323,7 +335,7 @@ collision_layer = 4
 collision_mask = 8
 script = ExtResource("4_b817x")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/Hammer/DamageArea" unique_id=614330038]
+[node name="DamageCS" type="CollisionShape3D" parent="Body/Hammer/DamageArea" unique_id=614330038]
 transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0, 2.6000001, 0)
 shape = SubResource("SphereShape3D_tmemv")
 
