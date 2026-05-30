@@ -13,6 +13,7 @@ var can_move = true
 @export var die_animation:String
 @export var fall_animation:String
 
+signal finshed_action
 signal dead
 
 func _ready() -> void:
@@ -35,8 +36,9 @@ func step(direction: global.direction):
 	
 	animator.play(walk_animation)
 	movement.move(direction)
-	await movement.finished_step
+	await movement.finished_action
 	if can_move:
+		finshed_action.emit()
 		animator.play(idle_animation)
 
 func idle():
@@ -47,6 +49,7 @@ func attack(entity:Node3D):
 	can_move = false
 	animator.play(attack_animation)
 	await animator.animation_finished
+	finshed_action.emit()
 	can_move = true
 
 func fall():

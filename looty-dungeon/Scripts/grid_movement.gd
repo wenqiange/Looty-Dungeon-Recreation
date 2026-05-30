@@ -21,6 +21,7 @@ var cur_effect:int = 0
 
 var is_moving = false
 signal finished_step()
+signal finished_action
 
 signal on_wall
 signal on_entity(node:Node3D)
@@ -48,6 +49,11 @@ func _ready() -> void:
 	var rot = parent.rotation_degrees.y
 	parent.rotation_degrees.y = 0
 	body.rotation_degrees.y = rot
+	
+	finished_step.connect(finished_action.emit)
+	on_wall.connect(finished_action.emit)
+	on_bounce.connect(finished_action.emit)
+	on_entity.connect(func(_body):finished_action.emit())
 
 func _process(_delta: float) -> void:
 	on_ground = ground_raycast.is_colliding()

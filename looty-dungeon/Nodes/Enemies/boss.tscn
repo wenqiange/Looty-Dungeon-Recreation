@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="4_b817x"]
 [ext_resource type="Script" uid="uid://doolqemfcfhdo" path="res://Scripts/hit_box.gd" id="5_16pqh"]
 [ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="6_q1x00"]
+[ext_resource type="Script" uid="uid://lny3nm37simg" path="res://Scripts/boss_ai.gd" id="7_e3888"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tmemv"]
 radius = 0.7
@@ -368,3 +369,18 @@ autoplay = &"idle"
 
 [node name="Center" type="Node3D" parent="." unique_id=540508406]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50118315, 0)
+
+[node name="BossAI" type="Node" parent="." unique_id=820114398 node_paths=PackedStringArray("agent")]
+script = ExtResource("7_e3888")
+step_delay = 0.1
+idle_time = 1.0
+min_steps = 3
+max_steps = 3
+agent = NodePath("../NavigationAgent3D")
+follow_radius = 5.0
+
+[node name="Timer" type="Timer" parent="BossAI" unique_id=658622213]
+one_shot = true
+autostart = true
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1068864238]
