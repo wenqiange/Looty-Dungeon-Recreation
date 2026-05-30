@@ -64,9 +64,9 @@ func fall():
 
 func on_die():
 	can_move = false
+	#dead.emit()
 	animator.play(die_animation)
 	death_sound.play()
 	await animator.animation_finished
-	await death_sound.finished
-	dead.emit()
+	#await death_sound.finished
 	queue_free()

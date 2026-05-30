@@ -26,8 +26,8 @@ func on_heal(val:int):
 		death.emit()
 
 func on_hit():
-	if cur_health > 0:
-		$HitSound.play()
+	#if cur_health > 0:
+		#$HitSound.play()
 	if invincible: return
 	cur_health -= 1
 	health_updated.emit(cur_health)

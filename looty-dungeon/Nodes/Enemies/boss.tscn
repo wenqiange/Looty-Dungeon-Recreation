@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://lny3nm37simg" path="res://Scripts/boss_ai.gd" id="7_e3888"]
 [ext_resource type="AudioStream" uid="uid://db5v42wv6vgq5" path="res://Sounds/BossWalk.mp3" id="8_1ay1c"]
 [ext_resource type="AudioStream" uid="uid://qxrl18l6cu0h" path="res://Sounds/BossDeath.mp3" id="9_b817x"]
+[ext_resource type="Script" uid="uid://ce5ur84jdnf6g" path="res://Scripts/health.gd" id="10_16pqh"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tmemv"]
 radius = 0.7
@@ -354,7 +355,7 @@ mesh = ExtResource("2_e3888")
 [node name="HitBox" type="Area3D" parent="." unique_id=613163342 node_paths=PackedStringArray("exceptions")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 collision_layer = 2
-collision_mask = 30
+collision_mask = 20
 script = ExtResource("5_16pqh")
 exceptions = [NodePath("../Body/Hammer/DamageArea")]
 metadata/_custom_type_script = "uid://doolqemfcfhdo"
@@ -407,3 +408,10 @@ volume_db = -4.103
 
 [node name="BossDeath" type="AudioStreamPlayer3D" parent="." unique_id=1498608753]
 stream = ExtResource("9_b817x")
+
+[node name="Health" type="Node" parent="." unique_id=231084464]
+script = ExtResource("10_16pqh")
+max_health = 3
+metadata/_custom_type_script = "uid://ce5ur84jdnf6g"
+
+[connection signal="death" from="Health" to="." method="on_die"]
