@@ -107,4 +107,4 @@ cheat_coins={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-environment/defaults/default_clear_color=Color(0.46306753, 2.7338267e-05, 0.37307483, 1)
+environment/defaults/default_clear_color=Color(0.16097535, 0, 0.22240336, 1)

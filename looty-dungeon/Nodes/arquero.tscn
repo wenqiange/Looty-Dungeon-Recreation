@@ -430,10 +430,10 @@ volume_db = -9.54
 
 [node name="Bow" type="Node" parent="." unique_id=660424687]
 script = ExtResource("6_kf4pe")
-max_dist = 6
+max_dist = 4
 min_dist = 1
 min_hold_time = 0.2
-hold_to_max = 3.0
+hold_to_max = 2.0
 
 [node name="HoldTimer" type="Timer" parent="Bow" unique_id=1789669464]
 wait_time = 6.0
