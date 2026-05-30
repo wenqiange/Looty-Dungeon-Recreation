@@ -1,5 +1,6 @@
 extends StaticBody3D
 
+@onready var sound: AudioStreamPlayer3D = $Sound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -7,6 +8,7 @@ func _ready() -> void:
 
 
 func open():
+	sound.play()
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_BOUNCE)
