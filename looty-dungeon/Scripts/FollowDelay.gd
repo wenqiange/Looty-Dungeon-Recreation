@@ -23,7 +23,7 @@ func _ready():
 	delay.timeout.connect(_on_delay)
 
 func _process(_delta: float) -> void:
-	if enemy.position.distance_to(player.position) > follow_radius: following = true
+	if enemy.position.distance_to(player.position) < follow_radius: following = true
 	agent.target_position = player.position
 	if agent.get_final_position().distance_to(enemy.position) < 0.9:
 		stop = true

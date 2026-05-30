@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://dkkjwel1efltt" path="res://Nodes/Traps/trident_trap.tscn" id="16_41bky"]
 [ext_resource type="PackedScene" uid="uid://fra3io0p4ql5" path="res://Nodes/Enemies/goblin.tscn" id="16_gk50b"]
 [ext_resource type="Script" uid="uid://bfh1emwibf3gk" path="res://Scripts/FollowDelay.gd" id="17_41bky"]
+[ext_resource type="PackedScene" uid="uid://coippum77fhr3" path="res://Nodes/Enemies/slime.tscn" id="18_exedk"]
+[ext_resource type="Script" uid="uid://pgghu6asd23v" path="res://Scripts/FollowDirections.gd" id="19_3khbf"]
 
 [node name="Level5" type="Node3D" unique_id=1113013960 node_paths=PackedStringArray("player_spawn")]
 script = ExtResource("1_gk50b")
@@ -268,4 +270,15 @@ agent = NodePath("../NavigationAgent3D")
 metadata/_custom_type_script = "uid://bfh1emwibf3gk"
 
 [node name="Delay" type="Timer" parent="goblin/FollowPlayer" unique_id=682992626]
+autostart = true
+
+[node name="Slime" parent="." unique_id=599997461 instance=ExtResource("18_exedk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 9)
+
+[node name="followInput" type="Node" parent="Slime" unique_id=150544975]
+script = ExtResource("19_3khbf")
+input_list = Array[int]([2, 1, 1, 3, 3, 0, 0, 2])
+metadata/_custom_type_script = "uid://pgghu6asd23v"
+
+[node name="Timer" type="Timer" parent="Slime/followInput" unique_id=402780146]
 autostart = true

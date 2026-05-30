@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://fra3io0p4ql5" path="res://Nodes/Enemies/goblin.tscn" id="17_xq73e"]
 [ext_resource type="Script" uid="uid://bfh1emwibf3gk" path="res://Scripts/FollowDelay.gd" id="18_i8xbr"]
 [ext_resource type="PackedScene" uid="uid://biycv3w8mr2sd" path="res://Nodes/Enemies/rat.tscn" id="19_vrw1a"]
+[ext_resource type="Script" uid="uid://pgghu6asd23v" path="res://Scripts/FollowDirections.gd" id="20_i8xbr"]
 
 [node name="Level8" type="Node3D" unique_id=1391559045 node_paths=PackedStringArray("player_spawn")]
 script = ExtResource("1_n1ajq")
@@ -241,14 +242,20 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.9
 [node name="Door" parent="." unique_id=1781724774 instance=ExtResource("9_wugs4")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.00613147, 0, 11.5)
 
-[node name="Slime" parent="." unique_id=1608742070 instance=ExtResource("15_al1qh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0042272, 0.5, 7.015352)
-
 [node name="EndTile" parent="." unique_id=1358480099 instance=ExtResource("16_n1ajq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 
+[node name="Rat" parent="." unique_id=530138206 instance=ExtResource("19_vrw1a")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2, 0.4, 3)
+
+[node name="Rat2" parent="." unique_id=1608742070 instance=ExtResource("19_vrw1a")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, 2.3841858e-07, 0.3999995, 5)
+
+[node name="Rat3" parent="." unique_id=369112969 instance=ExtResource("19_vrw1a")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, -1.9999998, 0.3999995, 3)
+
 [node name="goblin" parent="." unique_id=28463697 instance=ExtResource("17_xq73e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09018588, 0.5, 4.9295216)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09018588, 0.5, 9.929522)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="goblin" unique_id=984861709]
 path_desired_distance = 0.5
@@ -256,21 +263,19 @@ path_desired_distance = 0.5
 [node name="FollowPlayer" type="Node" parent="goblin" unique_id=1546167340 node_paths=PackedStringArray("agent")]
 script = ExtResource("18_i8xbr")
 agent = NodePath("../NavigationAgent3D")
+follow_radius = 2.0
 metadata/_custom_type_script = "uid://bfh1emwibf3gk"
 
 [node name="Delay" type="Timer" parent="goblin/FollowPlayer" unique_id=1208471357]
 autostart = true
 
-[node name="Rat" parent="goblin" unique_id=530138206 instance=ExtResource("19_vrw1a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9179051, -2.3841858e-07, 5.960369)
+[node name="Slime" parent="." unique_id=1468051723 instance=ExtResource("15_al1qh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0042272, 0.5, 7.015352)
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="goblin/Rat" unique_id=138138149]
-path_desired_distance = 0.5
+[node name="followInput" type="Node" parent="Slime" unique_id=1163558289]
+script = ExtResource("20_i8xbr")
+input_list = Array[int]([3, 3, 3, 3, 2, 2, 2, 2])
+metadata/_custom_type_script = "uid://pgghu6asd23v"
 
-[node name="FollowPlayer" type="Node" parent="goblin/Rat" unique_id=1050570813 node_paths=PackedStringArray("agent")]
-script = ExtResource("18_i8xbr")
-agent = NodePath("../NavigationAgent3D")
-metadata/_custom_type_script = "uid://bfh1emwibf3gk"
-
-[node name="Delay" type="Timer" parent="goblin/Rat/FollowPlayer" unique_id=876969761]
+[node name="Timer" type="Timer" parent="Slime/followInput" unique_id=2080155982]
 autostart = true
