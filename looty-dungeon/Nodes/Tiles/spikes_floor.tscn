@@ -91,7 +91,7 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, -0
 visible = false
 shape = SubResource("BoxShape3D_im1sb")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1217546213 groups=["LevelPathing"]]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1217546213]
 transform = Transform3D(0.833, 0, 0, 0, 0.833, 0, 0, 0, 0.833, 0, -1, 0.085)
 mesh = ExtResource("1_32cfw")
 

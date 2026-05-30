@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://doolqemfcfhdo" path="res://Scripts/hit_box.gd" id="4_5tb8v"]
 [ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="5_if708"]
 [ext_resource type="AudioStream" uid="uid://bo0jsj2ld7vrm" path="res://Sounds/GoblinSound.mp3" id="6_ffx5l"]
+[ext_resource type="Script" uid="uid://dm5xebxeda3k7" path="res://Scripts/RandPitch.gd" id="7_5tb8v"]
 [ext_resource type="AudioStream" uid="uid://dshq8nmcimksc" path="res://Sounds/GoblinDeath.mp3" id="7_6rtym"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tmemv"]
@@ -135,6 +136,21 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GoblinDeath")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.4747,
+"start_offset": 0.5177,
+"stream": ExtResource("7_6rtym")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_mrh0h"]
 resource_name = "fall"
@@ -196,6 +212,20 @@ tracks/0/path = NodePath("Body/Mesh")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, -0.0002594064, 0, 0, 0.1, 1, 0, 0.1, 0, 0.43333334, 1, -0.0002594064, 0, 0)
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GoblinSound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"Play"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mrh0h"]
 _data = {
@@ -207,20 +237,19 @@ _data = {
 &"walk": SubResource("Animation_2235k")
 }
 
-[node name="goblin" type="Node3D" unique_id=1608742070 node_paths=PackedStringArray("death_sound", "move_sound") groups=["enemies"]]
+[node name="goblin" type="Node3D" unique_id=1608742070 groups=["enemies"]]
 script = ExtResource("1_11vwg")
 idle_animation = "idle"
 walk_animation = "walk"
 attack_animation = "attack"
 die_animation = "die"
 fall_animation = "fall"
-death_sound = NodePath("GoblinDeath")
-move_sound = NodePath("GoblinSound")
 
 [node name="Body" type="Node3D" parent="." unique_id=2091126645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015058924, -0.5, -0.003975204)
 
 [node name="Mesh" type="Node3D" parent="Body" unique_id=991836782]
+transform = Transform3D(7.549227e-08, -0.9999254, 0.012215742, 1, 7.54979e-08, 0, -9.222629e-10, 0.012215742, 0.9999254, 0, 0, 0)
 
 [node name="in" type="MeshInstance3D" parent="Body/Mesh" unique_id=710784243]
 transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8000002, 0, -0.8, 0, -3.4969112e-08, -0.05144022, 0.099999994, -0.043846674)
@@ -268,9 +297,11 @@ autoplay = &"idle"
 [node name="GoblinSound" type="AudioStreamPlayer3D" parent="." unique_id=1551259577]
 stream = ExtResource("6_ffx5l")
 volume_db = -12.308
+script = ExtResource("7_5tb8v")
+min_pitch = 0.8
+max_pitch = 1.1
 
 [node name="GoblinDeath" type="AudioStreamPlayer3D" parent="." unique_id=1827498663]
-stream = ExtResource("7_6rtym")
 volume_db = -6.838
 
 [connection signal="got_hit" from="HitBox" to="." method="on_die"]

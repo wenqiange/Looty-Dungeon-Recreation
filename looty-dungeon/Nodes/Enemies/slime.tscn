@@ -7,9 +7,9 @@
 [ext_resource type="Script" uid="uid://ct32ju8ixue8" path="res://Scripts/damage_area.gd" id="5_7xbmq"]
 [ext_resource type="Script" uid="uid://doolqemfcfhdo" path="res://Scripts/hit_box.gd" id="6_c00aq"]
 [ext_resource type="Script" uid="uid://3t50y6pxtmjf" path="res://Scripts/grid_movement.gd" id="7_r83aw"]
+[ext_resource type="AudioStream" uid="uid://bipi3e3vmicok" path="res://Sounds/SlimeDeath.mp3" id="8_fwa0t"]
 [ext_resource type="Script" uid="uid://5tiyg3nrvfqs" path="res://Scripts/sliming.gd" id="8_gdo7j"]
 [ext_resource type="AudioStream" uid="uid://d072mv5ix1jng" path="res://Sounds/SlimeSound.mp3" id="9_p20v5"]
-[ext_resource type="AudioStream" uid="uid://cdu5jrf5qiyal" path="res://Sounds/SlimeHit.mp3" id="10_vw6wp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iaow0"]
 transparency = 1
@@ -204,6 +204,21 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer3D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.2264,
+"stream": ExtResource("8_fwa0t")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_moyba"]
 length = 2.0
@@ -237,6 +252,21 @@ tracks/1/path = NodePath("Body/Mesh")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.10000001, 1, 0.9, 1.2, 0.9, 0.5, 1, 1, 1, 1)
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0344,
+"stream": ExtResource("9_p20v5")
+}],
+"times": PackedFloat32Array(0.2)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wv5nn"]
 _data = {
@@ -247,15 +277,13 @@ _data = {
 &"walk": SubResource("Animation_qitfk")
 }
 
-[node name="Slime" type="Node3D" unique_id=1608742070 node_paths=PackedStringArray("death_sound", "move_sound") groups=["enemies"]]
+[node name="Slime" type="Node3D" unique_id=1608742070 groups=["enemies"]]
 script = ExtResource("1_cwq58")
 idle_animation = "slime/idle"
 walk_animation = "slime/walk"
 attack_animation = "slime/attack"
 die_animation = "slime/die"
-fall_animation = "slime/fall"
-death_sound = NodePath("Sliming/SlimeDeath")
-move_sound = NodePath("Sliming/SlimeSound")
+fall_animation = "slime/Fall"
 
 [node name="Body" type="Node3D" parent="." unique_id=2091126645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015058924, -0.5, -0.003975204)
@@ -312,10 +340,6 @@ autoplay = &"slime/idle"
 [node name="Sliming" type="Node" parent="." unique_id=1532130270]
 script = ExtResource("8_gdo7j")
 
-[node name="SlimeSound" type="AudioStreamPlayer3D" parent="Sliming" unique_id=1729220509]
-stream = ExtResource("9_p20v5")
-
-[node name="SlimeDeath" type="AudioStreamPlayer3D" parent="Sliming" unique_id=564598616]
-stream = ExtResource("10_vw6wp")
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1500850412]
 
 [connection signal="got_hit" from="HitBox" to="." method="on_die"]

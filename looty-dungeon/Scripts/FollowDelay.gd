@@ -7,6 +7,7 @@ var delay:Timer
 @export var follow_radius:float=3
 
 var following = false
+var stop = false
 
 func _ready():
 	super()
@@ -24,9 +25,14 @@ func _ready():
 func _process(_delta: float) -> void:
 	if enemy.position.distance_to(player.position) > follow_radius: following = true
 	agent.target_position = player.position
+	print(agent.get_final_position().distance_to(enemy.position))
+	if agent.get_final_position().distance_to(enemy.position) < 0.9:
+		stop = true
+	else: stop = false
 
 func _on_delay():
 	if not following:return
+	if stop: return
 	var next_pos = agent.get_next_path_position()
 	var dir = next_pos - enemy.position
 	var idir = global.vec_to_dir(Vector2(dir.x,dir.z).normalized())

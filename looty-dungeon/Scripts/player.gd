@@ -52,10 +52,10 @@ func _physics_process(_delta: float) -> void:
 		if not grid_movement.on_ground and not grid_movement.is_moving:
 			can_move = false
 			animator.play("Basic/Fall")
-			$FallSound.play()
+			#$FallSound.play()
 			await animator.animation_finished
-			await $FallSound.finished
-			$DeathSound.play()
+			#await $FallSound.finished
+			#$DeathSound.play()
 			dead.emit()
 			return
 		
@@ -102,7 +102,7 @@ func die():
 	can_move = false
 	freeze()
 	animator.play("Basic/Die")
-	$DeathSound.play()
+	#$DeathSound.play()
 	await animator.animation_finished
 	dead.emit()
 

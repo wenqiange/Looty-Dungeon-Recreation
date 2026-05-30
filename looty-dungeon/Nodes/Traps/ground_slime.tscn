@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bkqw0xfdoqn2x" path="res://Scripts/ground_slime.gd" id="1_nnark"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_d46s6"]
+radius = 0.30117857
 
 [sub_resource type="BoxMesh" id="BoxMesh_560st"]
 

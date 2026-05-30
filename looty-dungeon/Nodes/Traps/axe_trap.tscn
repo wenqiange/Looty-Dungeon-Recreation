@@ -72,36 +72,38 @@ _data = {
 &"axe_down": SubResource("Animation_t6p5g")
 }
 
-[node name="Axe_Trap" type="StaticBody3D" unique_id=125386657]
+[node name="Axe_trap" type="Node3D" unique_id=1531199215]
+
+[node name="Axe_Trap" type="StaticBody3D" parent="." unique_id=125386657]
 script = ExtResource("1_t6p5g")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=97797561]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Axe_Trap" unique_id=97797561]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04559326, 0.3957367, 0.004760742)
 shape = SubResource("BoxShape3D_yamyc")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=888027729]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Axe_Trap" unique_id=888027729]
 mesh = ExtResource("1_bwrha")
 
-[node name="Axe" type="Area3D" parent="." unique_id=241448325]
+[node name="Axe" type="Area3D" parent="Axe_Trap" unique_id=241448325]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.14076734, 0.29327995, 0)
 collision_layer = 4
 collision_mask = 10
 script = ExtResource("3_3jvbo")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Axe" unique_id=1491229283]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Axe_Trap/Axe" unique_id=1491229283]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.040031403, 0.5904502, 0.00016784314)
 shape = SubResource("BoxShape3D_rdlqr")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Axe" unique_id=938445434]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Axe_Trap/Axe" unique_id=938445434]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.62734663, 0.052590847)
 mesh = ExtResource("4_gbypq")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1559617021]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Axe_Trap" unique_id=1559617021]
 root_node = NodePath("../Axe")
 libraries/ = SubResource("AnimationLibrary_3jvbo")
 autoplay = &"axe_down"
 
-[node name="AxeSound" type="AudioStreamPlayer3D" parent="." unique_id=2125872387]
+[node name="AxeSound" type="AudioStreamPlayer3D" parent="Axe_Trap" unique_id=2125872387]
 volume_db = -25.43
 
 [node name="Ground" type="MeshInstance3D" parent="." unique_id=1330131596]

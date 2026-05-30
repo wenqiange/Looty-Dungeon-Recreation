@@ -94,6 +94,11 @@ cheat_coins={
 3d_physics/layer_4="PlayerHitBox"
 3d_physics/layer_5="PlayerDamageBox"
 3d_physics/layer_6="GroundEffect"
+3d_physics/layer_7="Colectables"
+
+[navigation]
+
+3d/default_edge_connection_margin=0.6
 
 [physics]
 

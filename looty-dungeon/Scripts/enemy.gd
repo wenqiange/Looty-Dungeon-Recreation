@@ -13,8 +13,8 @@ var can_move = true
 @export var die_animation:String
 @export var fall_animation:String
 
-@export var death_sound: AudioStreamPlayer3D
-@export var move_sound: AudioStreamPlayer3D
+#@export var death_sound: AudioStreamPlayer3D
+#@export var move_sound: AudioStreamPlayer3D
 
 signal finshed_action
 signal dead
@@ -36,8 +36,8 @@ func _process(_delta: float) -> void:
 func step(direction: global.direction):
 	if not can_move: return
 	if movement.is_moving: return
-	if move_sound:
-		move_sound.play()
+	#if move_sound:
+		#move_sound.play()
 	animator.play(walk_animation)
 	movement.move(direction)
 	await movement.finished_action
@@ -64,9 +64,9 @@ func fall():
 
 func on_die():
 	can_move = false
-	#dead.emit()
+	dead.emit()
 	animator.play(die_animation)
-	death_sound.play()
+	#death_sound.play()
 	await animator.animation_finished
 	#await death_sound.finished
 	queue_free()
