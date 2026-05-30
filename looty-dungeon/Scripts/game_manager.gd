@@ -65,6 +65,7 @@ func change_level(level:PackedScene):
 	if cur_level != null:
 		await exit_level()
 	await enter_level(level)
+	player.reset.emit()
 	changing = false
 
 func next_level():

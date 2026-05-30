@@ -7,7 +7,7 @@
 size = Vector3(1.0254517, 1.21344, 0.6)
 
 [node name="solid_knight" type="StaticBody3D" unique_id=136595844]
-collision_layer = 2
+collision_layer = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=555719907]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0025138855)
