@@ -4,13 +4,17 @@ extends Node3D
 @onready var fade_transition: FadeTransition = $UI/fade_transition
 
 @export var levels: Array[PackedScene]
-var level_num = 0
+var level_num := 0:
+	set(new_val):
+		level_num = new_val
+		change_level_num.emit(level_num)
 
 var cur_level:Level
-
 var player:Player
 
 var changing:bool = false
+
+signal change_level_num(num:int)
 
 func _ready() -> void: 
 	fade_transition.fade_out()
