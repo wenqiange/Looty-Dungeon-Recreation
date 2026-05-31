@@ -249,7 +249,6 @@ fall_animation = "fall"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015058924, -0.5, -0.003975204)
 
 [node name="Mesh" type="Node3D" parent="Body" unique_id=991836782]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0002594064, 0, 0)
 
 [node name="in" type="MeshInstance3D" parent="Body/Mesh" unique_id=710784243]
 transform = Transform3D(-3.4969112e-08, 0, 0.8, 0, 0.8000002, 0, -0.8, 0, -3.4969112e-08, -0.123560406, 0.099999994, -0.1)

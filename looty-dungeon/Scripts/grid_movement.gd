@@ -37,6 +37,7 @@ var mov_tween: Tween
 var prev_pos:Vector3
 
 func _ready() -> void:
+	ground_raycast.force_raycast_update()
 	parent = get_parent() as Node3D
 	
 	for c in parent.get_children():
